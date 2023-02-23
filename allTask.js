@@ -52,12 +52,14 @@
 //
 // poly()
 
-const makeSheff = function (name){
+const makeSheff = (name) => {
     return (dish) => {
-        console.log(`${name} готує ${dish}`);
-    };
-};
-const poly = makeSheff("Oliver");
+        console.log(`${name} make ${dish}`)
+    }
+}
 
-poly("піцу");
-console.log(poly);
+const sheffDen = makeSheff("den4ik")
+const sheffOliver = makeSheff("oliver")
+
+sheffDen("pasta")
+sheffOliver("rise")
