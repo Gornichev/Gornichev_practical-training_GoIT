@@ -8,20 +8,38 @@
 //     }
 //     console.log(totalArr)
 // }
-// const welcomeFunction = (value) => value > 6
+// mainFilter([1,4,6,7,8,4,66],value => value > 6)
 //
-// mainFilter([1,4,6,7,8,4,66],welcomeFunction)
-// const students = [
-//     { name: "Манго", score: 83 },
-//     { name: "Полі", score: 59 },
-//     { name: "Аякс", score: 37 },
-//     { name: "Ківі", score: 94 },
-//     { name: "Х'юстон", score: 64 },
-// ];
+const students = [
+    { name: "Манго", score: 83, online : true },
+    { name: "Полі", score: 59, online : false },
+    { name: "Аякс", score: 37, online : true  },
+    { name: "Ківі", score: 94, online : true  },
+    { name: "Х'юстон", score: 64, online : false },
+];
+
+// const totalScore = students.map(({name,score}) => ({ name,score}))
+// const changeScore = students.map(student => ({...student,score :student.score *2}))
+// console.log(changeScore)
+
+const studentToFind = "Манго"
+const updateStudent = students.map(student => {
+
+    if(studentToFind === student.name){
+        return {
+
+        }
+    }
+    return  `no!`
+})
+console.log(updateStudent)
+
+
+
 //
-// const studentFilter = (student) => student.score === 37;
-// mainFilter(students,studentFilter)
 //
+// mainFilter(students,student => student.score === 37)
+// //
 // const colors = [
 //   { hex: "#f44336", rgb: "244,67,54" },
 //   { hex: "#175888", rgb: "33,150,243" },
@@ -29,9 +47,7 @@
 //   { hex: "#a49b23", rgb: "255,235,59" },
 // ];
 //
-// const colorFilter = (color) => color.rgb === "244,67,54"
-// mainFilter(colors,colorFilter)
-
+// mainFilter(colors,color => color.rgb === "244,67,54")
 
 // const makeSheff = (name) => {
 //
@@ -52,14 +68,32 @@
 //
 // poly()
 
-const makeSheff = (name) => {
-    return (dish) => {
-        console.log(`${name} make ${dish}`)
-    }
-}
+// const makeSheff = (name) => {
+//     return (dish) => {
+//         console.log(`${name} make ${dish}`)
+//     }
+// }
+//
+// const sheffDen = makeSheff("den4ik")
+// const sheffOliver = makeSheff("oliver")
+//
+// sheffDen("pasta")
+// sheffOliver("rise")
 
-const sheffDen = makeSheff("den4ik")
-const sheffOliver = makeSheff("oliver")
+// const add = function (a,b,c) {
+//     return a + b + c;
+// }
 
-sheffDen("pasta")
-sheffOliver("rise")
+// const add = (a,b,c) => a + b + c ;
+// console.log(add(5,5,10))
+
+// const numbers = [5,6,7,8,8,9,0,4]
+//
+// // numbers.forEach(function (number){
+// //     console.log(this)
+// // },{a:5, b:10})
+//
+// const changeNum = numbers.map(number => {
+//     return number *2
+// })
+// console.log(changeNum)
