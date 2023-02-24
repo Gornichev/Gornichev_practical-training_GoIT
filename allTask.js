@@ -18,22 +18,38 @@ const students = [
     { name: "Х'юстон", score: 64, online : false },
 ];
 
+const onlineStudent = students.filter(student => student.name !== "Манго")
+console.log(onlineStudent)
+
+// const studentsName = students.map(student => student.name)
+// console.log(studentsName)
+
 // const totalScore = students.map(({name,score}) => ({ name,score}))
 // const changeScore = students.map(student => ({...student,score :student.score *2}))
 // console.log(changeScore)
 
 const studentToFind = "Манго"
-const updateStudent = students.map(student => {
+const studentToFind2 = "Ківі"
 
-    if(studentToFind === student.name){
-        return {
+const updateNameStudent = students.map(student => {
 
-        }
-    }
-    return  `no!`
+    return studentToFind === student.name || studentToFind2 === student.name
+        ? {...student, name : "Oliver koletsky"}
+        :  student;
 })
-console.log(updateStudent)
+// console.log(updateNameStudent)
 
+
+// const updateStudent = students.map(student => {
+//
+//     if(studentToFind === student.name){
+//         return {
+//             ...student,
+//             name : "Oliver"
+//         }
+//     }
+//     return  student
+// })
 
 
 //
@@ -97,3 +113,7 @@ console.log(updateStudent)
 //     return number *2
 // })
 // console.log(changeNum)
+
+const array = [1, 2, 3]
+
+const newArr = []
