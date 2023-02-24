@@ -11,16 +11,27 @@
 // mainFilter([1,4,6,7,8,4,66],value => value > 6)
 //
 const students = [
-    { name: "Манго", score: 83, online : true },
-    { name: "Полі", score: 59, online : false },
-    { name: "Аякс", score: 37, online : true  },
-    { name: "Ківі", score: 94, online : true  },
-    { name: "Х'юстон", score: 64, online : false },
+    { name: "Манго", score: 83, online : true, id: "34"},
+    { name: "Полі", score: 59, online : false, id: "22"},
+    { name: "Аякс", score: 37, online : true, id: "9"},
+    { name: "Ківі", score: 94, online : true, id: "5"},
+    { name: "Х'юстон", score: 64, online : false, id: "67"}
 ];
 
-const onlineStudent = students.filter(student => student.name !== "Манго")
-console.log(onlineStudent)
+const test = students.every(student => student.online)
 
+console.log(test)
+
+// const findIdStudent = (allStudents,idStud) => allStudents.find(({name}) => name=== idStud);
+// console.log(findIdStudent(students,"Манго"));
+
+// const onlineStudent = students.filter(student => student.name !== "Манго")
+// console.log(onlineStudent)
+
+// const findIdStudent = "9"
+// const newStud = students.find(({id}) => id === findIdStudent)
+// console.log(newStud)
+//
 // const studentsName = students.map(student => student.name)
 // console.log(studentsName)
 
@@ -28,15 +39,15 @@ console.log(onlineStudent)
 // const changeScore = students.map(student => ({...student,score :student.score *2}))
 // console.log(changeScore)
 
-const studentToFind = "Манго"
-const studentToFind2 = "Ківі"
-
-const updateNameStudent = students.map(student => {
-
-    return studentToFind === student.name || studentToFind2 === student.name
-        ? {...student, name : "Oliver koletsky"}
-        :  student;
-})
+// const studentToFind = "Манго"
+// const studentToFind2 = "Ківі"
+//
+// const updateNameStudent = students.map(student => {
+//
+//     return studentToFind === student.name || studentToFind2 === student.name
+//         ? {...student, name : "Oliver koletsky"}
+//         :  student;
+// })
 // console.log(updateNameStudent)
 
 
@@ -113,7 +124,3 @@ const updateNameStudent = students.map(student => {
 //     return number *2
 // })
 // console.log(changeNum)
-
-const array = [1, 2, 3]
-
-const newArr = []
