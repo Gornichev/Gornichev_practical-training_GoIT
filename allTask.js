@@ -25,17 +25,49 @@
 //
 // console.log(totalScore)
 
+ // ====reduce пошук унікальник тегів ========
+
 const carts = [
-    {label: 'mango', price : 25, quantity :2, tags: ["js", "Gt"]},
-    {label: 'apple', price : 50, quantity :3, tags: ["ww", "op"]},
-    {label: 'lemon', price : 5, quantity :5, tags: ["js", "de"]},
-    {label: 'orange', price : 10, quantity :1, tags: ["qq", "wq"]},
+    {label: 'mango', price : 25, quantity :2, tags: ["js", "de"]},
+    {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"]},
+    {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"]},
+    {label: 'orange', price : 10, quantity :1, tags: ["js", "gt"]},
 ]
 
-const allTags = carts.reduce((all,cart) => all.concat(cart.tags),[])
-const allTags2 = carts.reduce((all,cart) => [...all,...cart.tags],[])
-console.log(allTags)
-console.log(allTags2)
+// const allPrise = carts.map(cart => cart.price)
+// console.log(allPrise)
+
+const allTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
+
+const sumOfTag = allTags.reduce(
+    (acc,tag) => ({
+    ...acc,
+    [tag]: acc[tag]
+}), {})
+console.log(sumOfTag)
+
+// const sumOfTag = allTags.reduce((acc,tag) => {
+//     acc[tag] ?
+//     acc[tag] += 1
+//     : acc[tag] = 1
+//     return acc
+// }
+// ,{})
+
+// console.log(sumOfTag)
+// let strings = ["кришна", "кришна", "харе", "харе",
+//     "харе", "харе", "кришна", "кришна", ":-O"
+// ];
+//
+// function unique(arr) {
+//
+//     return arr.filter((item,index,arr) => {
+//         return arr.indexOf(item) === index
+//     })
+// }
+// console.log(unique(strings))
+
+// console.log(allCartsTags);
 
 // const total = cart.reduce(
 //     (totalPrice,{price,quantity}) => totalPrice + price * quantity
