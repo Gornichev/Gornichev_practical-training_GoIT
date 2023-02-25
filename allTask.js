@@ -10,17 +10,44 @@
 // }
 // mainFilter([1,4,6,7,8,4,66],value => value > 6)
 //
-const students = [
-    { name: "Манго", score: 83, online : true, id: "34"},
-    { name: "Полі", score: 59, online : false, id: "22"},
-    { name: "Аякс", score: 37, online : true, id: "9"},
-    { name: "Ківі", score: 94, online : true, id: "5"},
-    { name: "Х'юстон", score: 64, online : false, id: "67"}
-];
+// const students = [
+//     { name: "Манго", score: 10, online : true, id: "34"},
+//     { name: "Полі", score: 10, online : false, id: "22"},
+//     { name: "Аякс", score: 5, online : true, id: "9"},
+//     { name: "Ківі", score: 2, online : true, id: "5"},
+//     { name: "Х'юстон", score: 50, online : false, id: "67"}
+// ];
 
-const test = students.every(student => student.online)
 
-console.log(test)
+// const totalScore = students.reduce(
+//     (total,student) => student.score + total
+//     ,0)
+//
+// console.log(totalScore)
+
+const carts = [
+    {label: 'mango', price : 25, quantity :2, tags: ["js", "Gt"]},
+    {label: 'apple', price : 50, quantity :3, tags: ["ww", "op"]},
+    {label: 'lemon', price : 5, quantity :5, tags: ["js", "de"]},
+    {label: 'orange', price : 10, quantity :1, tags: ["qq", "wq"]},
+]
+
+const allTags = carts.reduce((all,cart) => all.concat(cart.tags),[])
+const allTags2 = carts.reduce((all,cart) => [...all,...cart.tags],[])
+console.log(allTags)
+console.log(allTags2)
+
+// const total = cart.reduce(
+//     (totalPrice,{price,quantity}) => totalPrice + price * quantity
+//     ,0)
+//
+// console.log(total)
+// const numbers = [5,6,7,8,8,9,0,4]
+// const total = numbers.reduce((acc,number) => acc +number,0)
+// console.log(total)
+
+// const test = students.every(student => student.online)
+// console.log(test)
 
 // const findIdStudent = (allStudents,idStud) => allStudents.find(({name}) => name=== idStud);
 // console.log(findIdStudent(students,"Манго"));
@@ -61,7 +88,6 @@ console.log(test)
 //     }
 //     return  student
 // })
-
 
 //
 //
@@ -114,7 +140,7 @@ console.log(test)
 // const add = (a,b,c) => a + b + c ;
 // console.log(add(5,5,10))
 
-// const numbers = [5,6,7,8,8,9,0,4]
+
 //
 // // numbers.forEach(function (number){
 // //     console.log(this)
@@ -124,3 +150,82 @@ console.log(test)
 //     return number *2
 // })
 // console.log(changeNum)
+
+// const atTheOldToad = {
+//     potions: [
+//         { name: "Speed potion", price: 460 },
+//         { name: "Dragon breath", price: 780 },
+//         { name: "Stone skin", price: 520 },
+//     ],
+//     getPotions() {
+//         return this.potions;
+//     },
+//     addPotion(newPotion) {
+//         const {name} = newPotion;
+//         const potionIndex = this.potions.findIndex(potion => potion.name === name);
+//
+//         if (potionIndex !== -1) {
+//             return `Error! Potion ${name} is already in your inventory!`;
+//         }
+//         this.potions.push(newPotion);
+//     },
+//
+//     removePotion(potionName) {
+//         const potionIndex = this.potions.findIndex(potion => potion.name === potionName);
+//
+//         if (potionIndex === -1) {
+//             return `Potion ${potionName} is not in inventory!`;
+//         }
+//
+//         this.potions.splice(potionIndex, 1);
+//     },
+//
+//     updatePotionName(oldName, newName) {
+//         const potionIndex = this.potions.findIndex(potion => potion.name === oldName);
+//
+//         if (potionIndex === -1) {
+//             return `Potion ${oldName} is not in inventory!`;
+//         }
+//
+//         this.potions[potionIndex].name = newName;
+//     },
+//     // Change code above this line
+// };
+
+// const atTheOldToad = {
+//     potions: [
+//         { name: "Speed potion", price: 460 },
+//         { name: "Dragon breath", price: 780 },
+//         { name: "Stone skin", price: 520 },
+//     ],
+//     // Change code below this line
+//     getPotions() {
+//         return this.potions;
+//     },
+//     addPotion(newPotion) {
+//         if (this.potions.includes(newPotion)) {
+//             return `Error! Potion ${newPotion} is already in your inventory!`;
+//         }
+//
+//         this.potions.push(newPotion);
+//     },
+//     removePotion(potionName) {
+//         const potionIndex = this.potions.indexOf(potionName);
+//
+//         if (potionIndex === -1) {
+//             return `Potion ${potionName} is not in inventory!`;
+//         }
+//
+//         this.potions.splice(potionIndex, 1);
+//     },
+//     updatePotionName(oldName, newName) {
+//         const potionIndex = this.potions.indexOf(oldName);
+//
+//         if (potionIndex === -1) {
+//             return `Potion ${oldName} is not in inventory!`;
+//         }
+//
+//         this.potions.splice(potionIndex, 1, newName);
+//     },
+//     // Change code above this line
+// };
