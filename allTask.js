@@ -24,18 +24,27 @@
 //
 // console.log(totalScore)
 
- // ====reduce пошук унікальник тегів ========
+
 
 const carts = [
-    {label: 'mango', price : 25, quantity :2, tags: ["js", "de"]},
-    {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"]},
-    {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"]},
-    {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"]},
+    {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
+    {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"],isOnline : false},
+    {label: 'peach', price : 15, quantity :8, tags: ["pt", "de"],isOnline : true},
+    {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"], isOnline : true},
+    {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
 ]
+
+// 1: відсортувати прайс увсіх хто онлайн
+// const sorted = carts
+//     .filter(cart => cart.isOnline)
+//     .sort((cartA,cartB) => cartA.price - cartB.price)
+//
+// console.log(sorted)
 
 // const copyCarts = [...carts].sort((a,b) => a.quantity - b.quantity)
 // console.log(copyCarts)
 
+// ====reduce пошук унікальник тегів ========
 // // const arrTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
 // // const allTags = carts.flatMap(cart => cart.tags)
 //
@@ -51,7 +60,7 @@ const carts = [
 //
 // }, {})
 // console.log(tagsCheck)
-
+// ====reduce пошук унікальник тегів ========
 
 // const sumOfTag = arrTags.reduce((acc,tag) => {
 //         acc[tag] ?
@@ -247,3 +256,39 @@ const carts = [
 // console.log(sorted)
 
 //======= chaining
+
+// Task1
+// const charCounts = string.split("").reduce((acc, el) => {
+//     acc[el] ? acc[el] += 1 : acc[el] = 1
+//     return acc;
+// }, []);
+// console.log(charCounts)
+
+// Напиши функцію що приймае стрінг і повертає позицію першийого унікальний символ.
+//     Наприклад Leetcode зустрічаеться тільки на позиції 1.
+
+// const firstUniqChar = (string) => {
+// const strToArr = string.split("")
+//     .reduce((acc,element) => {
+//     acc[element] ?
+//     acc[element] += 1
+//     : acc[element] = 1;
+//     return acc
+// },{})
+//     // console.log(strToArr)
+//     for (let i = 0; i < string.length; i++) {
+//         const char = string[i];
+//         if (strToArr[char] === 1) {
+//             return i;
+//         }
+//     }
+//     return  -1
+// }
+//
+// console.log(firstUniqChar("aleetcode"))
+// console.log(firstUniqChar("LoveLeetcode"))
+// console.log(firstUniqChar("aaddc"))
+
+// Напиши функцію що приймае стрінг і повертає позицію першийого унікальний символ.
+//     Наприклад Leetcode зустрічаеться тільки на позиції 1.
+console.dir(_)
