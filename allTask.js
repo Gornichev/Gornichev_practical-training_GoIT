@@ -36,11 +36,11 @@ const carts = [
 // const copyCarts = [...carts].sort((a,b) => a.quantity - b.quantity)
 // console.log(copyCarts)
 
-const arrTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
-const allTags = carts.flatMap(cart => cart.tags)
-
-console.log(arrTags)
-console.log(allTags)
+// // const arrTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
+// // const allTags = carts.flatMap(cart => cart.tags)
+//
+// console.log(arrTags)
+// console.log(allTags)
 
 // const tagsCheck = arrTags.reduce((acc,tag) => {
 //
@@ -102,7 +102,22 @@ console.log(allTags)
 //
 // console.log(total)
 
+//======= chaining
 // const numbers = [5,6,7,8,8,9,0,4]
+//
+// // подвоїти значення всіх елементів
+// //записати більші за 5
+// //відсортувати
+//
+// const sorted = numbers
+//     .map(num => num *2)
+//     .filter(num => num >5)
+//     .sort((a,b) => a -b)
+// console.log(sorted)
+
+//======= chaining
+
+
 // const copyOfNumber = [...numbers].sort((a,b) => a - b)
 // console.log(numbers,copyOfNumber)
 
@@ -166,6 +181,7 @@ console.log(allTags)
 //
 // mainFilter(colors,color => color.rgb === "244,67,54")
 
+// Closures======
 // const makeSheff = (name) => {
 //
 //     const makeDish = (dish) => {
@@ -196,6 +212,7 @@ console.log(allTags)
 //
 // sheffDen("pasta")
 // sheffOliver("rise")
+// Closures======
 
 // const add = function (a,b,c) {
 //     return a + b + c;
@@ -215,81 +232,18 @@ console.log(allTags)
 // })
 // console.log(changeNum)
 
-// const atTheOldToad = {
-//     potions: [
-//         { name: "Speed potion", price: 460 },
-//         { name: "Dragon breath", price: 780 },
-//         { name: "Stone skin", price: 520 },
-//     ],
-//     getPotions() {
-//         return this.potions;
-//     },
-//     addPotion(newPotion) {
-//         const {name} = newPotion;
-//         const potionIndex = this.potions.findIndex(potion => potion.name === name);
-//
-//         if (potionIndex !== -1) {
-//             return `Error! Potion ${name} is already in your inventory!`;
-//         }
-//         this.potions.push(newPotion);
-//     },
-//
-//     removePotion(potionName) {
-//         const potionIndex = this.potions.findIndex(potion => potion.name === potionName);
-//
-//         if (potionIndex === -1) {
-//             return `Potion ${potionName} is not in inventory!`;
-//         }
-//
-//         this.potions.splice(potionIndex, 1);
-//     },
-//
-//     updatePotionName(oldName, newName) {
-//         const potionIndex = this.potions.findIndex(potion => potion.name === oldName);
-//
-//         if (potionIndex === -1) {
-//             return `Potion ${oldName} is not in inventory!`;
-//         }
-//
-//         this.potions[potionIndex].name = newName;
-//     },
-//     // Change code above this line
-// };
 
-// const atTheOldToad = {
-//     potions: [
-//         { name: "Speed potion", price: 460 },
-//         { name: "Dragon breath", price: 780 },
-//         { name: "Stone skin", price: 520 },
-//     ],
-//     // Change code below this line
-//     getPotions() {
-//         return this.potions;
-//     },
-//     addPotion(newPotion) {
-//         if (this.potions.includes(newPotion)) {
-//             return `Error! Potion ${newPotion} is already in your inventory!`;
-//         }
+//======= chaining
+// const numbers = [5,6,7,8,8,9,0,4]
 //
-//         this.potions.push(newPotion);
-//     },
-//     removePotion(potionName) {
-//         const potionIndex = this.potions.indexOf(potionName);
+// // подвоїти значення всіх елементів
+// //записати більші за 5
+// //відсортувати
 //
-//         if (potionIndex === -1) {
-//             return `Potion ${potionName} is not in inventory!`;
-//         }
-//
-//         this.potions.splice(potionIndex, 1);
-//     },
-//     updatePotionName(oldName, newName) {
-//         const potionIndex = this.potions.indexOf(oldName);
-//
-//         if (potionIndex === -1) {
-//             return `Potion ${oldName} is not in inventory!`;
-//         }
-//
-//         this.potions.splice(potionIndex, 1, newName);
-//     },
-//     // Change code above this line
-// };
+// const sorted = numbers
+//     .map(num => num *2)
+//     .filter(num => num >5)
+//     .sort((a,b) => a -b)
+// console.log(sorted)
+
+//======= chaining
