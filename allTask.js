@@ -18,7 +18,6 @@
 //     { name: "Х'юстон", score: 50, online : false, id: "67"}
 // ];
 
-
 // const totalScore = students.reduce(
 //     (total,student) => student.score + total
 //     ,0)
@@ -31,30 +30,58 @@ const carts = [
     {label: 'mango', price : 25, quantity :2, tags: ["js", "de"]},
     {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"]},
     {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"]},
-    {label: 'orange', price : 10, quantity :1, tags: ["js", "gt"]},
+    {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"]},
 ]
 
-// const allPrise = carts.map(cart => cart.price)
-// console.log(allPrise)
+// const copyCarts = [...carts].sort((a,b) => a.quantity - b.quantity)
+// console.log(copyCarts)
 
-const allTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
+const arrTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
+const allTags = carts.flatMap(cart => cart.tags)
 
-const sumOfTag = allTags.reduce(
-    (acc,tag) => ({
-    ...acc,
-    [tag]: acc[tag]
-}), {})
-console.log(sumOfTag)
+console.log(arrTags)
+console.log(allTags)
 
-// const sumOfTag = allTags.reduce((acc,tag) => {
-//     acc[tag] ?
-//     acc[tag] += 1
-//     : acc[tag] = 1
-//     return acc
-// }
-// ,{})
+// const tagsCheck = arrTags.reduce((acc,tag) => {
+//
+//     return {
+//         ...acc,
+//         [tag] : acc[tag] ? acc[tag] +1 : 1
+//     }
+//
+// }, {})
+// console.log(tagsCheck)
 
+
+// const sumOfTag = arrTags.reduce((acc,tag) => {
+//         acc[tag] ?
+//             acc[tag] += 1
+//             : acc[tag] = 1
+//         return acc
+//     }
+//     ,{})
 // console.log(sumOfTag)
+
+// const allTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
+// console.log(allTags)
+// const sumOfTag = allTags.reduce((acc,tag) => {
+//         acc[tag] ?
+//             acc[tag] += 1
+//             : acc[tag] = 1
+//         return acc
+//     }
+//     ,{})
+//
+// console.log(sumOfTag)
+
+// const sumOfTag = allTags.reduce(
+//     (acc,tag) => ({
+//     ...acc,
+//     [tag]: acc[tag]
+// }), {})
+// console.log(sumOfTag)
+
+
 // let strings = ["кришна", "кришна", "харе", "харе",
 //     "харе", "харе", "кришна", "кришна", ":-O"
 // ];
@@ -74,7 +101,12 @@ console.log(sumOfTag)
 //     ,0)
 //
 // console.log(total)
+
 // const numbers = [5,6,7,8,8,9,0,4]
+// const copyOfNumber = [...numbers].sort((a,b) => a - b)
+// console.log(numbers,copyOfNumber)
+
+// numbers.sort((a, b) => a - b);
 // const total = numbers.reduce((acc,number) => acc +number,0)
 // console.log(total)
 
