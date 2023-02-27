@@ -187,6 +187,7 @@ const carts = [
 //   { hex: "#4caf50", rgb: "76,175,80" },
 //   { hex: "#a49b23", rgb: "255,235,59" },
 // ];
+
 //
 // mainFilter(colors,color => color.rgb === "244,67,54")
 
@@ -257,6 +258,7 @@ const carts = [
 
 //======= chaining
 
+
 // Task1
 // const charCounts = string.split("").reduce((acc, el) => {
 //     acc[el] ? acc[el] += 1 : acc[el] = 1
@@ -291,4 +293,18 @@ const carts = [
 
 // Напиши функцію що приймае стрінг і повертає позицію першийого унікальний символ.
 //     Наприклад Leetcode зустрічаеться тільки на позиції 1.
-console.dir(_)
+
+// task 2: З двох масивів додати в третій  елементи що співпадають.
+
+
+const findNumber = (array,array2) => {
+    const total = [];
+    for (let i = 1; i < array.length; i += 1) {
+    if (array[i] === array2[i]){
+        total.push(array[i])
+    }
+    }
+    return total
+}
+console.log(findNumber([1,5,6,8,9,3,67,8,0,55,-1],[1,3,6,8,4,3,67,0,-1,55]))
+console.log(findNumber([1,3,6,3,4,3,67,0,77],[1,5,6,7,9,8,67,8,77]))
