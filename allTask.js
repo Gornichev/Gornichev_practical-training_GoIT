@@ -315,15 +315,24 @@ const carts = [
 // stats(callback)
 
 // ==== test tasks ======
-// 1 Поліндром
-
-const isPalindrome = (string) => {
-    return string === string.split("").reverse().join("")
-}
-
-console.log(isPalindrome("abba"))
-console.log(isPalindrome("abba"))
-console.log(isPalindrome("afdfsfba"))
-console.log(isPalindrome("'Madam i'm Adam'"))
-console.log(isPalindrome("abb23"))
-console.log(isPalindrome("11111113"))
+// // 1 Поліндром
+//
+// const isPalindrome = (string) => {
+//     return string === string.split("").reverse().join("")
+// }
+//
+// console.log(isPalindrome("abba"))
+// console.log(isPalindrome("abba"))
+// console.log(isPalindrome("afdfsfba"))
+// console.log(isPalindrome("'Madam i'm Adam'"))
+// console.log(isPalindrome("abb23"))
+// console.log(isPalindrome("11111113"))
+// const findShortestWord = string  => {
+//
+//     return string
+//         .split(" ")
+//         .sort((a,b) => a.length -b.length[0]);
+// }
+//
+//
+// console.log(findShortestWord("The quick brown fox jumped over the lazy dog"))
