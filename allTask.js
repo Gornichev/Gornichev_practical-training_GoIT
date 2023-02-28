@@ -24,7 +24,15 @@
 //
 // console.log(totalScore)
 
+const func = (...arg) => {
 
+    return {
+        ...arg,
+        name: "poc"
+    }
+}
+
+console.log(func(2,4,6,7))
 
 const carts = [
     {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
@@ -295,16 +303,15 @@ const carts = [
 //     Наприклад Leetcode зустрічаеться тільки на позиції 1.
 
 // task 2: З двох масивів додати в третій  елементи що співпадають.
-
-
-const findNumber = (array,array2) => {
-    const total = [];
-    for (let i = 1; i < array.length; i += 1) {
-    if (array[i] === array2[i]){
-        total.push(array[i])
-    }
-    }
-    return total
-}
-console.log(findNumber([1,5,6,8,9,3,67,8,0,55,-1],[1,3,6,8,4,3,67,0,-1,55]))
-console.log(findNumber([1,3,6,3,4,3,67,0,77],[1,5,6,7,9,8,67,8,77]))
+//
+// const findNumber = (array,array2) => {
+//     const total = [];
+//     for (let i = 1; i < array.length; i += 1) {
+//     if (array[i] === array2[i]){
+//         total.push(array[i])
+//     }
+//     }
+//     return total
+// }
+// console.log(findNumber([1,5,6,8,9,3,67,8,0,55,-1],[1,3,6,8,4,3,67,0,-1,55]))
+// console.log(findNumber([1,3,6,3,4,3,67,0,77],[1,5,6,7,9,8,67,8,77]))
