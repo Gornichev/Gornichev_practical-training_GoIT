@@ -22,17 +22,6 @@
 //     (total,student) => student.score + total
 //     ,0)
 //
-// console.log(totalScore)
-
-const func = (...arg) => {
-
-    return {
-        ...arg,
-        name: "poc"
-    }
-}
-
-console.log(func(2,4,6,7))
 
 const carts = [
     {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
@@ -315,3 +304,27 @@ const carts = [
 // }
 // console.log(findNumber([1,5,6,8,9,3,67,8,0,55,-1],[1,3,6,8,4,3,67,0,-1,55]))
 // console.log(findNumber([1,3,6,3,4,3,67,0,77],[1,5,6,7,9,8,67,8,77]))
+
+// function callback  ()  {
+//     console.log('!!!22')
+// }
+//
+// function  stats  (callback){
+// callback();
+// }
+// stats(callback)
+
+// ==== test tasks ======
+// 1 Поліндром
+
+const isPalindrome = (string) => {
+    return string === string.split("").reverse().join("")
+}
+
+console.log(isPalindrome("abba"))
+console.log(isPalindrome("abba"))
+console.log(isPalindrome("afdfsfba"))
+console.log(isPalindrome("'Madam i'm Adam'"))
+console.log(isPalindrome("abba"))
+console.log(isPalindrome("abb23"))
+console.log(isPalindrome("11111113"))
