@@ -9,13 +9,15 @@
 // console.log(isPalindrome("11111113"))
 
 // 2) the shortest word search function;
+// Знайти найкоротший єлемент в виразі;
 
 const findShortestWord = string  => {
 
-return string
-    .split(" ").length;
+  return string
+       .split(" ")
+        .sort((a,b) =>{
+           return  a.length - b.length
+        })[0]
 }
+console.log(findShortestWord("The a quick brown fox jumped over the lazyyyyyy dog"))
 
-
-findShortestWord("The quick brown fox jumped over the lazy dog")
-console.log("!!!")
