@@ -21,15 +21,14 @@
 // }
 // console.log(findShortestWord("The a quick brown fox jumped over the lazyyyyyy dog"))
 
-const calcFunction = (el,param) => {
+function closer (el1,el2)  {
 
-const inner = (num) =>{
-    return  el + param * num;
+     return  function inner (el3)  {
+         console.log(el1 + el2 + el3)
+    }
+
 }
-const res = inner(1)
-    console.log(res)
-}
-calcFunction(5,6)
 
-
+const res = closer((5),(10))
+res(100)
 
