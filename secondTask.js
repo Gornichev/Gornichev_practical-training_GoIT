@@ -21,14 +21,5 @@
 // }
 // console.log(findShortestWord("The a quick brown fox jumped over the lazyyyyyy dog"))
 
-function closer (el1,el2)  {
 
-     return  function inner (el3)  {
-         console.log(el1 + el2 + el3)
-    }
-
-}
-
-const res = closer((5),(10))
-res(100)
 

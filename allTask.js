@@ -23,13 +23,13 @@
 //     ,0)
 //
 
-const carts = [
-    {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
-    {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"],isOnline : false},
-    {label: 'peach', price : 15, quantity :8, tags: ["pt", "de"],isOnline : true},
-    {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"], isOnline : true},
-    {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
-]
+// const carts = [
+//     {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
+//     {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"],isOnline : false},
+//     {label: 'peach', price : 15, quantity :8, tags: ["pt", "de"],isOnline : true},
+//     {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"], isOnline : true},
+//     {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
+// ]
 
 // 1: відсортувати прайс увсіх хто онлайн
 // const sorted = carts
@@ -336,3 +336,26 @@ const carts = [
 //
 //
 // console.log(findShortestWord("The quick brown fox jumped over the lazy dog"))
+
+// Замикання=======================
+// function closer (el1)  {
+//      return  function inner (el2)  {
+//          return  el1 + el2
+//     }
+// }
+//
+// const res = closer(1)("100")
+//
+//
+// const generateUrl = (dom) => {
+//
+//     return function (url) {
+//         return `https:/.${dom}.${url}`
+//
+//     }
+//
+// }
+// const facebook = generateUrl("facebook")("com")
+// console.log(facebook)
+
+// Замикання=======================
