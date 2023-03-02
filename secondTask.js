@@ -21,5 +21,57 @@
 // }
 // console.log(findShortestWord("The a quick brown fox jumped over the lazyyyyyy dog"))
 
+// task #3================
+// const apple = {
+//     label: 'apple',
+//     price : 50,
+//     quantity :3,
+//     tags: ["gt", "de"],
+//     isOnline : false
+// }
+//
+// const mango = {
+//     label: 'mango',
+//     price : 21,
+//     quantity :2,
+//     tags: ["js", "de"],
+//     isOnline : true
+// }
+//
+// createProduct(mango,LogProduct)
+// //
+// function createProduct (obj,callback) {
+// const product = {
+//     ...obj,
+//     id: Date.now()
+//         .toString()
+//         .slice(1,4),
+//     sex: true,}
+//
+//   return callback(product)
+// }
+//
+// function LogProduct (product)  {
+//     console.log("product callback", product)
+// }
+//
+// function logTotalPrice (product) {
+//     console.log("Product total price" ,product.price * product.quantity)
+// }
+
+// task 4
+
+const each = (array,callback) => {
+
+    let newArr = [];
+    for (let el of array){
+        newArr.push(callback(el))
+    }
+    return newArr
+}
+
+console.log(each([1,2,6,7,89,9,9],value => value * 2))
+
+
 
 

@@ -22,7 +22,6 @@
 //     (total,student) => student.score + total
 //     ,0)
 //
-
 // const carts = [
 //     {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
 //     {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"],isOnline : false},
