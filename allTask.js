@@ -357,4 +357,24 @@
 // const facebook = generateUrl("facebook")("com")
 // console.log(facebook)
 
-// Замикання=======================
+// Замикання======================= && LexicalEnvironment) и Замыкание ...
+
+let a = 15;
+let b = 200;
+
+function lexEnv (){
+    let a = 1;
+    console.log(a + b)
+}
+a = 50;
+b = 100;
+lexEnv()
+
+let name = "Vova"
+
+function go () {
+    let name = "Inik"
+    console.log(name)
+}
+name = "Itik"
+go()
