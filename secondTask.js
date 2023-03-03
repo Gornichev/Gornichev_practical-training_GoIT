@@ -75,17 +75,24 @@
 // Task #5
 // створіть функцію що приймае імя + фамилію і повертае ініціали завжди у верхньому регістрі.
 
-const initials = (string) => {
-   return  string.split(" ")
-       .map(el => {
-           return el.slice(0, 1) + "."
-       })
-       .join("")
-       .toUpperCase()
-       .slice(0,3)
-}
+// const initials = (string) => {
+//    return  string.split(" ")
+//        .map(el => {
+//            return el.slice(0, 1) + "."
+//        })
+//        .join("")
+//        .toUpperCase()
+//        .slice(0,3)
+// }
 // Task #6
+// Напишіть функцію всіх чисел  що приходять навіть якщо вони відьемні.
 
-import carts from "./allTask"
+const sumOfAllNumber = (num) => {
+   return  Math.abs(num)
+       .toString()
+       .split("")
+       .reduce((acc,el) => Number(acc) + Number(el) ,0)
+}
+// sumOfAllNumber(4444)
+console.log(sumOfAllNumber(4444))
 
-console.log(carts)
