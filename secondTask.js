@@ -61,17 +61,31 @@
 
 // task 4
 
-const each = (array,callback) => {
+// const each = (array,callback) => {
+//
+//     let newArr = [];
+//     for (let el of array){
+//         newArr.push(callback(el))
+//     }
+//     return newArr
+// }
+//
+// console.log(each([1,2,6,7,89,9,9],value => value * 2))
 
-    let newArr = [];
-    for (let el of array){
-        newArr.push(callback(el))
-    }
-    return newArr
+// Task #5
+// створіть функцію що приймае імя + фамилію і повертае ініціали завжди у верхньому регістрі.
+
+const initials = (string) => {
+   return  string.split(" ")
+       .map(el => {
+           return el.slice(0, 1) + "."
+       })
+       .join("")
+       .toUpperCase()
+       .slice(0,3)
 }
+// Task #6
 
-console.log(each([1,2,6,7,89,9,9],value => value * 2))
+import carts from "./allTask"
 
-
-
-
+console.log(carts)

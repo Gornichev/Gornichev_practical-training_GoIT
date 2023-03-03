@@ -22,13 +22,32 @@
 //     (total,student) => student.score + total
 //     ,0)
 //
-// const carts = [
-//     {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
-//     {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"],isOnline : false},
-//     {label: 'peach', price : 15, quantity :8, tags: ["pt", "de"],isOnline : true},
-//     {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"], isOnline : true},
-//     {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
-// ]
+
+const carts = [
+    {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
+    {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"],isOnline : false},
+    {label: 'peach', price : 15, quantity :8, tags: ["pt", "de"],isOnline : true},
+    {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"], isOnline : true},
+    {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
+]
+
+
+// const findPrice = 'apple';
+// const newQty = carts.map(cart => {
+//     return {
+//         ...cart,
+//         price : 0
+//     }
+// })
+// console.log(newQty)
+
+// const sortedCart =
+//     carts.sort((el1,el2) => el1.quantity - el2.quantity)
+//         .map(({label,quantity}) => {
+//             console.log(`label ${label} is a quantity ${quantity}`)
+//
+// })
+
 
 // 1: відсортувати прайс увсіх хто онлайн
 // const sorted = carts
@@ -176,13 +195,17 @@
 //
 //
 // mainFilter(students,student => student.score === 37)
-// //
+//
 // const colors = [
 //   { hex: "#f44336", rgb: "244,67,54" },
 //   { hex: "#175888", rgb: "33,150,243" },
 //   { hex: "#4caf50", rgb: "76,175,80" },
 //   { hex: "#a49b23", rgb: "255,235,59" },
 // ];
+//
+// colors.forEach(color => {
+//     alert(`you color is ${color.hex}`)
+//  })
 
 //
 // mainFilter(colors,color => color.rgb === "244,67,54")
@@ -359,22 +382,26 @@
 
 // Замикання======================= && LexicalEnvironment) и Замыкание ...
 
-let a = 15;
-let b = 200;
+// let a = 15;
+// let b = 200;
+// lexEnv()
+// function lexEnv (){
+//
+//     console.log(a + b)
+// }
+// a = 50;
+// b = 100;
 
-function lexEnv (){
-    let a = 1;
-    console.log(a + b)
-}
-a = 50;
-b = 100;
-lexEnv()
+//
+//
+// let name = "Vova"
+//
+// function go () {
+//     let name = "Inik"
+//     console.log(name)
+// }
+// name = "Itik"
+// go()
 
-let name = "Vova"
+// Замикання======================= && LexicalEnvironment) и Замыкание ...
 
-function go () {
-    let name = "Inik"
-    console.log(name)
-}
-name = "Itik"
-go()
