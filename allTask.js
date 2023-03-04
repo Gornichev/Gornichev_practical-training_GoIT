@@ -31,10 +31,26 @@ const carts = [
     {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"], isOnline : true},
     {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
 ]
-const totalQuality = carts.reduce((acc,cart) =>{
-    return acc + cart.quantity
-},0)
-console.log(totalQuality)
+
+const bestPrice = carts.filter(cart => cart.price >= 50)
+    .map(({label,price,tags,isOnline}) => {
+
+        return {
+            label,
+            price,
+            info : {
+                tags,
+                isOnline
+            }
+        };
+    })
+    .reduce((acc,cart) => acc + cart.price, 0)
+console.log(bestPrice )
+
+// const allPriceInCarts = carts.reduce((acc, {price,quantity})=> acc + price * quantity,0)
+// console.log(allPriceInCarts)
+// console.log(labelArray)
+
 
 // const findPrice = 'apple';
 // const newQty = carts.map(cart => {
