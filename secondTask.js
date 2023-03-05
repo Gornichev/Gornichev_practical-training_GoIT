@@ -93,6 +93,6 @@ const sumOfAllNumber = (num) => {
        .split("")
        .reduce((acc,el) => Number(acc) + Number(el) ,0)
 }
-// sumOfAllNumber(4444)
+
 console.log(sumOfAllNumber(4444))
 
