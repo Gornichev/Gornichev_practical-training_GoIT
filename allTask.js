@@ -34,20 +34,20 @@ const carts = [
 ]
 
 
-const bestPrice = carts.filter(cart => cart.price >= 50)
-    .map(({label,price,tags,isOnline}) => {
-
-        return {
-            label,
-            price,
-            info : {
-                tags,
-                isOnline
-            }
-        };
-    })
-    .reduce((acc,cart) => acc + cart.price, 0)
-console.log(bestPrice )
+// const bestPrice = carts.filter(cart => cart.price >= 50)
+//     .map(({label,price,tags,isOnline}) => {
+//
+//         return {
+//             label,
+//             price,
+//             info : {
+//                 tags,
+//                 isOnline
+//             }
+//         };
+//     })
+//     .reduce((acc,cart) => acc + cart.price, 0)
+// console.log(bestPrice )
 
 // const allPriceInCarts = carts.reduce((acc, {price,quantity})=> acc + price * quantity,0)
 // console.log(allPriceInCarts)

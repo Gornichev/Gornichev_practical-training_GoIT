@@ -87,12 +87,12 @@
 // Task #6
 // Напишіть функцію всіх чисел  що приходять навіть якщо вони відьемні.
 
-const sumOfAllNumber = (num) => {
-   return  Math.abs(num)
-       .toString()
-       .split("")
-       .reduce((acc,el) => Number(acc) + Number(el) ,0)
-}
-
-console.log(sumOfAllNumber(4444))
+// const sumOfAllNumber = (num) => {
+//    return  Math.abs(num)
+//        .toString()
+//        .split("")
+//        .reduce((acc,el) => Number(acc) + Number(el) ,0)
+// }
+//
+// console.log(sumOfAllNumber(4444))
 
