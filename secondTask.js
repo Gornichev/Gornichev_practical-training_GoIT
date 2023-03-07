@@ -215,9 +215,18 @@ const icon = {
 // icon.size("45px").color("$%$").padding("100")
 // console.log(icon)
 
-function sayFish (){
-    console.log("hello Nigga" , this)
-}
+
+// function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+// //     console.log("hello Nigga" , this)
+// }
 
 // sayFish.prototype.perfectDay = function (){
 //     console.log('Perfect day Fish')
