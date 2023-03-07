@@ -12,37 +12,31 @@
 // bookShelf.addAuthor("Stephen King")
 // console.log(bookShelf.authors)
 //
-// function makeSheaf  () {
-//     console.log("makeSheaf", this)
+
+// const mango = {
+//     label: 'mango',
+//     price : 21,
+//     quantity :2,
+//     tags: ["js", "de"],
+//     isOnline : true,
+//      makeSheaf  (item) {
+//          console.log(this.label,this.price)
+// },
+//     addItem (item) {
+//         console.log(this.quantity )
+//     }
 // }
-const mango = {
-    label: 'mango',
-    price : 21,
-    quantity :2,
-    tags: ["js", "de"],
-    isOnline : true,
-    // makeSheaf,
-    addItem (item) {
-    return {
-        ...this,
-        item :"time"
-    }
-    }
-}
-// console.log(mango.addItem("time"))
-
-///button
-
-// document.querySelector(".button-user-click")
-// .addEventListener("click", function () {
-//     console.log(this)
-// })
 //
+// // console.log(mango.addItem("time"))
+//
+// document.querySelector(".button-user-click")
+//     .addEventListener("click", mango.addItem.bind(mango))
 
 const vivaldi = {
     name: "Viva",
     age : "14",
-    status : "online"
+    status : "online",
+    mail : true,
 }
 
 const otto = {
@@ -50,11 +44,40 @@ const otto = {
     age : "19",
     status : "offline"
 }
-
 const info = {
     showInfo() {
         console.log(this.name, this.age, this.status)
     }
-
 }
-info.showInfo.call(mango)
+
+const status = {
+    showStatus (){
+        console.log(this.mail, "!!")
+    }
+}
+
+// document.querySelector(".button-user-click")
+//     .addEventListener("click",status.showStatus.bind(vivaldi))
+
+// document.querySelector(".button-user-click")
+//     .addEventListener("click",info.showInfo.bind(vivaldi))
+
+// =======
+// function greetGuest(greeting) {
+//     console.log(`${greeting}, ${this.username}`);
+// }
+//
+// const mango = {
+//     username: "Манго",
+//     age : "25"
+// };
+// const poly = {
+//     username: "Полі",
+// };
+//
+// greetGuest.call(mango,"hello")
+
+// const number = [1,2,6,8,8]
+// const min =  Math.min.apply(Math,number)
+// console.log(min)
+

@@ -88,11 +88,54 @@
 // Напишіть функцію всіх чисел  що приходять навіть якщо вони відьемні.
 
 // const sumOfAllNumber = (num) => {
-//    return  Math.abs(num)
-//        .toString()
-//        .split("")
-//        .reduce((acc,el) => Number(acc) + Number(el) ,0)
+//
+//     return Math.abs(num)
+//         .toString()
+//         .split("")
+//         .reduce((acc,el) => Number(acc) + Number(el))
 // }
 //
-// console.log(sumOfAllNumber(4444))
+//  console.log(sumOfAllNumber(-44))
+
+// Task 7
+// Напиши функцію пошуку мінімального та максимального числа в масиві. повертати мае масив ціх значень.
+// повертае масив ціх двох елементів .
+// A) варіант
+// const  minMaxFind = (array) => {
+//     const min = Math.min(...array)
+//     const max = Math.max(...array)
+//     return [min, max]
+// }
+
+// Б) варіант  es 5 сінтаксис
+
+// const  minMaxFind = (array) => {
+//     const min = Math.min.apply(null,array)
+//     const max = Math.max.apply(null,array)
+//     return [min, max]
+// }
+// С) варіант
+
+// const  minMaxFind = (array) => {
+//
+// let min = 0;
+// let max = 0;
+//     array.forEach(el =>{
+//         if(el > max){
+//             max = el
+//         }
+//         if (el < min){
+//             min = el
+//         }
+//     })
+//     return [min,max]
+// }
+// Топ варіант
+const  minMaxFind = (array) => {
+   return [Math.min(...array),Math.max(...array)]
+}
+
+console.log(minMaxFind([4,6,88,1000,4,45,4,5,-5,-1000]))
+minMaxFind([4,6,88,4,45,4,5,-5])
+console.log(minMaxFind([0]))
 
