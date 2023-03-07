@@ -32,6 +32,15 @@ const carts = [
     {label: 'opel', price : 9, quantity :1, tags: ["js", "gt"], isOnline : true},
     {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
 ]
+const carts = [
+    {label: 'mango', price : 25, quantity :2, tags: ["js", "de"], isOnline : true},
+    {label: 'apple', price : 50, quantity :3, tags: ["gt", "de"],isOnline : false},
+    {label: 'meth', price : 68, quantity :7, tags: ["mt", "mt"],isOnline : false},
+    {label: 'peach', price : 15, quantity :8, tags: ["pt", "de"],isOnline : true},
+    {label: 'lemon', price : 5, quantity :5, tags: ["js", "gt"], isOnline : true},
+    {label: 'opel', price : 9, quantity :1, tags: ["js", "gt"], isOnline : true},
+    {label: 'orange', price : 10, quantity :4, tags: ["js", "gt"], isOnline : true},
+]
 
 
 // const bestPrice = carts.filter(cart => cart.price >= 50)
