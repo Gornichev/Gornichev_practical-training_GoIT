@@ -32,29 +32,43 @@
 // document.querySelector(".button-user-click")
 //     .addEventListener("click", mango.addItem.bind(mango))
 
-const vivaldi = {
-    name: "Viva",
-    age : "14",
-    status : "online",
-    mail : true,
-}
-
-const otto = {
-    name: "Otto",
-    age : "19",
-    status : "offline"
-}
-const info = {
-    showInfo() {
-        console.log(this.name, this.age, this.status)
-    }
-}
-
-const status = {
-    showStatus (){
-        console.log(this.mail, "!!")
-    }
-}
+// ======= Метод coll,apply, bind
+// function greet(clientName) {
+//     return `${clientName}, ласкаво просимо в «${this.service}».`;
+// }
+//
+// const steam = {
+//     service: "Steam",
+// };
+//
+// const test = greet.bind(steam);
+// console.log(test("lENA"))
+//
+// const vivaldi = {
+//     name: "Vitas",
+//     age : "14",
+//     status : "online",
+//     mail : true,
+// }
+//
+// const otto = {
+//     name: "Otto",
+//     age : "19",
+//     status : "offline"
+// }
+// const info = {
+//     showInfo() {
+//         console.log(this.name, this.age, this.status)
+//     }
+// }
+//
+// const status = {
+//     showStatus (){
+//         console.log(this.name,  "actor")
+//     }
+// }
+//
+// status.showStatus.call(vivaldi)
 
 // document.querySelector(".button-user-click")
 //     .addEventListener("click",status.showStatus.bind(vivaldi))
@@ -80,4 +94,4 @@ const status = {
 // const number = [1,2,6,8,8]
 // const min =  Math.min.apply(Math,number)
 // console.log(min)
-
+// ======= Метод coll,apply, bind

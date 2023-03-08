@@ -131,11 +131,11 @@
 //     return [min,max]
 // }
 // Топ варіант
-const  minMaxFind = (array) => {
-   return [Math.min(...array),Math.max(...array)]
-}
-
-console.log(minMaxFind([4,6,88,1000,4,45,4,5,-5,-1000]))
-minMaxFind([4,6,88,4,45,4,5,-5])
-console.log(minMaxFind([0]))
+// const  minMaxFind = (array) => {
+//    return [Math.min(...array),Math.max(...array)]
+// }
+//
+// console.log(minMaxFind([4,6,88,1000,4,45,4,5,-5,-1000]))
+// minMaxFind([4,6,88,4,45,4,5,-5])
+// console.log(minMaxFind([0]))
 
