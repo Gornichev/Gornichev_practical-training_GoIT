@@ -139,3 +139,91 @@
 // minMaxFind([4,6,88,4,45,4,5,-5])
 // console.log(minMaxFind([0]))
 
+//Task 08;
+// Нашишіть метод calkTotalPrice (stoneName) що приймае назву каміння і розраховуе та повертае
+// загальну вартість каміння з таким імям,ціною та кількістю з властивості stone.
+
+// const shop = {
+//     stones : [
+//         {name : "Ruby", price: 100, quantity : 12},
+//         {name : "Diamond", price: 200, quantity : 5},
+//         {name : "Saphire", price: 30, quantity : 20}
+//     ],
+//     calkTotalPrice (stoneName){
+//         const stoneToFind = this.stones.find(stone =>{
+//             return stone.name === stoneName
+//
+//         } )
+//         if (stoneToFind) {
+//             const {price,quantity} = stoneToFind
+//             return price * quantity
+//         } else {
+//             console.log("WTF?")
+//         }
+//     }
+// }
+// shop.calkTotalPrice("Ruby!")
+// console.log(shop.calkTotalPrice("Ruby"))
+
+// =======
+//task 09;
+// Створіть обьект Calculator з трьома методами
+// 1) read (а,b) приймае два значення і зберігае їх як властивість обьекта
+// 2) add() повертае сумму збережених значень.
+// 3) mult() перемножуе збережені значення та повертае результат.
+
+// const calculator = {
+//     a: 0,
+//     b: 0,
+//     read (a,b) {
+//         this.a = a;
+//         this.b = b;
+//     },
+//     add(){
+//     return this.a + this.b
+//     },
+//     mult(){
+//     return this.a * this.b
+//     },
+// }
+//
+// calculator.read(10,4)
+// console.log(calculator.mult())
+//task 10;
+
+// Правильний чейнінг
+
+const icon = {
+    _color : "fff222",
+    _size: "25px",
+    _padding : "16px",
+
+    color(newColor){
+        this._color = newColor;
+        return this
+    },
+    size(newSize){
+        this._size = newSize;
+        return this
+    },
+    padding (newPadding){
+        this._padding = newPadding;
+        return this
+    }
+}
+//
+// icon.size("45px").color("$%$").padding("100")
+// console.log(icon)
+
+
+// function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+//     console.log("hello Nigga" , this)
+// }function sayFish (){
+// //     console.log("hello Nigga" , this)
+// }

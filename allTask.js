@@ -426,3 +426,27 @@ const carts = [
 
 // Замикання======================= && LexicalEnvironment) и Замыкание ...
 
+// Правильний чейнінг
+
+const icon = {
+    _color : "fff222",
+    _size: "25px",
+    _padding : "16px",
+
+    color(newColor){
+        this._color = newColor;
+        return this
+    },
+    size(newSize){
+        this._size = newSize;
+        return this
+    },
+    padding (newPadding){
+        this._padding = newPadding;
+        return this
+    }
+}
+//
+// icon.size("45px").color("$%$").padding("100")
+// console.log(icon)
+
