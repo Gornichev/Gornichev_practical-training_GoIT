@@ -179,7 +179,7 @@
 //         this.a = a;
 //         this.b = b;
 //     },
-//     add(){
+//     add(){git
 //     return this.a + this.b
 //     },
 //     mult(){
@@ -215,15 +215,31 @@ const icon = {
 // icon.size("45px").color("$%$").padding("100")
 // console.log(icon)
 
+//task 10;
 
-// function sayFish (){
-//     console.log("hello Nigga" , this)
-// }function sayFish (){
-//     console.log("hello Nigga" , this)
-// }function sayFish (){
-//     console.log("hello Nigga" , this)
-// }function sayFish (){
-//     console.log("hello Nigga" , this)
-// }function sayFish (){
-// //     console.log("hello Nigga" , this)
+// Напишіть функцію що повертае масив індекси всіх букв слова написаних у верхньому регістрі.
+
+// const capitalLetterIndex = (string) => {
+//
+//     return string.split("")
+//         .reduce((acc, element, idx) => {
+//         if (element === element.toUpperCase()) {
+//             acc.push(idx)
+//         }
+//         return acc
+//     }, [])
 // }
+// //(2) варіант
+// //     // const res = [];
+// //     // string.split("")
+// //     //     .forEach((element,idx) =>{
+// //     //         if(element === element.toUpperCase()){
+// //     //             res.push(idx)
+// //     //         }
+// //     //
+// //     //     })
+// //     // return res
+// // }
+//
+// console.log(capitalLetterIndex("CoDeWarS"))
+// console.log(capitalLetterIndex("wWw.CapiTaLLetteR.cOm"))

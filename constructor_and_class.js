@@ -70,22 +70,68 @@
 
 class MyUser {
     #age;
+    static isAdult = true;
+    // - статичний метод тільки у клааса не у інстанса(екземпляра)
 
-    constructor(name, isOnline, age) {
+    constructor(name, isOnline, age, email) {
         this.name = name;
         this.#age = age;
         this.isOnlene = isOnline;
+        this.email = email;
 
     }
-   // get showAge (){
-   //      return this.#age
-   //  }
-   //  set showAge (newAge){
-   //      this.#age = newAge;
-   //  }
+    showName(){
+        return this.name
+    }
+    showNewEmail(){
+        console.log("!!!");
+    }
+   get showAge (){
+        return this.#age
+    }
+    set showAge (newAge){
+        this.#age = newAge;
+    }
 
 }
+class NewUser  extends  MyUser {
+constructor(name, isOnline, age, email, isGood) {
+    super(...arguments);
+    this.isGood = isGood;
+}
+    showInform () {
+        return this
+    }
+    showParent () {
+     return super.showName()
+    }
+}
+class OldUser extends NewUser {
+    constructor(name, isOnline, age, email, isGood, music) {
+        super(...arguments);
+        this.music = music;
+    }
+    likeMusic(){
+        return `${this.name} like ${this.music}`
+    }
+    showParent(){
+        return super.showName()
+    }
+}
 
+const valentin = new NewUser ("valentin","true","78","www.valentin","no")
+const victor = new NewUser ("victor","true","11","www.victor","yes")
 const alex = new MyUser("Alex","true","23")
-console.log(alex.age = "1000")
-console.log(alex)
+const lena = new OldUser("lena","true","30","www.lena","no","rap")
+
+// console.log(lena.showParent())
+// console.log(lena.showInform)
+// console.log(victor.showParent())
+// console.log(valentin.showParent())
+// console.log(NewUser)
+// console.log(NewUser.isAdult)
+// console.log(NewUser)
+// console.log(alex.age = "1000")
+// console.log(alex)
+// console.log(MyUser.isAdult) - статичний метод тільки у клааса не у інстанса(екземпляра)
+
