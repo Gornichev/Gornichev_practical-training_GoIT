@@ -227,18 +227,3 @@ const icon = {
 // }function sayFish (){
 // //     console.log("hello Nigga" , this)
 // }
-
-sayFish.prototype.perfectDay = function (){
-    console.log('Perfect day Fish')
-}
-
-sayFish.perfectDay()
-sayFish.perfectDay()
-sayFish.perfectDay()
-sayFish.perfectDay()
-sayFish.perfectDay()
-sayFish.perfectDay()
-
-function sayNigga (){
-    console.log("hello Nigga" , this)
-}
