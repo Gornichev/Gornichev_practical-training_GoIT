@@ -78,7 +78,6 @@ class MyUser {
         this.#age = age;
         this.isOnlene = isOnline;
         this.email = email;
-
     }
     showName(){
         return this.name

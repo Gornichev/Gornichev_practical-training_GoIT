@@ -243,3 +243,20 @@ const icon = {
 //
 // console.log(capitalLetterIndex("CoDeWarS"))
 // console.log(capitalLetterIndex("wWw.CapiTaLLetteR.cOm"))
+
+// Task 11
+// створіть функцію що приймае декілька масивів (а скільки ми не знаемо ) з числами і повертае масив унікальних елементів.
+
+// роспиляемо ...rest у аргументів тому що ми не знаемо скільки масивів може прийти у функцію.
+///спосіб зібрати вс значення з масивів в один (253 рядок)
+
+// const uniteUnique = (...array) => {
+//
+//     newArr = [].concat(...array)
+//     .sort((el1,el2)=> el1 - el2);
+//     newArr = new Set(newArr)
+//     return [...newArr]
+//
+// }
+//
+// console.log(uniteUnique([1,5,5],[6,8,3],[3,2,4],[2,777,555,3]))
