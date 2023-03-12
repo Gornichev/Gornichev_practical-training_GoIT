@@ -95,3 +95,30 @@
 // const min =  Math.min.apply(Math,number)
 // console.log(min)
 // ======= Метод coll,apply, bind
+
+// const fma = () => {
+//     console.log('Fma')
+// }
+//
+// const fmb = fma;
+// console.log(fmb === fma); /// true
+
+// const showTag = function () {
+//     console.log(`showTag this.name`, this.name)
+//     console.log(`showTag this`, this)
+//
+// }
+// showTag()
+
+const user = {
+    name: "Lena",
+    showTag() {
+        console.log(`showTag this.name`, this.name)
+        // console.log(`showTag this`, this)
+    }
+}
+user.showTag();
+
+const error = user.showTag;
+error()
+

@@ -56,26 +56,29 @@ const items = [
 ];
 
 class Cart {
+  // #items  Приватне поле
+
+  #items
   constructor(name,items) {
     this.name = name;
-    this.items = items;
+    this.#items = items;
   }
 
   showItems (items){
-      for (let item of this.items) {
+      for (let item of this.#items) {
         console.log(item)
       }
    }
 
   addItem ({name,price,quantity,category,id}){
     return [
-      ...this.items,
+      ...this.#items,
       {name,price,quantity,category,id : this.generateId()},
     ]
   }
   updateItem(updateName,newName){
 
-    this.items.forEach(el => {
+    this.#items.forEach(el => {
 
        if (el.name === updateName){
          el.name = newName;
@@ -83,10 +86,10 @@ class Cart {
     })
   }
   deleteItem (findItem){
-    this.items.forEach(el =>{
+    this.#items.forEach(el =>{
       if(el.name === findItem){
         let idx = this.items.indexOf(el)
-        this.items.splice(idx,1)
+        this.#items.splice(idx,1)
       }
     })
   }
@@ -95,17 +98,22 @@ class Cart {
   }
 }
 
-const atb = new Cart("AtB",items)
-
-// show ===
+// const atb = new Cart("AtB",items)
+// const silpo = new Cart("AtB",items)
+// const fora = new Cart("AtB",items)
+//
+// // show ===
+// atb.items = null
 // atb.showItems()
-
-// add ======
-const newItem =  { name: "new", price: 0, quantity: 0, category : "fruits", id: 0}
-console.log(atb.addItem(newItem))
-
-// update ===
-// atb.updateItem("watermelon", "Super_Lemon")
+//
+// // add ======
+// // const newItem =  { name: "newItem", price: 0, quantity: 0, category : "fruits", id: 0}
+// // // console.log(atb.addItem(newItem))
+// // console.log(fora.addItem(newItem))
+//
+// // update ===
+// // atb.updateItem("watermelon", "Super_Lemon")
+// fora.updateItem("watermelon", "Super_Lemon")
 // atb.showItems()
 
 // delete
@@ -114,4 +122,4 @@ console.log(atb.addItem(newItem))
 
 // generateId
 // console.log(atb.generateId())
-atb.showItems()
+// atb.showItems()
