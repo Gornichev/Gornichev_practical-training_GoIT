@@ -57,4 +57,18 @@ body {
   border-color: red;
 }
 
+.counter {
+  display: flex;
+  align-items: center;
+}
+.counter .js-increment {
+  margin: 10px;
+}
+.counter .js-decrement {
+  margin: 10px;
+}
+.counter .js-value {
+  font-size: 30px;
+}
+
 /*# sourceMappingURL=%D1%81ommon.css.map */
