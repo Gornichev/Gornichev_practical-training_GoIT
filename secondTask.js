@@ -261,3 +261,33 @@ const icon = {
 // }
 // //
 // console.log(uniteUnique([1,5,5],[6,8,3],[3,2,4],[2,777,555,3]))
+// Task 12.
+//// напишіть функцію що приймае і повертае  довільну стрінгу вже з усіма заглавними буквами .
+
+// const firstUpLetter = (string) => {
+//
+//     if(string){
+//         return string
+//             .split(" ")
+//             .map(word => `${word[0].toUpperCase()}${word.slice(1)}`)
+//             .join(" ")
+//     } if (string === ""){
+//         console.log('Wtf')
+//     }
+// }
+//
+// console.log(firstUpLetter("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, unde."))
+// console.log(firstUpLetter(""))
+
+// Tast 13
+
+// функція форматуваня цифр в телефонний номер
+
+// const createPhoneNumber = (number) => {
+//
+//     const strNum = number.toString();
+//     return `(${strNum.slice(0,3)}) ${strNum.slice(3,6)}-${strNum.slice(6,10)}`
+//
+// }
+// // createPhoneNumber(1234567890) /// 123 456 7890 такий формат
+// console.log(createPhoneNumber(1234567890))

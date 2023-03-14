@@ -9,18 +9,24 @@ const counter = {
         this.value -= 1;
     }
 }
-const buttonIncr = document.querySelector(".js-increment");
-const buttonDcr = document.querySelector(".js-decrement");
-const buttonValue = document.querySelector(".js-value");
+// console.log(counter.__proto__)
+// const buttonIncr = document.querySelector(".js-increment");
+// const buttonDcr = document.querySelector(".js-decrement");
+// const buttonValue = document.querySelector(".js-value");
+// console.log(buttonValue)
+//
+// buttonDcr.addEventListener("click",()=>{
+//
+//     counter.decrement();
+//     buttonValue.textContent  = counter.value
+//
+// })
+//
+// buttonIncr.addEventListener("click",()=>{
+//
+//     counter.increment();
+//     buttonValue.innerHTML  = counter.value
+// })
 
-buttonDcr.addEventListener("click",()=>{
 
-    counter.decrement();
-    valueEl.textContent = counter.value
-})
 
-buttonIncr.addEventListener("click",()=>{
-
-    counter.increment();
-    valueEl.textContent = counter.value
-})
