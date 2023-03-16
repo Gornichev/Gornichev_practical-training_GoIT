@@ -134,3 +134,24 @@ const lena = new OldUser("lena","true","30","www.lena","no","rap")
 // console.log(alex)
 // console.log(MyUser.isAdult) - статичний метод тільки у клааса не у інстанса(екземпляра)
 
+class Car {
+    price = "150"
+
+    constructor({brand,speed,color} = {}) {
+        this.brand = brand;
+        this.speed = speed;
+        this.color = color;
+
+    }
+    showPrice (){
+        return this.price
+    }
+
+}
+
+const scoda = new Car({
+    brand : 'scoda',
+    speed : "100km",
+    color : "black",
+})
+
