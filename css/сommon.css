@@ -96,4 +96,14 @@ body {
   color: #41b60d;
 }
 
+.mb-3 {
+  margin-bottom: 20px;
+}
+
+.test-list {
+  margin-bottom: 20px;
+  padding: 10px;
+  list-style: none;
+}
+
 /*# sourceMappingURL=%D1%81ommon.css.map */

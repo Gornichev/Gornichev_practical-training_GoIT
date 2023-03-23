@@ -153,23 +153,24 @@
 
 // Remove addEventListener()
 
-const btnUser = document.querySelector(".button-user-click");
-const addBtnUser = document.querySelector(".add-button");
-const removeBtnUser = document.querySelector(".remove-button");
+// const btnUser = document.querySelector(".button-user-click");
+// const addBtnUser = document.querySelector(".add-button");
+// const removeBtnUser = document.querySelector(".remove-button");
+//
+//
+// btnUser.addEventListener("click",()=> {
+//
+//     console.log("addListener")
+//     addBtnUser.addEventListener("click",onAdd)
+//
+// });
+//
+// const onAdd = () => {
+//     console.log("addBtnUser")
+// }
+// removeBtnUser.addEventListener("click",()=>{
+//     console.log("Зняти слухача")
+//     addBtnUser.removeEventListener("click", onAdd)
+// });
 
-
-btnUser.addEventListener("click",()=> {
-
-    console.log("addListener")
-    addBtnUser.addEventListener("click",onAdd)
-
-});
-
-
-const onAdd = () => {
-    console.log("addBtnUser")
-}
-removeBtnUser.addEventListener("click",()=>{
-    console.log("Зняти слухача")
-    addBtnUser.removeEventListener("click", onAdd)
-})
+// ============
