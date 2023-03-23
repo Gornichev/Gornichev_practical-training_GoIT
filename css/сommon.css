@@ -74,6 +74,7 @@ body {
 
 .userClass {
   color: crimson;
+  margin-right: 10px;
 }
 
 .changeColor {
@@ -87,6 +88,7 @@ body {
 .links {
   display: flex;
   flex-direction: column;
+  width: 60px;
 }
 .links a {
   margin-bottom: 5px;

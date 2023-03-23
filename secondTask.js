@@ -85,7 +85,7 @@
 //        .slice(0,3)
 // }
 // Task #6
-// Напишіть функцію всіх чисел  що приходять навіть якщо вони відьемні.
+// Напишіть функцію сумми всіх чисел  що приходять навіть якщо вони відьемні.
 
 // const sumOfAllNumber = (num) => {
 //
@@ -193,24 +193,24 @@
 
 // Правильний чейнінг
 
-const icon = {
-    _color : "fff222",
-    _size: "25px",
-    _padding : "16px",
-
-    color(newColor){
-        this._color = newColor;
-        return this
-    },
-    size(newSize){
-        this._size = newSize;
-        return this
-    },
-    padding (newPadding){
-        this._padding = newPadding;
-        return this
-    }
-}
+// const icon = {
+//     _color : "fff222",
+//     _size: "25px",
+//     _padding : "16px",
+//
+//     color(newColor){
+//         this._color = newColor;
+//         return this
+//     },
+//     size(newSize){
+//         this._size = newSize;
+//         return this
+//     },
+//     padding (newPadding){
+//         this._padding = newPadding;
+//         return this
+//     }
+// }
 //
 // icon.size("45px").color("$%$").padding("100")
 // console.log(icon)
@@ -291,6 +291,7 @@ const icon = {
 // }
 // // createPhoneNumber(1234567890) /// 123 456 7890 такий формат
 // console.log(createPhoneNumber(1234567890))
+
 // Task 14
 // Напиши скрипт підрахунку вартості гравіювання прикрас.
 // Для цього створи функцію calculateEngravingPrice(message, pricePerWord)
@@ -364,3 +365,50 @@ const icon = {
 //
 // console.log(checkForSpam('Latest technology news')); // false
 // console.log(checkForSpam('Get best sale offers now!')); // true
+
+// task 17
+
+// Cтворіть функцію що Отримуе масив фруктів який треба відсортувати в заложності від повторення.
+
+// const fruits = ["banana", "apple", "orange", "apple", "banana", "banana", "paneple", "apple"];
+
+// const fruitsSort = (array)=> {
+//
+//     const testFruits = array.reduce((acc,fruit)=> {
+//
+//         //  acc[fruit] ? acc[fruit] += 1 : acc[fruit] = 1
+//         // return acc;
+//         /// або ///
+//         if (acc[fruit]){
+//             acc[fruit] += 1;
+//         } else {
+//             acc[fruit] = 1;
+//         }
+//         return acc;
+//     },{})
+//
+//         const keys = Object.keys(testFruits)
+//      return keys.sort((el1,el2)=> testFruits[el2] - testFruits[el1])
+//
+// }
+//
+// console.log(fruitsSort([ "apple","pizza", "orange", "apple", "banana", "banana","banana", "paneple", "pizza", "pizza", "pizza"]))
+
+ // як знайти яку кількість раз кожне число було записано в масив.
+// отримаемо обьект .
+
+// const numbers = [1,1,1,4,4,4,3,3,2,4,4,2,2,1,1,2,4]
+// const  repeat = (numbers) => {
+//
+//     const res = numbers.reduce((acc,num)=> {
+//         if (acc[num]){
+//             acc[num] += 1;
+//         } else {
+//             acc[num] = 1;
+//         }
+//         return acc;
+//
+//     },{})
+//     return res
+// }
+// console.log(repeat(numbers))

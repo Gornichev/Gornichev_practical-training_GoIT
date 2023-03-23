@@ -81,20 +81,36 @@ const carts = [
 // console.log(copyCarts)
 
 // ====reduce пошук унікальник тегів ========
-// // const arrTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
-// // const allTags = carts.flatMap(cart => cart.tags)
+// const arrTags = carts.reduce((acc,cart) => [...acc,...cart.tags],[])
+// const allTags = carts.flatMap(cart => cart.tags)
 //
 // console.log(arrTags)
 // console.log(allTags)
-
+//
 // const tagsCheck = arrTags.reduce((acc,tag) => {
+//
 //
 //     return {
 //         ...acc,
-//         [tag] : acc[tag] ? acc[tag] +1 : 1
+//         [tag]: acc[tag] ? acc[tag] +1 : 1
 //     }
 //
+//
 // }, {})
+
+// if (acc[tag]) {
+//     return {
+//         ...acc,
+//         [tag]: acc[tag] + 1
+//     };
+// } else {
+//     return {
+//         ...acc,
+//         [tag]: 1
+//     };
+// }
+
+
 // console.log(tagsCheck)
 // ====reduce пошук унікальник тегів ========
 

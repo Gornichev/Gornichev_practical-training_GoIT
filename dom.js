@@ -134,19 +134,42 @@
 //
 // // })
 // createElement
-const linksRef = document.querySelector(".links")
-const aRef = document.createElement("a")
-aRef.href = "https://github.com/Gornichev"
-aRef.target = "blank"
-aRef.classList.add("superLink")
-aRef.textContent = "Git"
+// const linksRef = document.querySelector(".links")
+// const aRef = document.createElement("a")
+// aRef.href = "https://github.com/Gornichev"
+// aRef.target = "blank"
+// aRef.classList.add("superLink")
+// aRef.textContent = "Git"
+//
+//
+// const btnUser = document.querySelector(".button-user-click");
+// const titleRef = document.querySelector(".userClass");
+//
+// btnUser.addEventListener("click", (e) =>{
+//
+//     linksRef.append(aRef)
+//
+// })
 
+// Remove addEventListener()
 
 const btnUser = document.querySelector(".button-user-click");
-const titleRef = document.querySelector(".userClass");
+const addBtnUser = document.querySelector(".add-button");
+const removeBtnUser = document.querySelector(".remove-button");
 
-btnUser.addEventListener("click", (e) =>{
 
-    linksRef.append(aRef)
+btnUser.addEventListener("click",()=> {
 
+    console.log("addListener")
+    addBtnUser.addEventListener("click",onAdd)
+
+});
+
+
+const onAdd = () => {
+    console.log("addBtnUser")
+}
+removeBtnUser.addEventListener("click",()=>{
+    console.log("Зняти слухача")
+    addBtnUser.removeEventListener("click", onAdd)
 })
