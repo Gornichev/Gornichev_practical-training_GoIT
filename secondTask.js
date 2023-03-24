@@ -299,17 +299,18 @@
 // і повертає ціну гравіювання всіх слів в рядку.
 
 // const calculateEngravingPrice =  (message, pricePerWord) => {
-// 1)
+// // 1)
 //     const strToArr = message.split(" ")
+//     console.log(strToArr.length)
 //     return strToArr.length * pricePerWord
 //
-//   2)
+//   // 2)
 //     // const strToArr = message.split(" ").filter( n =>  n != '' ).length;
 // // return strToArr * pricePerWord
 //
 // };
-//
-// console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 20,),); // 16
+
+// console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 20,),); // 160
 //
 // task 14
 // Напиши функцію findLongestWord(string), яка приймає параметром довільний рядок
@@ -412,3 +413,106 @@
 //     return res
 // }
 // console.log(repeat(numbers))
+
+// Task 18
+// написати функцію що подвоюе масив
+// Потрібно отримати [1,4,6,7,8,9,9,1,4,6,7,8,9,9]
+// const numbers = [1,4,6,7]
+//
+// const doubleArray = (array) => {
+//
+//     return [...array,...array]
+//
+// }
+// console.log(doubleArray([1,4,6,7]))
+
+// Task 19
+// Напиши функцію logItems(array), яка отримує масив і використовує цикл for,
+// який для кожного елемента масиву буде виводити в консоль
+// повідомлення в форматі [номер елемента] - [значення елемента].
+// Нумерація повинна починатися з 1.
+// Наприклад, для першого елемента масиву ['Mango', 'Poly', 'Ajax']
+// з індексом 0 буде виведено '1 - Mango', а для індексу 2 виведе '3 - Ajax'.
+
+// const logItems = function (array) {
+//
+//     array.forEach((element,idx)=>{
+//
+//         console.log(`${element} - ${idx +1}`)
+//     })
+// };
+//
+// logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+// logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+// Task 20
+// визначити кількість слів у тексті
+
+// const sumOfString = (string)=> {
+//
+//     return string.split(" ").length
+// }
+//
+// console.log(sumOfString("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, mollitia."))
+
+// Task 20
+// Напиши скрипт з наступним функціоналом:
+// При завантаженні сторінки користувачеві пропонується в prompt ввести число.
+// Введення зберігається в змінну input і додається в масив чисел numbers.
+// Операція введення числа користувачем і збереження в масив триває до тих , пір,
+// поки користувач не натисне Cancel в prompt.
+// Після того як користувач припинив введення натиснувши Cancel,
+// якщо масив не порожній, необхідно порахувати суму всіх елементів масиву і записати її
+// в змінну total. Використовуй цикл for або for...of. Після чого в консоль виведи рядок
+// 'Загальна сума чисел дорівнює [сума]'.
+// Робити перевірку того, що користувач ввів саме число,
+// а не довільний набір символів, не обов'язково. Якщо хочеш,' +
+// ' в разі некоректного введення, показуй alert з текстом 'Було введено не число,
+// попробуйте ще раз', при цьому результат prompt записувати в масив чисел не потрібно, ' +
+// 'після чого знову користувачеві пропонується ввести число в prompt.
+
+// let input;
+// const numbers = [];
+// let total = 0;
+//
+
+// Task 21
+
+const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+
+const isLoginValid = function (login) {
+
+    if (login.length >= 4 && login.length <= 16){
+        return true
+    } else {
+        return false
+    }
+
+};
+
+const isLoginUnique = function (allLogins, login) {
+
+    if(allLogins.includes(login)){
+        return false
+    } else {
+        return true
+    }
+
+};
+
+const addLogin = function (allLogins, login) {
+    // твій код
+};
+
+/*
+ * Виклич функції для перевірки працездатності твоєї реалізації.
+ */
+// console.log(addLogin(logins, 'Ajax')); // 'Логін успішно доданий!'
+// console.log(addLogin(logins, 'robotGoogles')); // 'Такий логін вже використовується!'
+// console.log(addLogin(logins, 'Zod')); // 'Помилка! Логін повинен бути від 4 до 16 символів'
+// console.log(addLogin(logins, 'jqueryisextremelyfast')); // 'Помилка! Логін повинен бути від 4 до 16 символів'
+
+
+
+
+
+
