@@ -187,27 +187,46 @@
 
 
 
-const btnSubmitRef = document.querySelector("#main-form")
-
-
-btnSubmitRef.addEventListener("submit",(event)=> {
-
-    event.preventDefault();
-// 1.========================
-//     const userText = document.querySelector("input[type='text']");
-//     const userEmail = document.querySelector("input[type='email']")
-//     // console.log(userEmail.value)
-//     // console.log(userText.value)
+// const btnSubmitRef = document.querySelector("#main-form")
 //
-//     const data = {
-//         userText : userText.value,
-//         userEmail : userEmail.value,
-//     }
+// btnSubmitRef.addEventListener("submit",(event)=> {
+//
+//     event.preventDefault();
+// // 1.========================
+// //     const userText = document.querySelector("input[type='text']");
+// //     const userEmail = document.querySelector("input[type='email']")
+// //     // console.log(userEmail.value)
+// //     // console.log(userText.value)
+// //
+// //     const data = {
+// //         userText : userText.value,
+// //         userEmail : userEmail.value,
+// //     }
+// //     console.log(data)
+// //     2.================
+//
+//     // const formRef = event.target.elements;
+//     // console.log(formRef.text.value)
+//     // const {email,text,password} = event.target.elements
+//     //
+//     // const data = {
+//     //     text : text.value,
+//     //     email : email.value,
+//     //     password : password.value,
+//     // }
+//     // console.log(data)
+//     // 3================== TOP!
+//
+//    const formRef = event.target;
+//    const formData = new FormData(formRef);
+//
+//    const data = {}
+//    formData.forEach((value,key)=> {
+//
+//        data[key] = value;
+//    })
 //     console.log(data)
-//     2.================
-    console.log(event.target.elements.email.value)
-    // const formRef = event.target.elements
-    // console.log(formRef.email)
-})
+// });
 
-// 2.========================
+
+

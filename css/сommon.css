@@ -109,6 +109,11 @@ body {
 .form {
   padding: 20px;
   border: 4px royalblue;
+  border-top: 1px black solid;
+}
+
+.input-group {
+  padding: 20px;
 }
 
 /*# sourceMappingURL=%D1%81ommon.css.map */

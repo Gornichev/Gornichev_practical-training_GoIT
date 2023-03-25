@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="css/сommon.css">
 </head>
 <body>
+<div class="input-group">
+    <div class="mb-3">
+        <input name="text" type="text" class="form-control" placeholder="Username" aria-label="Username">
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="button" disabled class="js-button"><span>Guest</span> registration</button>
+</div>
+
 <div class="form" id="main-form">
     <form>
         <div class="input-group mb-3">
@@ -19,22 +31,22 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"></label>
-            <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
+            <input name="password" type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <input  class="form-check-input" type="radio" name="Radios" id="exampleRadios1" value="option1" checked>
             <label class="form-check-label" for="exampleRadios1">
                 Default radio
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <input class="form-check-input" type="radio" name="Radios" id="exampleRadios2" value="option2">
             <label class="form-check-label" for="exampleRadios2">
                 Second default radio
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+            <input class="form-check-input" type="radio" name="Radios" id="exampleRadios3" value="option3">
             <label class="form-check-label" for="exampleRadios3">
                 Disabled radio
             </label>
@@ -56,23 +68,17 @@
     <a class="link" href="https://www.yahoo.com/" target="_parent">Yahoo</a>
 </div>
 
-
 <h2 class="userClass">Lets go to the mountains</h2>
 <!--<img src="int/worth-img.png" width="628" height="520" alt="">-->
 <button type="button" class="button-user-click userClass" >Main button</button>
 <button type="button" class="add-button userClass" >Add Listener </button>
 <button type="button" class="remove-button userClass" >Remove listener</button>
 
-
-
 <ul class="test-list">
     <li>Orange</li>
     <li>banana</li>
     <li>lemon</li>
 </ul>
-
-
-
 
 <!--script-->
 <script src="./secondTask.js" type="module"></script>
