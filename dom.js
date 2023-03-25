@@ -174,3 +174,40 @@
 // });
 
 // ============
+
+// const btnUser = document.querySelector(".button-user-click");
+//
+// btnUser.addEventListener("click",(event)=> {
+//     console.log(event.target)
+// });
+
+// event.preventDefault()========== відмінити дію (наприклад кнопки )
+
+// Form обробка
+
+
+
+const btnSubmitRef = document.querySelector("#main-form")
+
+
+btnSubmitRef.addEventListener("submit",(event)=> {
+
+    event.preventDefault();
+// 1.========================
+//     const userText = document.querySelector("input[type='text']");
+//     const userEmail = document.querySelector("input[type='email']")
+//     // console.log(userEmail.value)
+//     // console.log(userText.value)
+//
+//     const data = {
+//         userText : userText.value,
+//         userEmail : userEmail.value,
+//     }
+//     console.log(data)
+//     2.================
+    console.log(event.target.elements.email.value)
+    // const formRef = event.target.elements
+    // console.log(formRef.email)
+})
+
+// 2.========================
