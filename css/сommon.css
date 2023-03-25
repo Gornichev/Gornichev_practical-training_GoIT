@@ -106,4 +106,9 @@ body {
   list-style: none;
 }
 
+.form {
+  padding: 20px;
+  border: 4px royalblue;
+}
+
 /*# sourceMappingURL=%D1%81ommon.css.map */
