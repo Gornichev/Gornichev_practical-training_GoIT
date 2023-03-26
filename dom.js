@@ -185,13 +185,10 @@
 
 // Form обробка
 
-
-
 // const btnSubmitRef = document.querySelector("#main-form")
 //
 // btnSubmitRef.addEventListener("submit",(event)=> {
 //
-//     event.preventDefault();
 // // 1.========================
 // //     const userText = document.querySelector("input[type='text']");
 // //     const userEmail = document.querySelector("input[type='email']")
@@ -205,28 +202,61 @@
 // //     console.log(data)
 // //     2.================
 //
-//     // const formRef = event.target.elements;
-//     // console.log(formRef.text.value)
-//     // const {email,text,password} = event.target.elements
-//     //
-//     // const data = {
-//     //     text : text.value,
-//     //     email : email.value,
-//     //     password : password.value,
-//     // }
-//     // console.log(data)
-//     // 3================== TOP!
-//
-//    const formRef = event.target;
-//    const formData = new FormData(formRef);
-//
-//    const data = {}
-//    formData.forEach((value,key)=> {
-//
-//        data[key] = value;
-//    })
-//     console.log(data)
+//    //  const formRef = event.target.elements;
+//    //  console.log(formRef.text.value)
+//    //  const {email,text,password} = event.target.elements
+//    //
+//    //  const data = {
+//    //      text : text.value,
+//    //      email : email.value,
+//    //      password : password.value,
+//    //  }
+//    //  console.log(data)
+//    //  // 3================== TOP!
+//    //
+//    // const formRef = event.target;
+//    // const formData = new FormData(formRef);
+//    //
+//    // const data = {}
+//    // formData.forEach((value,key)=> {
+//    //
+//    //     data[key] = value;
+//    // })
+//    //  console.log(data)
 // });
 
+// Input event
 
+const formControlRef = document.querySelector(".form-control")
+const checkBoxRef = document.querySelector(".check-box-User")
+const btnBoxRef = document.querySelector(".button-user")
+// const spanRef = document.querySelector(".button-user > span")
 
+// input event
+// formControlRef.addEventListener("input",(event)=> {
+//
+//     console.log(event.target.value)
+// })
+//  change event
+// formControlRef.addEventListener("change",(event)=> {
+//
+//     console.log(event.target.value)
+// })
+// checkBoxRef.addEventListener("change",(event)=> {
+//
+//     console.log(event.target.checked)
+// })
+
+// Приклад !
+
+formControlRef.addEventListener("input",(event)=> {
+
+    const inputValue = event.target.value;
+
+    checkBoxRef.addEventListener("change",(event)=> {
+
+        btnBoxRef.disabled = !event.target.checked;
+        btnBoxRef.textContent = `${inputValue} registration`
+    });
+
+});
