@@ -525,7 +525,12 @@
 // console.log(addLogin(logins, 'Zod')); // 'Помилка! Логін повинен бути від 4 до 16 символів'
 // console.log(addLogin(logins, 'jqueryisextremelyfast')); // 'Помилка! Логін повинен бути від 4 до 16 символів'
 
+// task 22
+// отримуемо необмежену кількість аргументів  і нам потрібно повернути масив подвоених чисел.
 
-
-
-
+// const multiplyByTwo = (...array) => {
+//
+//     return array.flatMap(el=> el *2)
+// }
+//
+// console.log(multiplyByTwo((1,3,4,5,6,7,10)))

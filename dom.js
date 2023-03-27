@@ -227,9 +227,9 @@
 
 // Input event
 
-const formControlRef = document.querySelector(".form-control")
-const checkBoxRef = document.querySelector(".check-box-User")
-const btnBoxRef = document.querySelector(".button-user")
+// const formControlRef = document.querySelector(".form-control")
+// const checkBoxRef = document.querySelector(".check-box-User")
+// const btnBoxRef = document.querySelector(".button-user")
 // const spanRef = document.querySelector(".button-user > span")
 
 // input event
@@ -249,14 +249,47 @@ const btnBoxRef = document.querySelector(".button-user")
 
 // Приклад !
 
-formControlRef.addEventListener("input",(event)=> {
+// formControlRef.addEventListener("input",(event)=> {
+//
+//     const inputValue = event.target.value;
+//     checkBoxRef.addEventListener("change",(event)=> {
+//
+//         btnBoxRef.disabled = !event.target.disabled;
+//         btnBoxRef.textContent = `${inputValue} registration`
+//         btnBoxRef.style.color = "red"
+//     });
+// });
+// //
+// Focus event
+// formControlRef.addEventListener("focus",(event)=> {
+//     event.target.border = "3px solid #785"
+//     event.target.style.color = "2px solid #221"
+//
+// });
+// // Blur
+// formControlRef.addEventListener("blur",(event)=> {
+//     event.target.style.color = "2px solid #565"
+// });
 
-    const inputValue = event.target.value;
+// keybords event
 
-    checkBoxRef.addEventListener("change",(event)=> {
+// window.addEventListener("keydown",(event)=>{
+//     console.log(event.code)
+// })
 
-        btnBoxRef.disabled = !event.target.checked;
-        btnBoxRef.textContent = `${inputValue} registration`
-    });
+// приклад!
+// Кнопка очистки
+const pOutput = document.querySelector(".output");
+const btnClear = document.querySelector(".btn-clear");
 
+const onKeyListener =  (event)=> {
+    pOutput.textContent += event.key;
+};
+
+window.addEventListener("keydown",onKeyListener);
+
+btnClear.addEventListener("click",(event)=> {
+    pOutput.textContent = "";
+    window.removeEventListener("keydown",onKeyListener)
 });
+
