@@ -279,17 +279,51 @@
 
 // приклад!
 // Кнопка очистки
-const pOutput = document.querySelector(".output");
-const btnClear = document.querySelector(".btn-clear");
+// const pOutput = document.querySelector(".output");
+// const btnClear = document.querySelector(".btn-clear");
+//
+// const onKeyListener =  (event)=> {
+//     pOutput.textContent += event.key;
+// };
+//
+// window.addEventListener("keydown",onKeyListener);
+//
+// btnClear.addEventListener("click",(event)=> {
+//     pOutput.textContent = "";
+//     window.removeEventListener("keydown",onKeyListener)
+// });
 
-const onKeyListener =  (event)=> {
-    pOutput.textContent += event.key;
-};
-
-window.addEventListener("keydown",onKeyListener);
-
-btnClear.addEventListener("click",(event)=> {
-    pOutput.textContent = "";
-    window.removeEventListener("keydown",onKeyListener)
-});
-
+// Modal window
+// const bntModalRef = document.querySelector('#btb-modal');
+// const contentModalRef = document.querySelector('#modal-content');
+// const iconModalRef = document.querySelector('#icon-close');
+// const windowModalRef = document.querySelector('#modal-window');
+//
+// bntModalRef.addEventListener("click",(event)=>{
+//
+//     contentModalRef.style.display = "block"
+// });
+//
+// iconModalRef.addEventListener("click",(event)=>{
+//     contentModalRef.style.display = "none"
+// });
+//
+// iconModalRef.addEventListener("mouseover",(event)=>{
+//     event.target.style.cursor = "pointer"
+// });
+//
+// const onEscape = (event) => {
+//     if (event.code === "Escape"){
+//         contentModalRef.style.display = "none";
+//     }
+// };
+//
+// window.addEventListener("keydown", onEscape);
+//
+// const onBackDropClose = (event) => {
+//     if(event.target === windowModalRef){
+//         contentModalRef.style.display = "none";
+//     };
+// };
+//
+// window.addEventListener("click", onBackDropClose)
