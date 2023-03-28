@@ -136,6 +136,42 @@ body {
   padding: 15px;
 }
 
+.root {
+  padding: 20px;
+  border-bottom: 2px solid black;
+}
+.root .list-menu {
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+  max-width: 100px;
+  border: black 1px solid;
+  position: relative;
+  left: 50%;
+  top: 10px;
+}
+.root .list-menu li {
+  border-bottom: 1px solid #864;
+}
+.root .bntMenu {
+  padding: 10px 30px;
+  background-color: aquamarine;
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+.root .bntMenu:focus {
+  background-color: #E5E5E5;
+}
+
+.open {
+  display: block;
+}
+
+.close {
+  display: none;
+}
+
 .index {
   color: blue;
   border: 0;
