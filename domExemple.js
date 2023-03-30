@@ -1,5 +1,4 @@
-import  products from  "./product.js"
-import product from "./product.js";
+// import  products from  "./product.js"
 
 // Generate menu
 // const fruits = ["orange", "apple", "banana", "grapefruit"]
