@@ -172,6 +172,10 @@ body {
   display: none;
 }
 
+.mr-5 {
+  margin-right: 5px;
+}
+
 .index {
   color: blue;
   border: 0;
