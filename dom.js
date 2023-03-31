@@ -181,48 +181,51 @@
 //     console.log(event.target)
 // });
 
-// event.preventDefault()========== відмінити дію (наприклад кнопки )
+// event.preventDefault()========== відмінити дію (відпрвки форми що важливо! або наприклад кнопки)
 
 // Form обробка
 
-// const btnSubmitRef = document.querySelector("#main-form")
+// const btnSubmitRef = document.querySelector("#main-form");
+//
 //
 // btnSubmitRef.addEventListener("submit",(event)=> {
+//     event.preventDefault();
+
+
+// 1.========================
+//     const userText = document.querySelector("input[type='text']");
+//     const userEmail = document.querySelector("input[type='email']")
+//     // console.log(userEmail.value)
+//     // console.log(userText.value)
 //
-// // 1.========================
-// //     const userText = document.querySelector("input[type='text']");
-// //     const userEmail = document.querySelector("input[type='email']")
-// //     // console.log(userEmail.value)
-// //     // console.log(userText.value)
-// //
-// //     const data = {
-// //         userText : userText.value,
-// //         userEmail : userEmail.value,
-// //     }
-// //     console.log(data)
-// //     2.================
-//
-//    //  const formRef = event.target.elements;
-//    //  console.log(formRef.text.value)
-//    //  const {email,text,password} = event.target.elements
-//    //
-//    //  const data = {
-//    //      text : text.value,
-//    //      email : email.value,
-//    //      password : password.value,
-//    //  }
-//    //  console.log(data)
-//    //  // 3================== TOP!
-//    //
-//    // const formRef = event.target;
-//    // const formData = new FormData(formRef);
-//    //
-//    // const data = {}
-//    // formData.forEach((value,key)=> {
-//    //
-//    //     data[key] = value;
-//    // })
-//    //  console.log(data)
+//     const data = {
+//         userText : userText.value,
+//         userEmail : userEmail.value,
+//     }
+//     console.log(data)
+//     2.================
+
+   //  const formRef = event.target.elements;
+   //  console.log(formRef.text.value)
+   //  const {email,text,password} = event.target.elements
+   //
+   //  const data = {
+   //      text : text.value,
+   //      email : email.value,
+   //      password : password.value,
+   //  }
+   //  console.log(data)
+   //  // 3================== TOP!
+   //
+   // const formRef = event.target;
+   // const formData = new FormData(formRef);
+   //
+   // const data = {}
+   // formData.forEach((value,key)=> {
+   //
+   //     data[key] = value;
+   // })
+   //  console.log(data)
 // });
 
 // Input event
@@ -327,3 +330,42 @@
 // };
 //
 // window.addEventListener("click", onBackDropClose)
+
+
+// РЕПЕТА форми
+
+// якщо треба поелементно працювати з параметрами використовуемо  const formRef = event.target.elements
+// якщо просто зібрати данні з форми то new formData і метод foreach
+
+// const btnSubmitRef = document.querySelector("#main-form");
+// btnSubmitRef.addEventListener("submit", onFormSubmit);
+//
+// function onFormSubmit (event) {
+//
+//     event.preventDefault();
+//
+//     const formData = new FormData(event.target);
+//
+//     const data  = {};
+//     formData.forEach((value,key) => {
+//
+//         data[value] = key;
+//     })
+//     console.log(data)
+// };
+
+// Обьект посилань робиться дл того щоб в коді було зрозуміло де посилання на елементи з сторінки ( назвемо їх наприклад  Refs)
+
+const formControlRef = document.querySelector(".form-control")
+const checkBoxRef = document.querySelector(".check-box-User")
+const btnBoxRef = document.querySelector(".button-user")
+const spanRef = document.querySelector(".button-user > span")
+
+
+const refs = {
+     formControlRef : document.querySelector(".form-control"),
+     checkBoxRef : document.querySelector(".check-box-User"),
+     btnBoxRef : document.querySelector(".button-user"),
+     spanRef : document.querySelector(".button-user > span"),
+}
+

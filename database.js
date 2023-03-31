@@ -20,12 +20,6 @@ const dataBase = [
     {id: 37, name: "Western",isAvailable : false}
 ];
 
-// <tr>
-//     <th>Id-films</th>
-//     <th>genres-film</th>
-//     <th>isAvailable</th>
-// </tr>
-
 const makeFilmMarkUp = ({name,id,isAvailable}) => {
     return `
     <tr>
@@ -36,9 +30,8 @@ const makeFilmMarkUp = ({name,id,isAvailable}) => {
     `
 };
 
-
-const optionsRef = dataBase.map(makeFilmMarkUp).join(" ")
+const optionsRef = dataBase.map(makeFilmMarkUp).join(" ");
 
 const movieGenreRef = document.querySelector(".js-movie-genres");
 
-movieGenreRef.insertAdjacentHTML("beforeend",optionsRef)
+movieGenreRef.insertAdjacentHTML("beforeend",optionsRef);

@@ -156,7 +156,6 @@ body {
 .root .bntMenu {
   padding: 10px 30px;
   background-color: aquamarine;
-  position: absolute;
   left: 50%;
   top: 0;
 }

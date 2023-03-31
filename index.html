@@ -8,6 +8,40 @@
     <link rel="stylesheet" href="css/сommon.css">
 </head>
 <body>
+<div class="form" id="main-form">
+    <form>
+        <div class="input-group mb-3">
+            <input name="text" type="text" class="form-control" placeholder="Username" aria-label="Username">
+        </div>
+        <div class="mb-3">
+            <input name="email"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+            <label for="exampleInputEmail1" class="form-label"></label>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"></label>
+            <input name="password" type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-check">
+            <input  class="form-check-input" type="radio" name="Radios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Default radio
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="Radios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                Second default radio
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="Radios" id="exampleRadios3" value="option3">
+            <label class="form-check-label" for="exampleRadios3">
+                Disabled radio
+            </label>
+        </div>
+        <button  id="submit" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 <div class="root" id="root">
     <button type="button" id="bntMenu" class="bntMenu">Menu</button>
 </div>
@@ -44,40 +78,7 @@
     <button type="button" disabled class="button-user"><span>Guest registration</span> </button>
 </div>
 
-<div class="form" id="main-form">
-    <form>
-        <div class="input-group mb-3">
-            <input name="text" type="text" class="form-control" placeholder="Username" aria-label="Username">
-        </div>
-        <div class="mb-3">
-            <input name="email"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
-            <label for="exampleInputEmail1" class="form-label"></label>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"></label>
-            <input name="password" type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-check">
-            <input  class="form-check-input" type="radio" name="Radios" id="exampleRadios1" value="option1" checked>
-            <label class="form-check-label" for="exampleRadios1">
-                Default radio
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="Radios" id="exampleRadios2" value="option2">
-            <label class="form-check-label" for="exampleRadios2">
-                Second default radio
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="Radios" id="exampleRadios3" value="option3">
-            <label class="form-check-label" for="exampleRadios3">
-                Disabled radio
-            </label>
-        </div>
-        <button  id="submit" type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+
 
 <h1 class="super-title">Test Title</h1>
 
