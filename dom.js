@@ -367,7 +367,18 @@ const refs = {
      checkBoxRef : document.querySelector(".check-box-User"),
      btnBoxRef : document.querySelector(".button-user"),
      spanRef : document.querySelector(".button-user > span"),
-}
-
+};
 console.log(refs.btnBoxRef)
+console.log(refs.checkBoxRef)
+console.log(refs.spanRef)
+console.log(refs.btnBoxRef)
+
+// const refs = {
+//      formControlRef : document.querySelector(".form-control"),
+//      checkBoxRef : document.querySelector(".check-box-User"),
+//      btnBoxRef : document.querySelector(".button-user"),
+//      spanRef : document.querySelector(".button-user > span"),
+// // }
+
+
 
