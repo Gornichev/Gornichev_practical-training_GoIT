@@ -369,3 +369,5 @@ const refs = {
      spanRef : document.querySelector(".button-user > span"),
 }
 
+console.log(refs.btnBoxRef)
+
