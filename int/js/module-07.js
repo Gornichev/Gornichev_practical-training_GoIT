@@ -42,12 +42,17 @@ const descendant = document.querySelector("#descendant");
 // });
 //
 //
-// const listenerBnt = document.querySelector(`.listenerBtn`);
-//
-// listenerBnt.addEventListener(`click`,(event)=> {
-//
-//     console.log("bubbling")
-// })
+const listenerBnt = document.querySelector(`.listenerBtn`);
+
+
+listenerBnt.addEventListener(`click`,(event)=> {
+
+    if (event.target.nodeName !== "BUTTON") {
+       return;
+    }
+    console.log("use Bubbling");
+
+})
 
 const output = document.querySelector(".output");
 let scrollEventCounter = 0;
@@ -62,7 +67,7 @@ document.addEventListener("scroll", () => {
 //     }, 300)
 // );
 
-document.addEventListener("scroll", _.debounce(() => {
-        console.log("Scroll handler call after 300ms pause");
-    }, 300)
-);
+// document.addEventListener("scroll", _.debounce(() => {
+//         console.log("Scroll handler call after 300ms pause");
+//     }, 300)
+// );
