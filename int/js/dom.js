@@ -231,9 +231,11 @@
 // Input event
 
 // const formControlRef = document.querySelector(".form-control")
+// const inputGroupRef = document.querySelector(".input-group")
 // const checkBoxRef = document.querySelector(".check-box-User")
 // const btnBoxRef = document.querySelector(".button-user")
 // const spanRef = document.querySelector(".button-user > span")
+
 
 // input event
 // formControlRef.addEventListener("input",(event)=> {
@@ -252,14 +254,18 @@
 
 // Приклад !
 
-// formControlRef.addEventListener("input",(event)=> {
+
+// inputGroupRef.addEventListener("input",(event)=> {
 //
 //     const inputValue = event.target.value;
+//     console.log(btnBoxRef)
+//
 //     checkBoxRef.addEventListener("change",(event)=> {
 //
 //         btnBoxRef.disabled = !event.target.disabled;
-//         btnBoxRef.textContent = `${inputValue} registration`
-//         btnBoxRef.style.color = "red"
+//         btnBoxRef.textContent = `${inputValue} registration`;
+//         btnBoxRef.style.color = "red";
+//         console.log(btnBoxRef)
 //     });
 // });
 // //
@@ -302,6 +308,7 @@
 // const iconModalRef = document.querySelector('#icon-close');
 // const windowModalRef = document.querySelector('#modal-window');
 //
+//
 // bntModalRef.addEventListener("click",(event)=>{
 //
 //     contentModalRef.style.display = "block"
@@ -324,6 +331,9 @@
 // window.addEventListener("keydown", onEscape);
 //
 // const onBackDropClose = (event) => {
+//      // console.log(event.target)
+//      // console.log(event.currentTarget)
+//
 //     if(event.target === windowModalRef){
 //         contentModalRef.style.display = "none";
 //     };
@@ -356,29 +366,44 @@
 
 // Обьект посилань робиться дл того щоб в коді було зрозуміло де посилання на елементи з сторінки ( назвемо їх наприклад  Refs)
 
-const formControlRef = document.querySelector(".form-control")
-const checkBoxRef = document.querySelector(".check-box-User")
-const btnBoxRef = document.querySelector(".button-user")
-const spanRef = document.querySelector(".button-user > span")
 
-
-const refs = {
-     formControlRef : document.querySelector(".form-control"),
-     checkBoxRef : document.querySelector(".check-box-User"),
-     btnBoxRef : document.querySelector(".button-user"),
-     spanRef : document.querySelector(".button-user > span"),
-};
-console.log(refs.btnBoxRef)
-console.log(refs.checkBoxRef)
-console.log(refs.spanRef)
-console.log(refs.btnBoxRef)
+// const formControlRef = document.querySelector(".js-form-control")
+// const checkBoxRef = document.querySelector(".check-box-User")
+// const btnBoxRef = document.querySelector(".button-user")
+// const spanRef = document.querySelector(".button-user > span")
 
 // const refs = {
-//      formControlRef : document.querySelector(".form-control"),
-//      checkBoxRef : document.querySelector(".check-box-User"),
-//      btnBoxRef : document.querySelector(".button-user"),
+//      formControl : document.querySelector(".js-form-control"),
+//      checkBox : document.querySelector(".check-box-User"),
+//      btnBox : document.querySelector(".button-user"),
 //      spanRef : document.querySelector(".button-user > span"),
-// // }
+// };
 
+
+// refs.formControl.addEventListener("input",(event) => {
+//
+//     const inputValue = event.target.value;
+//     refs.checkBox.addEventListener("change",(event)=> {
+//
+//         refs.btnBox.disabled = !event.target.checked;
+//         refs.btnBox.textContent = `${inputValue} registration`;
+//         refs.btnBox.style.color = "red";
+//
+//     });
+// })
+// refs.formControl.addEventListener("input", onChangeInput);
+// refs.checkBox.addEventListener("change", onChangeCheckBox)
+//
+// function onChangeInput (event)  {
+//
+//     refs.btnBox.textContent = `${event.target.value} registration`;
+//
+// };
+//
+// function onChangeCheckBox (event) {
+//
+//
+//     refs.btnBox.disabled = !event.target.checked;
+// };
 
 
