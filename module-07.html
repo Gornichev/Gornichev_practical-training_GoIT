@@ -8,19 +8,50 @@
     <link rel="stylesheet" href="css/сommon.css">
 </head>
 <body>
+<div class="gallery">
+    <h3>Gallery</h3>
+    <ul class="gallery js-gallery">
+        <li class=gallery-item">
+            <a class="gallery-link" href="https://motionarray.imgix.net/preview-610281-ZUMPpW99pX8J0bre-large.jpg?w=660&q=60&fit=max&auto=format">
+                <img class="gallery-image" src="https://motionarray.com/stock-photos/golden-retriever-dog-610281/?q=dog" alt="">
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="event-delegation">
+    <h2>Event delegation</h2>
+    <p class="active-tag js-active-tag"></p>
+    <ul class="tags js-tags">
+        <li class="tags-item">
+            <button type="button" class="text-bnt" data-value="html">html</button>
+        </li>
+        <li class="tags-item">
+            <button type="button" class="text-bnt" data-value="react">react</button>
+        </li>
+        <li class="tags-item">
+            <button type="button" class="text-bnt" data-value="css">css</button>
+        </li>
+        <li class="tags-item">
+            <button type="button" class="text-bnt" data-value="javascript">javascript</button>
+        </li>
+        <li class="tags-item">
+            <button type="button" class="text-bnt" data-value="node js">node js</button>
+        </li>
+    </ul>
+</div>
 <h3>// (event bubbling</h3>
 <div id="parent">
     Parent
     <div id="child">
         Child
         <div id="descendant">Descendant</div>
-    </div>
+    </div><span>1</span>
 </div>
 <div class="listenerBtn">
-    <button type="button">1</button>
-    <button type="button">2</button>
-    <button type="button">3</button>
-    <button type="button">4</button>
+    <button type="button" data-name="button"><span>1</span></button>
+    <button type="button" data-name="button"><span>2</span></button>
+    <button type="button" data-name="button"><span>3</span></button>
+    <button type="button" data-name="button"><span>4</span></button>
 
     <p class="js-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos id optio praesentium reiciendis, reprehenderit temporibus ullam. Autem, molestiae, nisi!</p>
 </div>

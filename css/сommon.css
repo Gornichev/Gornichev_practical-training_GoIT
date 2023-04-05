@@ -175,6 +175,27 @@ body {
   margin-right: 5px;
 }
 
+.event-delegation {
+  padding-bottom: 50px;
+  border-bottom: 2px solid black;
+}
+.event-delegation .tags {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.event-delegation .tags .text-bnt {
+  margin-right: 8px;
+}
+
+.tags-bnt-active {
+  background-color: blue;
+}
+
+.active-tag {
+  margin: 0;
+}
+
 .index {
   color: blue;
   border: 0;

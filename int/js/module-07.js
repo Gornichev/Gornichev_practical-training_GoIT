@@ -47,12 +47,13 @@ const listenerBnt = document.querySelector(`.listenerBtn`);
 
 listenerBnt.addEventListener(`click`,(event)=> {
 
-    if (event.target.nodeName !== "BUTTON") {
-       return;
-    }
-    console.log("use Bubbling");
+    // if (event.target.nodeName !== "BUTTON") {
+    //    return;
+    // };
+    // console.log("use Bubbling");
+    console.log(event.target.dataset)
 
-})
+});
 
 const output = document.querySelector(".output");
 let scrollEventCounter = 0;
@@ -71,3 +72,31 @@ document.addEventListener("scroll", () => {
 //         console.log("Scroll handler call after 300ms pause");
 //     }, 300)
 // );
+
+// event-delegation
+
+const tags = document.querySelector(".js-tags");
+const activeTeg = document.querySelector(".js-active-tag");
+
+tags.addEventListener("click", onTagClick);
+
+function onTagClick (event){
+
+    if(event.target.nodeName !== "BUTTON"){
+        return;
+    };
+    console.log("Btn");
+
+    const prevTags = event.currentTarget.querySelector(".tags-bnt-active");
+    if(prevTags) {
+        prevTags.classList.remove("tags-bnt-active");
+    };
+
+    const nextTags = event.target;
+    nextTags.classList.add("tags-bnt-active");
+
+    activeTeg.textContent = nextTags.dataset.value
+
+};
+
+
