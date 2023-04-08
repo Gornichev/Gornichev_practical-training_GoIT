@@ -147,3 +147,32 @@
 // console.log(_.add(2,3));
 // console.log(lodash.add(2,1))
 // console.log(_.isEqual(1,2))
+
+
+// Filter element on Input
+import film from "./database.js";
+
+const inputRef = document.querySelector("#filter-input");
+const inputResultRef = document.querySelector("#js-input-result");
+
+const createListItems = (items) => {
+
+    return items.map(item =>`<li>${item.name}</li>`).join("");
+
+};
+
+const listenItems = createListItems(film);
+
+
+inputRef.addEventListener("input", onFilmChange);
+
+function onFilmChange (event) {
+    const filter = event.target.value.toLowerCase();
+
+    const filtered = film.filter((element) =>  element.name.toLowerCase().includes(filter))
+
+    listenItems = createListItems(filtered);
+    console.log(listenItems)
+}
+
+

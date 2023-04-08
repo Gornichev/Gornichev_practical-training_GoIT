@@ -1,4 +1,5 @@
-const dataBase = [
+
+export default [
     {id: 28, name: "Action",isAvailable : true},
     {id: 12, name: "Adventure",isAvailable : true},
     {id: 16, name: "Animation",isAvailable : true},
@@ -20,18 +21,18 @@ const dataBase = [
     {id: 37, name: "Western",isAvailable : false}
 ];
 
-const makeFilmMarkUp = ({name,id,isAvailable}) => {
-    return `
-    <tr>
-    <th>${name}</th>
-    <th>${id}</th>
-    <th>${isAvailable}</th>
-    </tr>
-    `
-};
-
-const optionsRef = dataBase.map(makeFilmMarkUp).join(" ");
-
-const movieGenreRef = document.querySelector(".js-movie-genres");
-
-movieGenreRef.insertAdjacentHTML("beforeend",optionsRef);
+// const makeFilmMarkUp = ({name,id,isAvailable}) => {
+//     return `
+//     <tr>
+//     <th>${name}</th>
+//     <th>${id}</th>
+//     <th>${isAvailable}</th>
+//     </tr>
+//     `
+// };
+//
+// const optionsRef = dataBase.map(makeFilmMarkUp).join(" ");
+//
+// const movieGenreRef = document.querySelector(".js-movie-genres");
+//
+// movieGenreRef.insertAdjacentHTML("beforeend",optionsRef);
