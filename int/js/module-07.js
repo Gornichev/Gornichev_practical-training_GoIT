@@ -155,6 +155,8 @@ import film from "./database.js";
 const inputRef = document.querySelector("#filter-input");
 const inputResultRef = document.querySelector("#js-input-result");
 
+inputRef.addEventListener("input", _.debounce(onFilmChange,1000));
+
 const createListItems = (items) => {
 
     return items.map(item =>`<li>${item.name}</li>`).join("");
@@ -162,17 +164,14 @@ const createListItems = (items) => {
 };
 
 const listenItems = createListItems(film);
-
-
-inputRef.addEventListener("input", onFilmChange);
+inputResultRef.innerHTML = listenItems;
 
 function onFilmChange (event) {
     const filter = event.target.value.toLowerCase();
 
-    const filtered = film.filter((element) =>  element.name.toLowerCase().includes(filter))
-
-    listenItems = createListItems(filtered);
-    console.log(listenItems)
-}
+    const filtered = film.filter((element) =>  element.name.toLowerCase().includes(filter));
+    const listenItems = createListItems(filtered);
+    inputResultRef.innerHTML = listenItems;
+};
 
 
