@@ -180,16 +180,43 @@
 // }
 
 // Lazy Loading
-const allImage = document.querySelectorAll('img[loading="lazy"]');
+// const allImage = document.querySelectorAll('img[loading="lazy"]');
+//
+// allImage.forEach((image)=> {
+//
+//     image.addEventListener("load", onImageLoader,{once: true});  //// знімае listener
+// });
+//
+// function onImageLoader (event) {
+//
+//     event.target.classList.add("appear")
+//     console.log("Image upload");
+//     console.log(event.target)
+// };
+// <script async src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+//         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+//         crossOrigin="anonymous"
+//         referrerpolicy="no-referrer"
+// {/*></script>*/}
 
-allImage.forEach((image)=> {
+if ("loading",HTMLImageElement.prototype){
+    console.log("Yes")
 
-    image.addEventListener("load", onImageLoader,{once: true});  //// знімае listener
-});
+    // const scriptCreate = document.createElement("Script");
+    // scriptCreate.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js";
+    // scriptCreate.integrity = "sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==";
+    // scriptCreate.crossOrigin = "anonymous";
+    // scriptCreate.referrerpolicy = "no-referrer";
+    // document.body.append(scriptCreate)
 
-function onImageLoader (event) {
 
-    event.target.classList.add("appear")
-    console.log("Image upload");
-    console.log(event.target)
+    const img = document.createElement("img");
+    img.class = "gallery-image";
+    img.src =  "./int/image/2.jpg";
+    img.width = 200
+    img.height = 200
+    document.body.append(img);
+
+} else {
+    console.log("NO!")
 }
