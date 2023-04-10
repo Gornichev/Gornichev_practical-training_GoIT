@@ -150,28 +150,46 @@
 
 
 // Filter element on Input
-import film from "./database.js";
+// import film from "./database.js";
+//
+// const inputRef = document.querySelector("#filter-input");
+// const inputResultRef = document.querySelector("#js-input-result");
+//
+// inputRef.addEventListener("input", _.debounce(onFilmChange,1000));
+//
+// const createListItems = (items) => {
+//
+//     return items.map(item =>`<li>${item.name}</li>`).join("");
+//
+// };
+//
+// const listenItems = createListItems(film);
+// // inputResultRef.innerHTML = listenItems;
+//
+// function onFilmChange (event) {
+//     const filter = event.target.value.toLowerCase();
+//
+//     const filtered = film.filter((element) =>  element.name.toLowerCase().includes(filter));
+//     const listenItems = createListItems(filtered);
+//     inputResultRef.innerHTML = listenItems;
+// };
 
-const inputRef = document.querySelector("#filter-input");
-const inputResultRef = document.querySelector("#js-input-result");
+// function innerMarkup (markup) {
+//
+//     inputResultRef.innerHTML = markup;
+// }
 
-inputRef.addEventListener("input", _.debounce(onFilmChange,1000));
+// Lazy Loading
+const allImage = document.querySelectorAll('img[loading="lazy"]');
 
-const createListItems = (items) => {
+allImage.forEach((image)=> {
 
-    return items.map(item =>`<li>${item.name}</li>`).join("");
+    image.addEventListener("load", onImageLoader,{once: true});  //// знімае listener
+});
 
-};
+function onImageLoader (event) {
 
-const listenItems = createListItems(film);
-inputResultRef.innerHTML = listenItems;
-
-function onFilmChange (event) {
-    const filter = event.target.value.toLowerCase();
-
-    const filtered = film.filter((element) =>  element.name.toLowerCase().includes(filter));
-    const listenItems = createListItems(filtered);
-    inputResultRef.innerHTML = listenItems;
-};
-
-
+    event.target.classList.add("appear")
+    console.log("Image upload");
+    console.log(event.target)
+}
