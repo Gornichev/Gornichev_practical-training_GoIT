@@ -198,25 +198,46 @@
 //         crossOrigin="anonymous"
 //         referrerpolicy="no-referrer"
 // {/*></script>*/}
+// if ("loading",HTMLImageElement.prototype){
+//     console.log("Yes")
+//
+//     // const scriptCreate = document.createElement("Script");
+//     // scriptCreate.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js";
+//     // scriptCreate.integrity = "sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==";
+//     // scriptCreate.crossOrigin = "anonymous";
+//     // scriptCreate.referrerpolicy = "no-referrer";
+//     // document.body.append(scriptCreate)
+//
+//
+//     const img = document.createElement("img");
+//     img.class = "gallery-image";
+//     img.src =  "./int/image/2.jpg";
+//     img.width = 200
+//     img.height = 200
+//     document.body.append(img);
+//
+// } else {
+//     console.log("NO!")
+// }
+// <!--event-delegation-->
 
-if ("loading",HTMLImageElement.prototype){
-    console.log("Yes")
+const tagsContainer = document.querySelector(".js-tags");
+const selectedTagOn = document.querySelector(".js-active-tag")
+tagsContainer.addEventListener("click", onTagsClick);
 
-    // const scriptCreate = document.createElement("Script");
-    // scriptCreate.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js";
-    // scriptCreate.integrity = "sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==";
-    // scriptCreate.crossOrigin = "anonymous";
-    // scriptCreate.referrerpolicy = "no-referrer";
-    // document.body.append(scriptCreate)
+function onTagsClick (e) {
+    if(e.target.nodeName !== "BUTTON"){
+         return;
+    };
+    console.log(e.target);
 
+    const currentBtn = document.querySelector(".tags-btn-active");
+    // currentBtn?.classList.remove("tags-btn-active") ///// заміна If що знизу;
 
-    const img = document.createElement("img");
-    img.class = "gallery-image";
-    img.src =  "./int/image/2.jpg";
-    img.width = 200
-    img.height = 200
-    document.body.append(img);
-
-} else {
-    console.log("NO!")
-}
+    if(currentBtn){
+        currentBtn.classList.remove("tags-btn-active");
+    };
+    const nextBtn = e.target;
+    nextBtn.classList.add("tags-btn-active");
+    selectedTagOn.textContent = e.target.dataset.value;
+};

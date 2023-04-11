@@ -183,12 +183,15 @@ body {
   display: flex;
   justify-content: center;
   list-style: none;
+  outline: 1px solid tomato;
+  padding: 10px;
 }
 .event-delegation .tags .text-bnt {
   margin-right: 8px;
+  padding: 10px 35px;
 }
 
-.tags-bnt-active {
+.tags-btn-active {
   background-color: blue;
 }
 
