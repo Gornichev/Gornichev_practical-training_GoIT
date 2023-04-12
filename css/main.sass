@@ -203,19 +203,25 @@ body
 	display: flex
 	flex-wrap: wrap
 
+	.color-card
+		font-size: 14px
+
+	.isActive
+		transform: perspective(200px) rotateX(5deg)
+		-webkit-box-shadow: 1px -1px 71px -11px rgba(0,0,0,0.81)
+		-moz-box-shadow: 1px -1px 71px -11px rgba(0,0,0,0.81)
+		box-shadow: 1px -1px 71px -11px rgba(0,0,0,0.81)
+
 	.color-swatch
 		width: 150px
 		height: 100px
 		margin-bottom: 20px
+		border: 2px solid #000
 
 	.color-meta
 		max-width: 150px
-		-webkit-box-shadow: 1px -1px 71px -11px rgba(0,0,0,0.81)
-		-moz-box-shadow: 1px -1px 71px -11px rgba(0,0,0,0.81)
-		box-shadow: 1px -1px 71px -11px rgba(0,0,0,0.81)
 		background-color: #cecece
 		text-align: center
-
 
 .color-meta
 	background-color: #7e2222

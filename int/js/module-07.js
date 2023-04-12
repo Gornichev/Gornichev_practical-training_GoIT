@@ -289,7 +289,7 @@ const colors = [
     {hex:"#5ab623", rgb : "0,0,255,255"},
 ];
 
-
+// рендерим розмітку
 function createColorMarkup (colors)  {
 
   return colors.map(({hex,rgb}) =>
@@ -304,16 +304,31 @@ function createColorMarkup (colors)  {
     </div> `
    ).join("");
 };
-const paletteRef = document.querySelector(".js-palette");
-const markupCards = createColorMarkup(colors);
-paletteRef.insertAdjacentHTML("beforeend" , markupCards);
-paletteRef.addEventListener("click", onPaletteClick)
 
+const paletteRef = document.querySelector(".js-palette");
+const markupCards = createColorMarkup(colors); ///результат виконаня функціх
+
+paletteRef.insertAdjacentHTML("beforeend" , markupCards); // вставляем розмітку
+paletteRef.addEventListener("click", onPaletteClick);
 
 function onPaletteClick (e) {
 
-    if(!e.target.classList.contains("color-swatch")){
+    if(!e.target.classList.contains("color-swatch")){   /// якщо клік не по зоні виходимо з функції
             return;
+    };
+
+    paletteRef.style.backgroundColor = e.target.dataset.hex;    /// зміна кольору секції
+
+    const currentEl = document.querySelector(".isActive"); ///знаходимо попередній елемент і
+
+    if(currentEl) {
+        currentEl.classList.remove("isActive");  /// перевіряемо його на наявність класу
     }
-    console.log(e.target)
+
+    const parentCard = e.target.closest(".color-card"); // Element.closest()повертає найближчий батьківський елемент
+                              // (або сам елемент), який відповідає заданому CSS-селектору або null,
+                              //якщо таких елементів взагалі немає.
+
+    parentCard.classList.add("isActive");
+
 }
