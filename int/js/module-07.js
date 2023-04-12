@@ -221,23 +221,99 @@
 // }
 // <!--event-delegation-->
 
-const tagsContainer = document.querySelector(".js-tags");
-const selectedTagOn = document.querySelector(".js-active-tag")
-tagsContainer.addEventListener("click", onTagsClick);
+// const tagsContainer = document.querySelector(".js-tags");
+// const selectedTagOn = document.querySelector(".js-active-tag")
+// tagsContainer.addEventListener("click", onTagsClick);
 
-function onTagsClick (e) {
-    if(e.target.nodeName !== "BUTTON"){
-         return;
-    };
-    console.log(e.target);
+// 1))))
+// function onTagsClick (e) {
+//
+//     if(e.target.nodeName !== "BUTTON"){
+//          return;
+//     };
+//     const currentBtn = document.querySelector(".tags-btn-active");
+//     // currentBtn?.classList.remove("tags-btn-active") ///// заміна If що знизу;
+//
+//     if(currentBtn){
+//         currentBtn.classList.remove("tags-btn-active");
+//     };
+//
+//     const nextBtn = e.target;
+//     nextBtn.classList.add("tags-btn-active");
+//
+//     selectedTagOn.textContent = e.target.dataset.value
+// };
 
-    const currentBtn = document.querySelector(".tags-btn-active");
-    // currentBtn?.classList.remove("tags-btn-active") ///// заміна If що знизу;
+// 2)))
+//
+// const tagsContainer = document.querySelector(".js-tags");
+// const selectedTagOn = document.querySelector(".js-active-tag")
+// tagsContainer.addEventListener("click", onTagsClick);
+// const selectedTags = new Set();
+//
+// function onTagsClick (e) {
+//
+//     if(e.target.nodeName !== "BUTTON"){
+//         return;
+//     };
+//
+//     const btn = e.target;
+//     const tags = e.target.dataset.value;
+//     const isActive = btn.classList.contains("tags-btn-active");
+//
+//     if(isActive){
+//         selectedTags.delete(tags);
+//     } else {
+//         selectedTags.add(tags);
+//     }
+//
+//    btn.classList.toggle("tags-btn-active");
+//     selectedTagOn.textContent = tags;
+//
+//     console.log(selectedTags)
+// };
 
-    if(currentBtn){
-        currentBtn.classList.remove("tags-btn-active");
-    };
-    const nextBtn = e.target;
-    nextBtn.classList.add("tags-btn-active");
-    selectedTagOn.textContent = e.target.dataset.value;
+// color picker
+const colors = [
+    {hex:"#000000FF", rgb : "323,4,5,5"},
+    {hex:"#FFFFFF", rgb : "255,255,255"},
+    {hex:"#FF0000FF", rgb : "255,0,0,255"},
+    {hex:"#00FF00FF", rgb : "0,255,0,255"},
+    {hex:"#2b2baf", rgb : "0,0,255,255"},
+    {hex:"#0000FFFF", rgb : "0,0,255,255"},
+    {hex:"#48ff00", rgb : "0,0,255,255"},
+    {hex:"#000000", rgb : "0,0,255,255"},
+    {hex:"#aaaac9", rgb : "0,0,255,255"},
+    {hex:"#80323e", rgb : "0,0,255,255"},
+    {hex:"#815e65", rgb : "0,0,255,255"},
+    {hex:"#5ab623", rgb : "0,0,255,255"},
+];
+
+
+function createColorMarkup (colors)  {
+
+  return colors.map(({hex,rgb}) =>
+     ` <div class="palette js-palette">
+    <div class="color-card">
+        <div class="color-swatch" data-rgb="${rgb}" data-hex="${hex}" style="background-color: ${hex} "></div>
+        <div class="color-meta">
+            <p> HEX: ${hex}</p>
+            <p> RGB: ${rgb} </p>
+        </div>
+    </div>
+    </div> `
+   ).join("");
 };
+const paletteRef = document.querySelector(".js-palette");
+const markupCards = createColorMarkup(colors);
+paletteRef.insertAdjacentHTML("beforeend" , markupCards);
+paletteRef.addEventListener("click", onPaletteClick)
+
+
+function onPaletteClick (e) {
+
+    if(!e.target.classList.contains("color-swatch")){
+            return;
+    }
+    console.log(e.target)
+}
