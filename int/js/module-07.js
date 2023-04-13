@@ -311,24 +311,55 @@ const markupCards = createColorMarkup(colors); ///результат викон�
 paletteRef.insertAdjacentHTML("beforeend" , markupCards); // вставляем розмітку
 paletteRef.addEventListener("click", onPaletteClick);
 
+// function onPaletteClick (e) {
+//
+//     if(!e.target.classList.contains("color-swatch")){   /// якщо клік не по зоні виходимо з функції
+//             return;
+//     };
+//
+//     paletteRef.style.backgroundColor = e.target.dataset.hex;    /// зміна кольору секції
+//
+//     const currentEl = document.querySelector(".isActive"); ///знаходимо попередній елемент і
+//
+//     if(currentEl) {
+//         currentEl.classList.remove("isActive");  /// перевіряемо його на наявність класу
+//     }
+//
+//     const parentCard = e.target.closest(".color-card"); // Element.closest()повертає найближчий батьківський елемент
+//                               // (або сам елемент), який відповідає заданому CSS-селектору або null,
+//                               //якщо таких елементів взагалі немає.
+//
+//     parentCard.classList.add("isActive");
+//
+// };
+
+/// function refactoring
+
 function onPaletteClick (e) {
 
-    if(!e.target.classList.contains("color-swatch")){   /// якщо клік не по зоні виходимо з функції
-            return;
+    if(!e.target.classList.contains("color-swatch")){
+        return;
     };
+    const parentCard = e.target.closest(".color-card");
 
-    paletteRef.style.backgroundColor = e.target.dataset.hex;    /// зміна кольору секції
+    removeActiveCard();
+    addActiveCard (parentCard);
+    setColorSection(e.target.dataset.hex);
+};
 
-    const currentEl = document.querySelector(".isActive"); ///знаходимо попередній елемент і
+function setColorSection (color) {
+    paletteRef.style.backgroundColor = color;
 
+};
+
+function removeActiveCard () {
+    const currentEl = document.querySelector(".isActive");
     if(currentEl) {
-        currentEl.classList.remove("isActive");  /// перевіряемо його на наявність класу
+        currentEl.classList.remove("isActive");
     }
+};
 
-    const parentCard = e.target.closest(".color-card"); // Element.closest()повертає найближчий батьківський елемент
-                              // (або сам елемент), який відповідає заданому CSS-селектору або null,
-                              //якщо таких елементів взагалі немає.
+function addActiveCard (card) {
 
-    parentCard.classList.add("isActive");
-
+    card.classList.add("isActive");
 }
