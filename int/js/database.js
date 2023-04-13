@@ -36,7 +36,6 @@ export default [
 // const movieGenreRef = document.querySelector(".js-movie-genres");
 //
 // movieGenreRef.insertAdjacentHTML("beforeend",optionsRef);
-
 const colors = [
     {hex:"#000000FF", rgb : "323,4,5,5"},
     {hex:"#FFFFFF", rgb : "255,255,255"},
@@ -49,3 +48,13 @@ const colors = [
     {hex:"#aaaac9", rgb : "0,0,255,255"},
     {hex:"#80323e", rgb : "0,0,255,255"},
 ];
+export default colors;
+
+// const boy = "vova";
+// const girl = "lena";
+//
+// export const boy = () => hello
+// export const girl = () => hello
+
+
+
