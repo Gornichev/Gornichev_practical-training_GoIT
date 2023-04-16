@@ -13,18 +13,18 @@ module.exports = {
             {test: /\.css$/i, use: [
                     "style-loader",{
                         loader:  MiniCssExtractPlugin.loader,
-                        options: {esModules : false}
+                        options: {esModule : false}
                     },
 
                     "css-loader"],
             },
 
             {test: /\.s[ac]ss$/i, use: [
-                    // Creates `style` nodes from JS strings
-                    "style-loader",
-                    // Translates CSS into CommonJS
+                    "style-loader",{
+                        loader:  MiniCssExtractPlugin.loader,
+                        options: {esModule : false},
+                    },
                     "css-loader",
-                    // Compiles Sass to CSS
                     "sass-loader",
                  ],
             },
