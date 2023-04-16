@@ -1,4 +1,5 @@
-import colors from  "../js/main"
+// import colors from  "../js/main"
+import "../src/scss/base.scss"
 
 colors.map((color) =>{
     console.log(`${color.hex} and ${color.rgb}`);
@@ -19,3 +20,4 @@ class User {
 };
 
 const viva = new User("incognito", "26")
+console.log("viva")
