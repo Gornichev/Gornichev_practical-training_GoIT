@@ -1,16 +1,16 @@
-// import  products from  "./product.js"
-//
+
+
 // Generate menu
 // const fruits = ["orange", "apple", "banana", "grapefruit"]
 //
 // const rootRef = document.querySelector("#root");
 // const btnMenuRef = document.querySelector("#bntMenu");
-
-///==== створюемо Ul і даемо йому класи
+//
+// /==== створюемо Ul і даемо йому класи
 // const ulRef = document.createElement("ul");
 // ulRef.classList.add("list-menu");
 // ulRef.classList.add("close");
-//
+// //
 //
 // ///====== функція що створюе LI і тег <a> в ньому
 //
@@ -49,15 +49,15 @@
 //     ulRef.classList.toggle('close');
 // })
 // Generate menu
-
+//
 // find element
 // const findEl = "exampleRadios2"
 // const linkEl = document.querySelector(`.form-check-input[id="${findEl}"]`);
 // console.log(linkEl)
-
-
+//
+//
 // Створюемо Функцію що оброблюе данні з бека в новий обьект що ми створили;
-
+//
 // const colorPicturesOptions = [
 //     {label : "red", color : "#c02020"},
 //     {label : "green", color : "#365522"},
@@ -73,7 +73,7 @@
 //     {label : "ye323llow", color : "#dec79c"},
 //     {label : "32", color : "#f51313"},
 // ];
-
+//
 // const elementRef = colorPicturesOptions.map((element) =>{
 //
 //     const btnRef = document.createElement("button");
@@ -90,9 +90,9 @@
 //
 //     return btnRef;
 // });
-
-
-
+//
+//
+//
 // const makeOptions = (options) => {
 //
 //     return options.map((element) => {
@@ -112,21 +112,21 @@
 //     })
 //
 // };
-//
+
 // const elementRef = makeOptions(colorOptions)
 // const rootRef = document.querySelector("#root");
 // rootRef.append(...elementRef);
-
-
-
+//
+//
+//
 // Робимо карточку продукта по данним що приходять з масивів обьектів
-
-//<article class="product">
+//
+// <article class="product">
 //     <h2 class="product-name">назва</h2>
 //     <p class="product-description"></p>
 //     <p class="product-price"></p>
 // </article>
-
+//
 // const makeProductCard = (options) => {
 //
 //     return options.map(({name,description,price})=>{
@@ -155,9 +155,9 @@
 // };
 //
 // console.log(makeProductCard(products));
-
-//======== 2=============
-
+//
+// ======== 2=============
+//
 // const rootRef = document.querySelector("#root");
 //
 // const makeProductCard = ({name,description,price}) => {

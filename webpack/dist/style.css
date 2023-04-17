@@ -1,0 +1,9 @@
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/base.sass ***!
+  \*************************************************************************************************************/
+.title-test {
+  background-color: #41b60d;
+}
+.title-test .test-color {
+  color: tomato;
+}

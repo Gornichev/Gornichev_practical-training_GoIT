@@ -260,4 +260,23 @@ body {
   border-color: red;
 }
 
+.test-color {
+  color: #41b60d;
+}
+
+.title-test {
+  color: #7e2222;
+}
+
+.webpack-test-list {
+  background-position: initial;
+}
+
+.title-test {
+  background-color: #41b60d;
+}
+.title-test .test-color {
+  color: tomato;
+}
+
 /*# sourceMappingURL=%D1%81ommon.css.map */

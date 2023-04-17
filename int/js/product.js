@@ -1,4 +1,4 @@
-// const products = [
+// export default [
 //     {
 //         name: "suzuki",
 //         price : 5000,
@@ -22,32 +22,32 @@
 //     }
 // ];
 //
-// const rootRef = document.querySelector("#root");
-//
-//
-// const makeProductCard = ({name,description,price}) => {
-//
-//     const articleRef = document.createElement("article");
-//         articleRef.classList.add("product");
-//
-//         const titleRef = document.createElement("h2");
-//         titleRef.classList.add("product-name");
-//         titleRef.textContent = name;
-//
-//         const priceRef = document.createElement("p");
-//         priceRef.classList.add("product-price");
-//         priceRef.textContent = price;
-//
-//         const dscRef = document.createElement("p");
-//         dscRef.classList.add("product-description");
-//         dscRef.textContent = description;
-//
-//         rootRef.append(articleRef);
-//         articleRef.append(titleRef,priceRef,dscRef)
-//
-//         return articleRef
-//
-// };
-//
-// const element = products.map(makeProductCard);
-// console.log(products)
+// // const rootRef = document.querySelector("#root");
+// //
+// //
+// // const makeProductCard = ({name,description,price}) => {
+// //
+// //     const articleRef = document.createElement("article");
+// //         articleRef.classList.add("product");
+// //
+// //         const titleRef = document.createElement("h2");
+// //         titleRef.classList.add("product-name");
+// //         titleRef.textContent = name;
+// //
+// //         const priceRef = document.createElement("p");
+// //         priceRef.classList.add("product-price");
+// //         priceRef.textContent = price;
+// //
+// //         const dscRef = document.createElement("p");
+// //         dscRef.classList.add("product-description");
+// //         dscRef.textContent = description;
+// //
+// //         rootRef.append(articleRef);
+// //         articleRef.append(titleRef,priceRef,dscRef)
+// //
+// //         return articleRef
+// //
+// // };
+// //
+// // const element = products.map(makeProductCard);
+// // console.log(products)

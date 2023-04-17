@@ -363,6 +363,15 @@
 //     card.classList.add("isActive");
 // };
 
+// const a = 100;
+// export default a;
+//
+// const numbers = [1,4,5,6,6,5];
+// export default numbers;
 
+const person = {
+    name : "lena",
+    age: 30,
+};
 
-export default [1,4,5,5,67];
+export default person;
