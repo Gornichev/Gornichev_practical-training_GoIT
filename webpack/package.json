@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "webpack --mode=production",
     "dev": "webpack --mode=development",
-    "serve": "webpack serve --mode=development"
+    "server": "webpack  serve --mode=production"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
+    "handlebars-loader": "^1.7.3",
     "node-sass": "^8.0.0"
   }
 }

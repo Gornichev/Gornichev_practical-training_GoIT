@@ -29,6 +29,7 @@ module.exports = {
                     "sass-loader",
                  ],
             },
+            { test: /\.handlebars$/, loader: "handlebars-loader" },
         ],
     },
 };
