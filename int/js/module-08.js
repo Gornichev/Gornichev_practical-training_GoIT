@@ -43,28 +43,50 @@
 
 // Example Form
 
-const formRef = document.querySelector("#js-form");
-const textAreaRef = document.querySelector("#js-textarea");
+// const formRef = document.querySelector("#js-form");
+// const textAreaRef = document.querySelector("#js-textarea");
+//
+// window.addEventListener("load", ()=> {                   ////  \ \ читае з Local Storage що записано !
+//     const msg = localStorage.getItem("user-message");
+//
+//     if(msg){
+//         textAreaRef.textContent = msg;
+//     }
+// });
+//
+// formRef.addEventListener("submit", (e) => {           /// при події Submit LOcal Storege мае очиститися.
+//     e.preventDefault();
+//     const msg = localStorage.getItem("user-message");
+//     if(msg){
+//         localStorage.removeItem("user-message")
+//         textAreaRef.textContent = "";
+//         e.target.reset
+//     };
+// });
+//
+// textAreaRef.addEventListener("input", (e)=> {
+//     const msg = e.target.value;
+//     localStorage.setItem("user-message",msg);
+//
+// });
 
-window.addEventListener("load", ()=> {
-    const msg = localStorage.getItem("user-message");
-    if(msg){
-        textAreaRef.textContent = msg;
-    }
-});
 
-formRef.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const msg = localStorage.getItem("user-message");
-    if(msg){
-        localStorage.removeItem("user-message")
-        textAreaRef.textContent = "";
-        e.target.reset
-    };
-});
+// Шаблонізація
+const motoElementList = ["wheel", "motor", "transmission","Helm"];
 
-textAreaRef.addEventListener("input", (e)=> {
-    const msg = e.target.value;
-    localStorage.setItem("user-message",msg);
+const listRef = document.querySelector(".js-list");
+//
+// motoElementList.forEach((element)=>{
+//
+//     listRef.innerHTML += `<li class="changeColor"> This is ${element}</li>`
+// });
 
-});
+const markup = motoElementList.map((element)=>{
+
+    return `<li class="changeColor"> This is ${element}</li>`
+}).join("");
+
+listRef.insertAdjacentHTML("beforeend", markup);
+
+
+
