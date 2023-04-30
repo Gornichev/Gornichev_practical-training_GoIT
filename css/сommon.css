@@ -260,6 +260,31 @@ body {
   margin: 15px 0;
 }
 
+.gallery {
+  border: 2px solid black;
+}
+.gallery .gallery-title {
+  text-align: center;
+  font-size: 30px;
+}
+.gallery img {
+  width: 350px;
+  height: auto;
+}
+.gallery .gallery-content {
+  display: flex;
+  justify-content: space-between;
+}
+.gallery .gallery-content .gallery-item {
+  margin: 0;
+}
+.gallery .gallery-content .gallery-text {
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 5px;
+}
+
 .index {
   color: blue;
   border: 0;
@@ -282,10 +307,22 @@ body {
 }
 
 .title-test {
-  background-color: #41b60d;
+  background-color: beige;
 }
 .title-test .test-color {
   color: tomato;
+}
+
+.section-menu {
+  font-size: 16px;
+}
+.section-menu .title-menu {
+  color: tomato;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.section-menu .menu-list {
+  list-style: none;
 }
 
 /*# sourceMappingURL=%D1%81ommon.css.map */

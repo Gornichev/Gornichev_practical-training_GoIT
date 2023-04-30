@@ -72,21 +72,74 @@
 
 
 // Шаблонізація
-const motoElementList = ["wheel", "motor", "transmission","Helm"];
-
-const listRef = document.querySelector(".js-list");
+// const motoElementList = ["wheel", "motor", "transmission","Helm"];
 //
-// motoElementList.forEach((element)=>{
+// const listRef = document.querySelector(".js-list");
+// //
+// // motoElementList.forEach((element)=>{
+// //
+// //     listRef.innerHTML += `<li class="changeColor"> This is ${element}</li>`
+// // });
 //
-//     listRef.innerHTML += `<li class="changeColor"> This is ${element}</li>`
-// });
+// const markup = motoElementList.map((element)=>{
+//
+//     return `<li class="changeColor"> This is ${element}</li>`
+// }).join("");
+//
+// listRef.insertAdjacentHTML("beforeend", markup);
+// Hendlebars
+// const motoElementList = ["wheel", "motor", "transmission","Helm","bars"];
+//
+// const template = document.querySelector(".template-demo").innerHTML;
+// const rootRef = document.querySelector("#root");
+//
+// const templateScript = Handlebars.compile(template);
+// const markup = templateScript(motoElementList);
+//
+// rootRef.insertAdjacentHTML("beforeend",markup);
 
-const markup = motoElementList.map((element)=>{
-
-    return `<li class="changeColor"> This is ${element}</li>`
-}).join("");
-
-listRef.insertAdjacentHTML("beforeend", markup);
+// Gallery whith Handlebars
 
 
+
+const galleryItem = [
+    {   img: "https://cdn.pixabay.com/photo/2023/04/22/02/19/roller-coaster-7942853_1280.jpg",
+        name:"rollerCoaster"
+    },
+    {
+        img: "https://cdn.pixabay.com/photo/2023/04/18/18/38/atv-7935771_1280.jpg",
+        name : "bike"
+    },
+    {
+        img: "https://media.istockphoto.com/id/1084805740/uk/%D1%84%D0%BE%D1%82%D0%BE/%D0%B2%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D1%96-%D0%BF%D0%B0%D0%BB%D1%8C%D0%BC%D0%B8.jpg?s=1024x1024&w=is&k=20&c=HPAPLmyoMW-EtvqOdQxS51Pa7krjtYtumBLFugg9o48=",
+        name: "nature"
+    }
+];
+
+
+// import  Handlebars from  ".handlebars"
+
+const template = document.querySelector("#gallery").innerHTML;
+const rootRef = document.querySelector(".root");
+
+const templateScript = Handlebars.compile(template);
+const markup = templateScript(galleryItem);
+
+rootRef.insertAdjacentHTML("beforeend",markup)
+
+// Hendlebars
+// console.log('!!')
+
+// REpeta Module-08--------------------
+
+// import func from "/int/js/module-07.js"
+// console.log(func);
+
+// import {getId as testGetId} from  "/int/js/module-07.js";
+// console.log(testGetId())
+
+
+import * as data from  "/int/js/module-07.js";
+
+console.log(data);
 

@@ -24,6 +24,32 @@
     </div>
 <!--local-storage-->
     <ul class="js-list"></ul>
+
+<!--templates HendleBars    -->
+<div id="root"></div>
+<template class="template-demo">
+    <ul class="list">
+        {{#each this}}
+        <li class="list-item">{{this}}</li>
+        {{/each}}
+    </ul>
+</template>
+<!--    // Gallery whith Handlebars-->
+<div class="root"></div>
+<template id="gallery">
+    <div class="gallery">
+        <h2 class="gallery-title">Gallery</h2>
+        <div class="gallery-content">
+            {{#each this}}
+            <div class="gallery-item">
+                <img src="{{this.img}}" alt="{{this.name}}" class="gallery-img">
+                <p class="gallery-text">{{this.name}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</template>
+<!--templates HendleBars    -->
 </div>
 <script
         async
@@ -31,7 +57,8 @@
         integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
-></script>
+></script>hendlebars
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script src="int/js/secondTask.js" type="module"></script>
 <script src="int/js/allTask.js" type="module"></script>
 <script src="int/js/thisAndOther.js" type="module" ></script>

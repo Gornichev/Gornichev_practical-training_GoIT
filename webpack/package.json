@@ -2,11 +2,11 @@
   "name": "webpack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
     "prod": "webpack --mode=production",
     "dev": "webpack --mode=development",
-    "server": "webpack  serve --mode=production"
+    "server": "webpack  serve --mode=production --open"
   },
   "keywords": [],
   "author": "",

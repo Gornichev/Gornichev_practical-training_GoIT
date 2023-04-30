@@ -362,16 +362,29 @@
 // function addActiveCard (card) {
 //     card.classList.add("isActive");
 // };
-
+//
 // const a = 100;
 // export default a;
+
 //
 // const numbers = [1,4,5,6,6,5];
 // export default numbers;
 
-const person = {
-    name : "lena",
-    age: 30,
+// export default function isUpgrade (status)  {
+//     return `Hello`
+// };
+export const getId = ()=> {
+    console.log("Get")
 };
 
-export default person;
+export const setId = ()=> {
+    console.log("set")
+};
+
+export const a = 22;
+export let b = "moment"
+
+// export default {
+//     getId,
+//     setId,
+// };

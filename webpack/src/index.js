@@ -1,13 +1,18 @@
-import colors from  "../js/main"
-import "./sass/base.sass"
-import "./templating/test.handlebars"
+import colors from  "../js/main";
+import "./sass/base.sass";
+import menuTemplates from "./templates/menu.handlebars";
+import menuData from "./menuData";
+import refs from "../js/refs";
 
-colors.map((color) =>{
-    console.log(`${color.hex} and ${color.rgb}`);
-});
 
-console.log("hello nigga");
-console.log("Hello")
+const markup = menuTemplates(menuData);
+refs.root.innerHTML = markup;
+
+
+// colors.map((color) =>{
+//     console.log(`${color.hex} and ${color.rgb}`);
+// });
+
 // class User {
 //     #age
 //     constructor(status) {
@@ -20,6 +25,6 @@ console.log("Hello")
 // };
 
 // const viva = new User("incognito", "26");
-console.log("Hello")
+// console.log("Hello")
 
 
