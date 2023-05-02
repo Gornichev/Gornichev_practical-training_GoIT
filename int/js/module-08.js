@@ -37,7 +37,7 @@
 //     console.log(findUser)
 // };
 //
-// // Revove
+// // Remove
 //
 // localStorage.removeItem("user-info");
 
@@ -48,10 +48,9 @@
 //
 // window.addEventListener("load", ()=> {                   ////  \ \ читае з Local Storage що записано !
 //     const msg = localStorage.getItem("user-message");
-//
 //     if(msg){
 //         textAreaRef.textContent = msg;
-//     }
+//     };
 // });
 //
 // formRef.addEventListener("submit", (e) => {           /// при події Submit LOcal Storege мае очиститися.
@@ -69,7 +68,6 @@
 //     localStorage.setItem("user-message",msg);
 //
 // });
-
 
 // Шаблонізація
 // const motoElementList = ["wheel", "motor", "transmission","Helm"];
@@ -100,32 +98,30 @@
 
 // Gallery whith Handlebars
 
-
-
-const galleryItem = [
-    {   img: "https://cdn.pixabay.com/photo/2023/04/22/02/19/roller-coaster-7942853_1280.jpg",
-        name:"rollerCoaster"
-    },
-    {
-        img: "https://cdn.pixabay.com/photo/2023/04/18/18/38/atv-7935771_1280.jpg",
-        name : "bike"
-    },
-    {
-        img: "https://media.istockphoto.com/id/1084805740/uk/%D1%84%D0%BE%D1%82%D0%BE/%D0%B2%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D1%96-%D0%BF%D0%B0%D0%BB%D1%8C%D0%BC%D0%B8.jpg?s=1024x1024&w=is&k=20&c=HPAPLmyoMW-EtvqOdQxS51Pa7krjtYtumBLFugg9o48=",
-        name: "nature"
-    }
-];
+// const galleryItem = [
+//     {   img: "https://cdn.pixabay.com/photo/2023/04/22/02/19/roller-coaster-7942853_1280.jpg",
+//         name:"rollerCoaster"
+//     },
+//     {
+//         img: "https://cdn.pixabay.com/photo/2023/04/18/18/38/atv-7935771_1280.jpg",
+//         name : "bike"
+//     },
+//     {
+//         img: "https://media.istockphoto.com/id/1084805740/uk/%D1%84%D0%BE%D1%82%D0%BE/%D0%B2%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D1%96-%D0%BF%D0%B0%D0%BB%D1%8C%D0%BC%D0%B8.jpg?s=1024x1024&w=is&k=20&c=HPAPLmyoMW-EtvqOdQxS51Pa7krjtYtumBLFugg9o48=",
+//         name: "nature"
+//     }
+// ];
 
 
 // import  Handlebars from  ".handlebars"
 
-const template = document.querySelector("#gallery").innerHTML;
-const rootRef = document.querySelector(".root");
-
-const templateScript = Handlebars.compile(template);
-const markup = templateScript(galleryItem);
-
-rootRef.insertAdjacentHTML("beforeend",markup)
+// const template = document.querySelector("#gallery").innerHTML;
+// const rootRef = document.querySelector(".root");
+//
+// const templateScript = Handlebars.compile(template);
+// const markup = templateScript(galleryItem);
+//
+// rootRef.insertAdjacentHTML("beforeend",markup)
 
 // Hendlebars
 // console.log('!!')
@@ -138,8 +134,55 @@ rootRef.insertAdjacentHTML("beforeend",markup)
 // import {getId as testGetId} from  "/int/js/module-07.js";
 // console.log(testGetId())
 
-
 import * as data from  "/int/js/module-07.js";
+// console.log(data);
 
-console.log(data);
+// localStorage.setItem("data",JSON.stringify(data));
+// const saveData = JSON.parse(localStorage.getItem("data"));
+// console.log(saveData)
 
+// Example:
+// import throttle from 'lodash.throttle';
+// const throttle = require('lodash.throttle')
+
+// const refs = {
+//     form : document.querySelector("#js-form"),
+//     textArea : document.querySelector("#js-textarea"),
+//     inputNAme : document.querySelector("#name-input-js")
+// };
+//
+// const lodash = _;
+//
+// refs.form.addEventListener("submit",onFormSubmit);
+// refs.textArea.addEventListener("input",lodash.throttle(onTextareaInput,2000));
+//
+// const STORAGE_KEY = "message";
+// populateTextarea();
+//
+// function populateTextarea (e) {
+//     const saveMsg = localStorage.getItem(STORAGE_KEY);
+//     if(saveMsg){
+//         refs.textArea.value = saveMsg;
+//     };
+// };
+//
+// function onTextareaInput (e){
+//     const msg = e.target.value;
+//     localStorage.setItem(STORAGE_KEY,msg);
+// };
+//
+// function onFormSubmit (e) {
+//     e.preventDefault();
+//     console.log("get_form");
+//     e.target.reset();
+//     localStorage.removeItem(STORAGE_KEY)
+// };
+//
+// const formData = {};
+//
+// refs.form.addEventListener("input", lodash.throttle(saveData,3000));
+//
+// function saveData (e) {
+//     formData[e.target.name] = e.target.value;
+//     console.log(formData);
+// };
