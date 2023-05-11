@@ -4,10 +4,13 @@ import menuTemplates from "./templates/menu.handlebars";
 import menuData from "./menuData";
 import refs from "../js/refs";
 import lodash from 'lodash.throttle'
-
+import {Modal} from "bootstrap.native"
 
 const markup = menuTemplates(menuData);
 refs.root.innerHTML = markup;
+
+const modal = new Modal("#exampleModal");
+modal.show()
 
 
 // colors.map((color) =>{
