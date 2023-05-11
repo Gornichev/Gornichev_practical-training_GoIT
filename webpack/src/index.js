@@ -3,6 +3,7 @@ import "./sass/base.sass";
 import menuTemplates from "./templates/menu.handlebars";
 import menuData from "./menuData";
 import refs from "../js/refs";
+import lodash from 'lodash.throttle'
 
 
 const markup = menuTemplates(menuData);

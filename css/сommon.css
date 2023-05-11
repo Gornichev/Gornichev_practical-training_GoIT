@@ -285,6 +285,24 @@ body {
   margin: 5px;
 }
 
+.section-note {
+  padding: 50px;
+  text-align: center;
+  display: block;
+}
+.section-note .alert {
+  width: 300px;
+  background-color: #41b60d;
+  padding: 20px;
+}
+.section-note .alert:focus {
+  background-color: #E5E5E5;
+}
+
+.section-note-hide {
+  display: none;
+}
+
 .index {
   color: blue;
   border: 0;
