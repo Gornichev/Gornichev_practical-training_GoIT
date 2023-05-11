@@ -13,12 +13,12 @@
 //     clearInterval(intervalId);
 // };
 //
-function startTimer () {
-
-    setTimeout(()=> {
-        console.log("Start Timer");
-    },2000);
-};
+// function startTimer () {
+//
+//     setTimeout(()=> {
+//         console.log("Start Timer");
+//     },2000);
+// };
 //
 // function startInterval () {
 //   intervalId = setInterval(()=> {
@@ -36,21 +36,39 @@ function startTimer () {
 
 // Notification
 
-const notification = document.querySelector(".js-alert");
-notification.addEventListener("click",onNotification);
+// const notification = document.querySelector(".js-alert");
+// notification.addEventListener("click",offNotification);
+//
+// const NOTIFICATION_DELAY = 4000;
+// let timerId = null;
+// onNotification();
+//
+// function offNotification () {
+//     notification.classList.add("section-note-hide");
+//     clearTimeout(timerId);
+// };
+//
+// function onNotification () {
+//     notification.classList.remove("section-note-hide");
+//    const timerId = setTimeout(()=> {
+//         offNotification();
+//         console.log("off Note")
+//     },NOTIFICATION_DELAY)
+// };
 
-const NOTIFICATION_DELAY = 2000;
-onNotification();
+// reiteration
 
-function offNotification () {
-    notification.classList.add("section-note-hide");
-};
-
-function onNotification () {
-    notification.classList.remove("section-note-hide");
-    setTimeout(()=> {
-        offNotification();
-        console.log("off Note")
-    },NOTIFICATION_DELAY)
-};
+// const PROMPT_DELAY = 1000;
+// let counter = 0;
+// const MAX_PROMPT_NUMBER = 3;
+//
+// const intervalId = setInterval(()=>{
+//     if(counter === MAX_PROMPT_NUMBER){
+//         console.log("Enough!");
+//         clearInterval(intervalId);
+//         return;
+//     };
+//     console.log(`Follow us lady  ${Date.now()}`);
+//     counter += 1;
+// },PROMPT_DELAY);
 

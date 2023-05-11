@@ -303,6 +303,19 @@ body {
   display: none;
 }
 
+.modal-user {
+  text-align: center;
+}
+
+.modal-content {
+  display: block;
+  padding: 10px;
+}
+
+.modal-footer {
+  padding: 5px;
+}
+
 .index {
   color: blue;
   border: 0;
