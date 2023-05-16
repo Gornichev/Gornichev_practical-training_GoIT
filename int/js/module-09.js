@@ -1,3 +1,5 @@
+import {Modal,Button} from "../../ext/bootstrap.native-master/dist/bootstrap-native.mjs";
+
 // let getEl = selector => document.querySelector("selector");
 
 // const btnTimeout = document.querySelector("#js-btn-timeout");
@@ -72,3 +74,37 @@
 //     counter += 1;
 // },PROMPT_DELAY);
 
+// const modalContent = document.querySelector(".js-modal-content");
+//
+//
+// function onModal () {
+//     modalContent.classList.add(modal-content-show);
+// };
+//
+// setTimeout(onModal,2000)
+
+// const PROMPT_DELAY = 1000;
+// let counter = 0;
+// const MAX_PROMPT_NUMBER = 3;
+
+// Modal at SetTimeOut
+// const modal = new Modal("#userModal");
+// const DELAY_TIME = 3000;
+// const refs = {
+//     modalUser : document.querySelector("#userModal")
+// };
+// modal.show()
+// refs.modalUser.addEventListener("hide.bs.modal", ()=>{
+//     console.log("Close")
+// })
+// function openModal () {
+//     modal.show();
+//     console.log("OPEN MODAl");
+// };
+//
+// setTimeout(openModal,DELAY_TIME)
+
+// Timer
+const date = new Date();
+
+console.log(date.getTime())

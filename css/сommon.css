@@ -115,25 +115,6 @@ body {
   padding-bottom: 40px;
 }
 
-.modal-content {
-  display: none;
-  position: relative;
-  left: 35%;
-  right: 50%;
-  width: 400px;
-  height: 200px;
-  border: 10px solid black;
-  padding: 20px;
-  margin: 0;
-  background-color: #41b60d;
-}
-.modal-content .icon-close {
-  position: absolute;
-  right: 0;
-  top: -5px;
-  padding: 15px;
-}
-
 .root {
   padding: 20px;
   border-bottom: 2px solid black;
@@ -305,11 +286,6 @@ body {
 
 .modal-user {
   text-align: center;
-}
-
-.modal-content {
-  display: block;
-  padding: 10px;
 }
 
 .modal-footer {

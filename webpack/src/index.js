@@ -4,7 +4,6 @@ import menuTemplates from "./templates/menu.handlebars";
 import menuData from "./menuData";
 import refs from "../js/refs";
 import lodash from 'lodash.throttle'
-
 import {Modal,Button,Carousel, Collapse, Dropdown} from "bootstrap.native"
 
 const modal = new Modal("#exampleModal");
@@ -22,7 +21,7 @@ const  modalUser = document.querySelector("#exampleModal")
 
 modalUser.addEventListener("hide.bs.modal", ()=> {
     console.log('!!!')
-})
+});
 
 
 
