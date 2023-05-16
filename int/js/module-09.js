@@ -106,20 +106,104 @@ import {Modal,Button} from "../../ext/bootstrap.native-master/dist/bootstrap-nat
 
 // Timer
 
-const timer = {
+// const timer = {
+//
+//     start(){
+//        let counter = 0;
+//         const StartTime = Date.now()
+//         setInterval(()=>{
+//             const currentTime = Date.now()
+//             // console.log(`currentTime -> ${currentTime}`)
+//             counter += 1;
+//             console.log(`${counter} sec later`);
+//             const differenceTime = currentTime - StartTime;
+//             console.log(differenceTime)
+//
+//         },1000)
+//     },
+// }
+// timer.start()
+// TIMER
 
-    start(){
-       let counter = 0;
-        const StartTime = Date.now()
-        setInterval(()=>{
-            const currentTime = Date.now()
-            // console.log(`currentTime -> ${currentTime}`)
-            counter += 1;
-            console.log(`${counter} sec later`);
-            const differenceTime = currentTime - StartTime;
-            console.log(differenceTime)
+// class CountdownTimer {
+//     constructor({ selector, targetDate }) {
+//         this.selector = selector;
+//         this.targetDate = targetDate;
+//         this.timerId = null;
+//     }
+//
+//     start() {
+//         this.timerId = setInterval(() => {
+//             const currentTime = Date.now();
+//             const time = this.targetDate - currentTime;
+//             this.updateClockface(time);
+//             if (time <= 0) {
+//                 this.stop();
+//             }
+//         }, 1000);
+//     }
+//
+//     stop() {
+//         clearInterval(this.timerId);
+//         this.timerId = null;
+//         this.updateClockface(0);
+//     }
+//
+//     pad(value) {
+//         return String(value).padStart(2, '0');
+//     }
+//
+//     updateClockface(time) {
+//         const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+//         const hours = this.pad(
+//             Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+//         );
+//         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+//         const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+//
+//         const timerElement = document.querySelector(this.selector);
+//
+//         timerElement.querySelector('[data-value="days"]').textContent = days;
+//         timerElement.querySelector('[data-value="hours"]').textContent = hours;
+//         timerElement.querySelector('[data-value="mins"]').textContent = mins;
+//         timerElement.querySelector('[data-value="secs"]').textContent = secs;
+//     }
+// }
+//
+// const timer = new CountdownTimer({
+//     selector: '#timer-1',
+//     targetDate: new Date('May 18, 2023 00:00:00'),
+// });
+//
+// timer.start();
 
-        },1000)
-    },
-}
-timer.start()
+// colorChange
+const colors = [
+    '#6e2121',
+    '#f3c921',
+    '#4CAF50',
+];
+
+const startButton = document.querySelector('button[data-action="start"]');
+const stopButton = document.querySelector("button[data-action='stop']");
+
+let intervalId = null;
+const body = document.body
+
+startButton.addEventListener('click', () => {
+    if (!intervalId) {
+        intervalId = setInterval(() => {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            body.style.backgroundColor = randomColor;
+        }, 1000);
+    }
+});
+
+stopButton.addEventListener('click', () => {
+    clearInterval(intervalId);
+    intervalId = null;
+});
+
+
+
+
