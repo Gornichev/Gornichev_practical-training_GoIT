@@ -105,6 +105,21 @@ import {Modal,Button} from "../../ext/bootstrap.native-master/dist/bootstrap-nat
 // setTimeout(openModal,DELAY_TIME)
 
 // Timer
-const date = new Date();
 
-console.log(date.getTime())
+const timer = {
+
+    start(){
+       let counter = 0;
+        const StartTime = Date.now()
+        setInterval(()=>{
+            const currentTime = Date.now()
+            // console.log(`currentTime -> ${currentTime}`)
+            counter += 1;
+            console.log(`${counter} sec later`);
+            const differenceTime = currentTime - StartTime;
+            console.log(differenceTime)
+
+        },1000)
+    },
+}
+timer.start()
