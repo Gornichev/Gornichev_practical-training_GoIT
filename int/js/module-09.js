@@ -178,32 +178,42 @@ import {Modal,Button} from "../../ext/bootstrap.native-master/dist/bootstrap-nat
 // timer.start();
 
 // colorChange
-const colors = [
-    '#6e2121',
-    '#f3c921',
-    '#4CAF50',
-];
+// const colors = [
+//     '#6e2121',
+//     '#f3c921',
+//     '#4CAF50',
+// ];
+//
+// const startButton = document.querySelector('button[data-action="start"]');
+// const stopButton = document.querySelector("button[data-action='stop']");
+//
+// let intervalId = null;
+// const body = document.body
+//
+// startButton.addEventListener('click', () => {
+//     if (!intervalId) {
+//         intervalId = setInterval(() => {
+//             const randomColor = colors[Math.floor(Math.random() * colors.length)];
+//             body.style.backgroundColor = randomColor;
+//         }, 1000);
+//     }
+// });
+//
+// stopButton.addEventListener('click', () => {
+//     clearInterval(intervalId);
+//     intervalId = null;
+// });
 
-const startButton = document.querySelector('button[data-action="start"]');
-const stopButton = document.querySelector("button[data-action='stop']");
 
-let intervalId = null;
-const body = document.body
+const promise = new Promise(((resolve, reject) => {
 
-startButton.addEventListener('click', () => {
-    if (!intervalId) {
-        intervalId = setInterval(() => {
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            body.style.backgroundColor = randomColor;
-        }, 1000);
+    const info = Math.random() > 0.5;
+    if (info){
+        resolve ("Victory");
     }
-});
+    reject ("defeat");
+}))
 
-stopButton.addEventListener('click', () => {
-    clearInterval(intervalId);
-    intervalId = null;
-});
-
-
-
-
+promise.then(resolve => {
+    console.log("!!!!")
+})
