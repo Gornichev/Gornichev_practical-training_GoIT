@@ -349,20 +349,54 @@ import {Modal,Button} from "../../ext/bootstrap.native-master/dist/bootstrap-nat
 
 // -------#Examples----------
 
-function fetchPokemonById (id ) {
+// function fetchPokemonById (id ) {
+//
+//    return  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+//                 .then(r => r.json())
+// } ;
+//
+// fetchPokemonById(1).then(onFetchSuccess).catch(onFetchError);
+//
+// function onFetchSuccess (pokemon) {
+//     console.log(pokemon);
+// };
+//
+// function onFetchError (error) {
+//     console.log("ERROR!!!")
+//     console.log(error);
+// }
+//
 
-   return  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-                .then(r => r.json())
-} ;
+// Hippodrome
 
-fetchPokemonById(1).then(onFetchSuccess).catch(onFetchError);
-
-function onFetchSuccess (pokemon) {
-    console.log(pokemon);
+const refs = {
+    btnStart : document.querySelector(".js-btn-start"),
+    winner : document.querySelector(".js-winner"),
+    progress : document.querySelector(".js-progress")
 };
 
-function onFetchError (error) {
-    console.log("ERROR!!!")
-    console.log(error);
-}
+const horses = [
+    "Chicken",
+    "Pig",
+    "Oliver",
+    "Fanny Devils",
+    "Mather-case"
+];
 
+function run (horse) {
+    return new Promise(resolve => {
+
+        const time = randomIntegerFromInterval(2000,4000);
+        setTimeout(()=>{
+            resolve({horse,time})
+        },time)
+    })
+};
+
+const promises = horses.map(horse => run(horse));
+
+Promise.all(promises).then(x => console.log(x))
+
+function randomIntegerFromInterval  (min, max)  {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
