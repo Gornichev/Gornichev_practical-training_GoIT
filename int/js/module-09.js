@@ -368,13 +368,6 @@ import {Modal,Button} from "../../ext/bootstrap.native-master/dist/bootstrap-nat
 //
 
 // Hippodrome
-
-const refs = {
-    btnStart : document.querySelector(".js-btn-start"),
-    winner : document.querySelector(".js-winner"),
-    progress : document.querySelector(".js-progress")
-};
-
 const horses = [
     "Chicken",
     "Pig",
@@ -382,6 +375,43 @@ const horses = [
     "Fanny Devils",
     "Mather-case"
 ];
+
+const refs = {
+    btnStart : document.querySelector(".js-btn-start"),
+    winner : document.querySelector(".js-winner"),
+    progress : document.querySelector(".js-progress"),
+    tableBody : document.querySelector(".js-table-body")
+};
+
+refs.btnStart.addEventListener("click",getStartRace);
+
+function getStartRace () {
+    const promises = horses.map(horse => run(horse));
+
+    Promise.race(promises).then(({horse,time}) => {
+        refs.winner.textContent = `Winner < ${horse} > time [${time}]`;
+
+    });
+
+    Promise.all(promises).then((horses) => {
+        horses.map(({horse,time}) => {
+            const tr = `<tr><td></td><td>${horse}</td><td>${time}</td></tr>`
+            refs.tableBody.insertAdjacentHTML("beforeend",tr)
+        })
+    });
+
+    updateProgressField("Race Start! Bids are no longer accepted.");
+    updateWinnerField("");
+};
+
+
+function updateWinnerField (message) {
+    refs.winner.textContent = message;
+};
+
+function updateProgressField (message) {
+    refs.progress.textContent = message
+};
 
 function run (horse) {
     return new Promise(resolve => {
@@ -393,10 +423,9 @@ function run (horse) {
     })
 };
 
-const promises = horses.map(horse => run(horse));
-
-Promise.all(promises).then(x => console.log(x))
-
 function randomIntegerFromInterval  (min, max)  {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+
+

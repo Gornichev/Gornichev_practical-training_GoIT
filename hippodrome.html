@@ -10,9 +10,21 @@
 </head>
 <body>
 <section class="section-hippodrome">
-    <button type="button" class="js-btn-start">Start race</button>
-    <p class="js-winner"></p>
-    <p class="js-progress"></p>
+    <button type="button" class="js-btn-start btn-start">Start race</button>
+    <div class="scoreboard">
+        <p class="progress-css js-progress"></p>
+        <p class="js-winner winner"></p>
+        <table class="js-result-table result-table">
+            <thead>
+            <tr>
+                <th>Race</th>
+                <th>Horses</th>
+                <th>Time</th>
+            </tr>
+            </thead>
+            <tbody class="js-table-body"></tbody>
+        </table>
+    </div>
 </section>
 <script
         async

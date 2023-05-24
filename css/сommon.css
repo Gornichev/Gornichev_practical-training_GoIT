@@ -315,6 +315,44 @@ body {
   color: #7e2222;
 }
 
+.section-hippodrome {
+  padding: 20px;
+  background-color: #fff3cd;
+  text-align: center;
+}
+.section-hippodrome .btn-start {
+  padding: 5px 15px;
+  background-color: #a52834;
+  color: #ffffff;
+}
+.section-hippodrome .scoreboard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.section-hippodrome .scoreboard .progress-css {
+  font-size: 25px;
+  color: #b22626;
+}
+.section-hippodrome .scoreboard .winner {
+  font-size: 20px;
+  color: #0b5ed7;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.section-hippodrome .scoreboard .result-table {
+  border: 1px solid black;
+  padding: 20px;
+}
+.section-hippodrome .scoreboard .result-table th {
+  border: 1px solid black;
+}
+.section-hippodrome .scoreboard .result-table td {
+  border: 1px solid black;
+}
+
 .index {
   color: blue;
   border: 0;
