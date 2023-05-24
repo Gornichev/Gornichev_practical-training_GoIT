@@ -380,29 +380,61 @@ const refs = {
     btnStart : document.querySelector(".js-btn-start"),
     winner : document.querySelector(".js-winner"),
     progress : document.querySelector(".js-progress"),
-    tableBody : document.querySelector(".js-table-body")
+    tableBody : document.querySelector(".js-table-body"),
+    lastHorse : document.querySelector(".js-last-horse")
 };
 
 refs.btnStart.addEventListener("click",getStartRace);
+
+function run (horse) {
+    return new Promise((resolve,reject) => {
+
+        const time = randomIntegerFromInterval(2000,4000);
+
+        setTimeout(()=>{
+            resolve({horse,time});
+            reject("NO START")
+        },time)
+    })
+};
 
 function getStartRace () {
     const promises = horses.map(horse => run(horse));
 
     Promise.race(promises).then(({horse,time}) => {
-        refs.winner.textContent = `Winner < ${horse} > time [${time}]`;
+        refs.winner.textContent = `Winner : < ${horse} > time [${time}]`;
 
-    });
+    }).catch(x => console.log(x));
 
     Promise.all(promises).then((horses) => {
-        horses.map(({horse,time}) => {
-            const tr = `<tr><td></td><td>${horse}</td><td>${time}</td></tr>`
-            refs.tableBody.insertAdjacentHTML("beforeend",tr)
+
+
+        horses.forEach(({horse,time},idx) => {
+
+            const tr = `<tr><td>${idx +1}</td><td>${horse}</td><td>${time}</td></tr>`
+            refs.tableBody.insertAdjacentHTML("beforeend",tr);
+
+            const lowestTime = getLowestTime(horses);
+
         })
     });
 
     updateProgressField("Race Start! Bids are no longer accepted.");
     updateWinnerField("");
 };
+
+function getLowestTime(horses) {
+    let lowestTime = 0;
+
+    horses.forEach(({ time ,horse }) => {
+        if (time > lowestTime) {
+            lowestTime = time;
+        }
+        refs.lastHorse.textContent = `Worst time : <${horse}> [${lowestTime}]`
+    });
+
+    return lowestTime;
+}
 
 
 function updateWinnerField (message) {
@@ -411,16 +443,6 @@ function updateWinnerField (message) {
 
 function updateProgressField (message) {
     refs.progress.textContent = message
-};
-
-function run (horse) {
-    return new Promise(resolve => {
-
-        const time = randomIntegerFromInterval(2000,4000);
-        setTimeout(()=>{
-            resolve({horse,time})
-        },time)
-    })
 };
 
 function randomIntegerFromInterval  (min, max)  {

@@ -352,6 +352,10 @@ body {
 .section-hippodrome .scoreboard .result-table td {
   border: 1px solid black;
 }
+.section-hippodrome .scoreboard .last-horse {
+  font-size: 16px;
+  color: #251315;
+}
 
 .index {
   color: blue;
