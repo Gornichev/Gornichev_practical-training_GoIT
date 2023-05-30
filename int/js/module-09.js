@@ -368,86 +368,86 @@ import {Modal,Button} from "../../ext/bootstrap.native-master/dist/bootstrap-nat
 //
 
 // Hippodrome
-const horses = [
-    "Chicken",
-    "Pig",
-    "Oliver",
-    "Fanny Devils",
-    "Mather-case"
-];
-
-const refs = {
-    btnStart : document.querySelector(".js-btn-start"),
-    winner : document.querySelector(".js-winner"),
-    progress : document.querySelector(".js-progress"),
-    tableBody : document.querySelector(".js-table-body"),
-    lastHorse : document.querySelector(".js-last-horse")
-};
-
-refs.btnStart.addEventListener("click",getStartRace);
-
-function run (horse) {
-    return new Promise((resolve,reject) => {
-
-        const time = randomIntegerFromInterval(2000,4000);
-
-        setTimeout(()=>{
-            resolve({horse,time});
-            reject("NO START")
-        },time)
-    })
-};
-
-function getStartRace () {
-    const promises = horses.map(horse => run(horse));
-
-    Promise.race(promises).then(({horse,time}) => {
-        refs.winner.textContent = `Winner : < ${horse} > time [${time}]`;
-
-    }).catch(x => console.log(x));
-
-    Promise.all(promises).then((horses) => {
-
-
-        horses.forEach(({horse,time},idx) => {
-
-            const tr = `<tr><td>${idx +1}</td><td>${horse}</td><td>${time}</td></tr>`
-            refs.tableBody.insertAdjacentHTML("beforeend",tr);
-
-            const lowestTime = getLowestTime(horses);
-
-        })
-    });
-
-    updateProgressField("Race Start! Bids are no longer accepted.");
-    updateWinnerField("");
-};
-
-function getLowestTime(horses) {
-    let lowestTime = 0;
-
-    horses.forEach(({ time ,horse }) => {
-        if (time > lowestTime) {
-            lowestTime = time;
-        }
-        refs.lastHorse.textContent = `Worst time : <${horse}> [${lowestTime}]`
-    });
-
-    return lowestTime;
-}
-
-
-function updateWinnerField (message) {
-    refs.winner.textContent = message;
-};
-
-function updateProgressField (message) {
-    refs.progress.textContent = message
-};
-
-function randomIntegerFromInterval  (min, max)  {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-
-
+// const horses = [
+//     "Chicken",
+//     "Pig",
+//     "Oliver",
+//     "Fanny Devils",
+//     "Mather-case"
+// ];
+//
+// const refs = {
+//     btnStart : document.querySelector(".js-btn-start"),
+//     winner : document.querySelector(".js-winner"),
+//     progress : document.querySelector(".js-progress"),
+//     tableBody : document.querySelector(".js-table-body"),
+//     lastHorse : document.querySelector(".js-last-horse")
+// };
+//
+// refs.btnStart.addEventListener("click",getStartRace);
+//
+// function run (horse) {
+//     return new Promise((resolve,reject) => {
+//
+//         const time = randomIntegerFromInterval(2000,4000);
+//
+//         setTimeout(()=>{
+//             resolve({horse,time});
+//             reject("NO START")
+//         },time)
+//     })
+// };
+//
+// function getStartRace () {
+//     const promises = horses.map(horse => run(horse));
+//
+//     Promise.race(promises).then(({horse,time}) => {
+//         refs.winner.textContent = `Winner : < ${horse} > time [${time}]`;
+//
+//     }).catch(x => console.log(x));
+//
+//     Promise.all(promises).then((horses) => {
+//
+//
+//         horses.forEach(({horse,time},idx) => {
+//
+//             const tr = `<tr><td>${idx +1}</td><td>${horse}</td><td>${time}</td></tr>`
+//             refs.tableBody.insertAdjacentHTML("beforeend",tr);
+//
+//             const lowestTime = getLowestTime(horses);
+//
+//         })
+//     });
+//
+//     updateProgressField("Race Start! Bids are no longer accepted.");
+//     updateWinnerField("");
+// };
+//
+// function getLowestTime(horses) {
+//     let lowestTime = 0;
+//
+//     horses.forEach(({ time ,horse }) => {
+//         if (time > lowestTime) {
+//             lowestTime = time;
+//         }
+//         refs.lastHorse.textContent = `Worst time : <${horse}> [${lowestTime}]`
+//     });
+//
+//     return lowestTime;
+// }
+//
+//
+// function updateWinnerField (message) {
+//     refs.winner.textContent = message;
+// };
+//
+// function updateProgressField (message) {
+//     refs.progress.textContent = message
+// };
+//
+// function randomIntegerFromInterval  (min, max)  {
+//     return Math.floor(Math.random() * (max - min + 1) + min);
+// };
+//
+//
+//
