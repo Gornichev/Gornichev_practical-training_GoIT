@@ -6,24 +6,28 @@ const refs = {
     bntReadPersonage : document.querySelector("#js-bnt"),
 };
 
-function getData () {
+function getData() {
     fetch("https://rickandmortyapi.com/api/character")
-        .then(response => response.json())
-        .then((items) => {
-            const markup = items.results.map(item =>
-                `
-                    <li class="item">
-            <img src="${item.image}" alt="">
-            <p class="name">${item.name}</p>
-            <p class="gender">${item.gender}</p>
-            <p class="status">${item.status}</p>
-            <p class="id">${item.id}</p>
-        </li>
-            `
-            ).join("");
-            refs.itemList.insertAdjacentHTML("beforeend",markup)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            const markup = data.results
+                .map(
+                    ({ image, name, status, gender, location, id }) =>
+                        `<li class="item">
+              <img src="${image}" alt="">
+              <p class="name">${name}</p>
+              <p class="gender">${gender}</p>
+              <p class="status">${status}</p>
+              <p class="location">${location.name}</p>
+              <p class="id">${id}</p>
+            </li>`
+                )
+                .join("");
+
+            refs.itemList.insertAdjacentHTML("beforeend", markup);
         });
-};
+}
 
 refs.bntReadPersonage.addEventListener("click",getData);
 
