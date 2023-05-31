@@ -40,3 +40,15 @@ function getData() {
 
 refs.bntReadPersonage.addEventListener("click",getData);
 
+window.addEventListener("scroll", ()=> {
+
+    const {scrollHeight,scrollTop,clientHeight} = document.documentElement;
+
+    if(scrollTop === clientHeight - scrollHeight ) {
+
+        console.log('!!!')
+        getData();
+    };
+})
+
+
