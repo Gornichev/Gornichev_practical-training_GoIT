@@ -13,7 +13,15 @@
 <div class="root-items-card" id="root-items-card">
     <ul id="js-item-list" class="item-list">
     </ul>
-    <button type="button" id="js-bnt" class="bnt-card">Read all Personage</button>
+<!--    <button type="button" id="js-bnt" class="bnt-card">Read all Personage</button>-->
+
+    <form id="js-form-search">
+        <div class="mb-3">
+            <label for="js-input-getPokemon">Pokemon ID:</label>
+            <input type="text" id="js-input-getPokemon" name="query">
+        </div>
+        <button type="submit" class="btn btn-primary">Get Pokemon</button>
+    </form>
 </div>
 <script
         async

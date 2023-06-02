@@ -382,6 +382,7 @@ body {
 .root-items-card .item-list img {
   border-radius: 50%;
   width: 150px;
+  border: 1px solid black;
 }
 
 .index {
