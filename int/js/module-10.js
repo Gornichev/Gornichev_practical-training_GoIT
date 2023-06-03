@@ -53,46 +53,113 @@
 // })
 
 // pocemoncard
+//
+// const refs = {
+//     root : document.querySelector("#root-items-card"),
+//     itemList : document.querySelector("#js-item-list"),
+//     jsFormSearch : document.querySelector("#js-form-search")
+// };
+//
+// function fetchPokemon (pokemonId) {
+//
+//   return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+//         .then(response => response.json())
+// };
+//
+// function renderPokemonCard (pokemon) {
+//
+//         const markup = `
+//             <li class="item">
+//               <img src="${pokemon.sprites.front_default}" alt="">
+//               <p class="sprites">Name: ${pokemon.name}</p>
+//               <p class="weight"> weight: ${pokemon.weight}</p>
+//               <p class="id">Stats : ${pokemon.id}</p>
+//             </li>`
+//
+//     refs.itemList.insertAdjacentHTML("beforeend", markup);
+// };
+//
+// refs.jsFormSearch.addEventListener("submit",getPokemon);
+//
+// function getPokemon (event) {
+//     event.preventDefault();
+//
+//     const form = event.target;
+//     const pokemonId = form.elements.query.value;
+//
+//     fetchPokemon(pokemonId)
+//         .then(renderPokemonCard)
+//         .catch(onFetchError)
+//         .finally(()=> form.reset())
+// };
+//
+// function onFetchError (error) {
+//     alert("Wrong request")
+// };
 
-const refs = {
-    root : document.querySelector("#root-items-card"),
-    itemList : document.querySelector("#js-item-list"),
-    jsFormSearch : document.querySelector("#js-form-search")
-};
+// PixabayApi
 
-function fetchPokemon (pokemonId) {
+// fetch("https://pixabay.com/api/?key=36998604-a22208bfbc6a6ebb3feca8fcb&q=dog&lang=en&image_type=photo")
+// .then(r => r.json())
+// .then(data => {
+//     data.hits.map(element => {
+//         console.log(element.id)
+//     })
+// } )
 
-  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+// Home WOrk
+// Створи невеликий додаток пошуку даних про країну по її частковому або повному імені.
+//    Використовуй Rest Countries API v2, а саме ендпоінт /name, який повертає масив
+// об'єктів країн, що потрапили під критерій пошуку.
+
+// function searchCountryByName (name) {
+//     fetch(`https://restcountries.com/v3.1/all?fields=name/${name}`)
+//         .then(response => response.json())
+//         .then(countries => {
+//
+//             if(countries > 0) {
+//                 countries.forEach (country => {
+//                     console.log(country)
+//                     console.log(`Name: ${country.name}`);
+//                 })
+//             }
+//         })
+// };
+//
+// searchCountryByName("Ukraine")
+
+// const refs = {
+//     inputSource : document.querySelector(".js-input-source-countries"),
+// };
+//
+// refs.inputSource.addEventListener("input",onInputValue);
+//
+// function onInputValue (e) {
+//     searchCountryByName(e.target.value)
+//
+// };
+
+function searchCountryByName(name) {
+    fetch(`https://restcountries.com/v2/name/${name}`)
         .then(response => response.json())
-};
-
-function renderPokemonCard (pokemon) {
-
-        const markup = `
-            <li class="item">
-              <img src="${pokemon.sprites.front_default}" alt="">
-              <p class="sprites">Name: ${pokemon.name}</p>
-              <p class="weight"> weight: ${pokemon.weight}</p>
-              <p class="id">Stats : ${pokemon.id}</p>
-            </li>`
-
-    refs.itemList.insertAdjacentHTML("beforeend", markup);
-};
-
-refs.jsFormSearch.addEventListener("submit",getPokemon);
-
-function getPokemon (event) {
-    event.preventDefault();
-
-    const form = event.target;
-    const pokemonId = form.elements.query.value;
-
-    fetchPokemon(pokemonId)
-        .then(renderPokemonCard)
-        .catch(onFetchError)
-        .finally(()=> form.reset())
-};
-
-function onFetchError (error) {
-    alert("Wrong request")
+        .then(countries => {
+            if (countries.length > 0) {
+                countries.forEach(country => {
+                    console.log(`Name: ${country.name}`);
+                    console.log(`Capital: ${country.capital}`);
+                    console.log(`Population: ${country.population}`);
+                    console.log(`Region: ${country.region}`);
+                    console.log("-------------------------");
+                });
+            } else {
+                console.log("No matching countries found.");
+            }
+        })
+        .catch(error => {
+            console.log("Error occurred while accessing the API.");
+            console.log(error);
+        });
 }
+
+// Приклад виклику функції пошуку країни
+searchCountryByName("Ukraine");
