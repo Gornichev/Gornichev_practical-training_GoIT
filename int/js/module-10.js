@@ -1,5 +1,7 @@
 // const debounce = require('debounce')
 // import { debounce } from "/debounce"
+// import _ from 'lodash'
+
 // Cards Rickandmorty
 
 // const refs = {
@@ -136,9 +138,10 @@ function searchCountryByName(name) {
 
                 });
 
-            }  if(countries.length > 5){
-                alert("Write the request more correctly")
-              }
+            }
+            // if(countries.length > 5){
+            //     alert("Write the request more correctly")
+            //   }
             else {
                 console.log("No matching countries found.");
             }
@@ -151,16 +154,13 @@ function searchCountryByName(name) {
     },5000));
 };
 refs.inputSource.addEventListener("input", _.debounce(findCountry,2000));
-
 function findCountry (e) {
         searchCountryByName(e.currentTarget.value)
-}
+};
 
-//
-// function fetchCounties (country) {
-//     fetch(`https://restcountries.com/v2/name/${name}`)
-//         .then(response => response.json())
-// };
+
+
+
 
 
 
