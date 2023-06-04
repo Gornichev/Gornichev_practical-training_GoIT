@@ -1,3 +1,5 @@
+// const debounce = require('debounce')
+// import { debounce } from "/debounce"
 // Cards Rickandmorty
 
 // const refs = {
@@ -97,8 +99,8 @@
 //     alert("Wrong request")
 // };
 
-// PixabayApi
-
+// // PixabayApi
+//
 // fetch("https://pixabay.com/api/?key=36998604-a22208bfbc6a6ebb3feca8fcb&q=dog&lang=en&image_type=photo")
 // .then(r => r.json())
 // .then(data => {
@@ -112,54 +114,58 @@
 //    Використовуй Rest Countries API v2, а саме ендпоінт /name, який повертає масив
 // об'єктів країн, що потрапили під критерій пошуку.
 
-// function searchCountryByName (name) {
-//     fetch(`https://restcountries.com/v3.1/all?fields=name/${name}`)
-//         .then(response => response.json())
-//         .then(countries => {
-//
-//             if(countries > 0) {
-//                 countries.forEach (country => {
-//                     console.log(country)
-//                     console.log(`Name: ${country.name}`);
-//                 })
-//             }
-//         })
-// };
-//
-// searchCountryByName("Ukraine")
 
-// const refs = {
-//     inputSource : document.querySelector(".js-input-source-countries"),
-// };
-//
-// refs.inputSource.addEventListener("input",onInputValue);
-//
-// function onInputValue (e) {
-//     searchCountryByName(e.target.value)
-//
-// };
+const refs = {
+    inputSource : document.querySelector(".js-input-source-countries"),
+    rootsCountry : document.querySelector(".js-root-countries")
+};
 
 function searchCountryByName(name) {
     fetch(`https://restcountries.com/v2/name/${name}`)
         .then(response => response.json())
         .then(countries => {
-            if (countries.length > 0) {
+            if (countries.length > 0 & countries.length === 1) {
                 countries.forEach(country => {
-                    console.log(`Name: ${country.name}`);
-                    console.log(`Capital: ${country.capital}`);
-                    console.log(`Population: ${country.population}`);
-                    console.log(`Region: ${country.region}`);
-                    console.log("-------------------------");
+                    const markup = `
+                    <li>Name: ${country.name}</li>
+                    <li>Capital: ${country.capital}</li>
+                    <li>Population: ${country.population}</li>
+                    <li>Region: ${country.region}</li>
+                    `
+                    refs.rootsCountry.insertAdjacentHTML("beforeend",markup)
+
                 });
-            } else {
+
+            }  if(countries.length > 5){
+                alert("Write the request more correctly")
+              }
+            else {
                 console.log("No matching countries found.");
             }
         })
         .catch(error => {
             console.log("Error occurred while accessing the API.");
             console.log(error);
-        });
+        }).finally(()=> setTimeout(()=> {
+        refs.rootsCountry.textContent = ""
+    },5000));
+};
+refs.inputSource.addEventListener("input", _.debounce(findCountry,2000));
+
+function findCountry (e) {
+        searchCountryByName(e.currentTarget.value)
 }
 
-// Приклад виклику функції пошуку країни
-searchCountryByName("Ukraine");
+//
+// function fetchCounties (country) {
+//     fetch(`https://restcountries.com/v2/name/${name}`)
+//         .then(response => response.json())
+// };
+
+
+
+
+
+
+
+
