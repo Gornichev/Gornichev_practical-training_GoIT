@@ -118,30 +118,33 @@
 
 
 const refs = {
-    inputSource : document.querySelector(".js-input-source-countries"),
-    rootsCountry : document.querySelector(".js-root-countries")
+    inputSource : document.querySelector(".input-source-countries"),
+    rootsCountry : document.querySelector(".js-root-countries"),
 };
 
 function searchCountryByName(name) {
     fetch(`https://restcountries.com/v2/name/${name}`)
         .then(response => response.json())
         .then(countries => {
-            if (countries.length > 0 & countries.length === 1) {
+            if (countries.length > 0) {
                 countries.forEach(country => {
                     const markup = `
+                    <ul class="item-country-list">
+                    <li><img src="${country.flag}" alt=""></li>
                     <li>Name: ${country.name}</li>
                     <li>Capital: ${country.capital}</li>
                     <li>Population: ${country.population}</li>
                     <li>Region: ${country.region}</li>
+                    </ul>
                     `
                     refs.rootsCountry.insertAdjacentHTML("beforeend",markup)
 
                 });
 
             }
-            // if(countries.length > 5){
-            //     alert("Write the request more correctly")
-            //   }
+            if(countries.length > 10 ){
+                console.log("enter the data more correctly");
+            }
             else {
                 console.log("No matching countries found.");
             }
@@ -149,23 +152,18 @@ function searchCountryByName(name) {
         .catch(error => {
             console.log("Error occurred while accessing the API.");
             console.log(error);
-        }).finally(()=> setTimeout(()=> {
-        refs.rootsCountry.textContent = ""
-    },5000));
+        })
+        .finally(()=> setTimeout(()=> {
+        refs.rootsCountry.textContent = "";
+    },7000));
+
 };
-refs.inputSource.addEventListener("input", _.debounce(findCountry,2000));
+
 function findCountry (e) {
-        searchCountryByName(e.currentTarget.value)
+        searchCountryByName(e.target.value);
 };
+const debounce = _.debounce(findCountry,2000)
 
-
-
-
-
-
-
-
-
-
-
-
+refs.inputSource.addEventListener("input", (e) => {
+   return debounce(e);
+});
