@@ -401,6 +401,18 @@ body {
   max-width: 200px;
 }
 
+.section-newApiShow .js-form-newApiFind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-newApiShow .js-form-newApiFind .js-input-newApiFind-group {
+  display: flex;
+}
+.section-newApiShow .js-form-newApiFind .js-input-newApiFind {
+  margin-right: 20px;
+}
+
 .index {
   color: blue;
   border: 0;

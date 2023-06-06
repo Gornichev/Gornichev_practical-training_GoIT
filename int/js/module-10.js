@@ -56,7 +56,7 @@
 //     };
 // })
 
-// pocemoncard
+// Pocemoncard
 //
 // const refs = {
 //     root : document.querySelector("#root-items-card"),
@@ -101,69 +101,81 @@
 //     alert("Wrong request")
 // };
 
-// // PixabayApi
-//
-// fetch("https://pixabay.com/api/?key=36998604-a22208bfbc6a6ebb3feca8fcb&q=dog&lang=en&image_type=photo")
-// .then(r => r.json())
-// .then(data => {
-//     data.hits.map(element => {
-//         console.log(element.id)
-//     })
-// } )
+// PixabayApi
+const url = "https://newsapi.org/v2/everything?q=cat&pageSize=10&page=1"
+
+const options = {
+    headers : {
+        Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
+
+    }
+}
+
+fetch(url , options)
+.then(r => r.json())
+.then(data => {
+
+} )
+
+
 
 // Home WOrk
+// searchCountry
 // Створи невеликий додаток пошуку даних про країну по її частковому або повному імені.
 //    Використовуй Rest Countries API v2, а саме ендпоінт /name, який повертає масив
 // об'єктів країн, що потрапили під критерій пошуку.
 
 
-const refs = {
-    inputSource : document.querySelector(".input-source-countries"),
-    rootsCountry : document.querySelector(".js-root-countries"),
-};
+// const refs = {
+//     inputSource : document.querySelector(".input-source-countries"),
+//     rootsCountry : document.querySelector(".js-root-countries"),
+// };
+//
+// function searchCountryByName(name) {
+//     fetch(`https://restcountries.com/v2/name/${name}`)
+//         .then(response => response.json())
+//         .then(countries => {
+//             if (countries.length > 0) {
+//                 countries.forEach(country => {
+//                     const markup = `
+//                     <ul class="item-country-list">
+//                     <li><img src="${country.flag}" alt=""></li>
+//                     <li>Name: ${country.name}</li>
+//                     <li>Capital: ${country.capital}</li>
+//                     <li>Population: ${country.population}</li>
+//                     <li>Region: ${country.region}</li>
+//                     </ul>
+//                     `
+//                     refs.rootsCountry.insertAdjacentHTML("beforeend",markup)
+//
+//                 });
+//
+//             }
+//             if(countries.length > 10 ){
+//                 console.log("enter the data more correctly");
+//             }
+//             else {
+//                 console.log("No matching countries found.");
+//             }
+//         })
+//         .catch(error => {
+//             console.log("Error occurred while accessing the API.");
+//             console.log(error);
+//         })
+//         .finally(()=> setTimeout(()=> {
+//         refs.rootsCountry.textContent = "";
+//     },7000));
+//
+// };
+//
+// function findCountry (e) {
+//         searchCountryByName(e.target.value);
+// };
+// const debounce = _.debounce(findCountry,2000)
+//
+// refs.inputSource.addEventListener("input", (e) => {
+//    return debounce(e);
+// });
 
-function searchCountryByName(name) {
-    fetch(`https://restcountries.com/v2/name/${name}`)
-        .then(response => response.json())
-        .then(countries => {
-            if (countries.length > 0) {
-                countries.forEach(country => {
-                    const markup = `
-                    <ul class="item-country-list">
-                    <li><img src="${country.flag}" alt=""></li>
-                    <li>Name: ${country.name}</li>
-                    <li>Capital: ${country.capital}</li>
-                    <li>Population: ${country.population}</li>
-                    <li>Region: ${country.region}</li>
-                    </ul>
-                    `
-                    refs.rootsCountry.insertAdjacentHTML("beforeend",markup)
-
-                });
-
-            }
-            if(countries.length > 10 ){
-                console.log("enter the data more correctly");
-            }
-            else {
-                console.log("No matching countries found.");
-            }
-        })
-        .catch(error => {
-            console.log("Error occurred while accessing the API.");
-            console.log(error);
-        })
-        .finally(()=> setTimeout(()=> {
-        refs.rootsCountry.textContent = "";
-    },7000));
-
-};
-
-function findCountry (e) {
-        searchCountryByName(e.target.value);
-};
-const debounce = _.debounce(findCountry,2000)
-
-refs.inputSource.addEventListener("input", (e) => {
-   return debounce(e);
-});
+// / Home WOrk
+// searchCountry
