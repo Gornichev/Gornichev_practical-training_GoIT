@@ -102,22 +102,66 @@
 // };
 
 // PixabayApi
-const url = "https://newsapi.org/v2/everything?q=cat&pageSize=10&page=1"
 
-const options = {
-    headers : {
-        Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
+// NewSAPiService;
+import product from "./product"
 
-    }
-}
+const a  = product
 
-fetch(url , options)
-.then(r => r.json())
-.then(data => {
+// import NewApiService from  "./news-api-service"
 
-} )
+// const newApiService = new NewApiService();
+// console.log(newApiService)
+
+const refs = {
+    newsForm : document.querySelector(".js-form-newApiFind"),
+    containerList : document.querySelector(".js-list-container"),
+    btnLoadMore : document.querySelector('[data-action="load-more"]')
+};
 
 
+refs.newsForm.addEventListener("submit",onSource);
+refs.btnLoadMore.addEventListener("click",loadMore);
+
+let searchQuery = "";
+
+
+function onSource (e) {
+    e.preventDefault();
+
+    searchQuery = e.currentTarget.elements.query.value;
+
+    const url = `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=10&page=1`;
+
+    const options = {
+        headers : {
+            Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
+
+        }
+    };
+
+    fetch(url , options)
+        .then(r => r.json())
+        .then(data => console.log)
+};
+
+function loadMore (e) {
+    const options = {
+        headers : {
+            Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
+
+        }
+    };
+    const url = `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=10&page=1`;
+    fetch(url , options)
+        .then(r => r.json())
+        .then(data => console.log)
+};
+
+
+
+
+// NewSAPiService
 
 // Home WOrk
 // searchCountry

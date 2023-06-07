@@ -39,12 +39,12 @@
         <form class="js-form-newApiFind">
             <div class="js-input-newApiFind-group">
                 <label for="exampleInputPassword1" class="form-label"></label>
-                <input type="text" class="form-control js-input-newApiFind" id="exampleInputPassword1">
+                <input type="text" class="form-control js-input-newApiFind" id="exampleInputPassword1" name="query">
             </div>
             <button type="submit" class="btn btn-primary">Find more news</button>
         </form>
-        <ul class="js-list-newApiFind"></ul>
-        <button type="button" class="btn btn-info js-btn-showMore">Show More</button>
+        <ul class="js-list-container"></ul>
+        <button type="button" class="btn btn-info js-btn-showMore" data-action="load-more">Show More</button>
     </div>
 <!--    News Api Pagination-->
 </div>
@@ -71,5 +71,6 @@ https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
 <script src="int/js/module-08.js" type="module"></script>
 <script src="int/js/module-09.js" type="module"></script>
 <script src="int/js/module-10.js" type="module"></script>
+<script src="int/js/news-api-service.js" type="module"></script>
 </body>
 </html>
