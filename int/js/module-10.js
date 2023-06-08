@@ -104,61 +104,73 @@
 // PixabayApi
 
 // NewSAPiService;
-import product from "./product"
-
-const a  = product
-
-// import NewApiService from  "./news-api-service"
-
-// const newApiService = new NewApiService();
-// console.log(newApiService)
-
 const refs = {
     newsForm : document.querySelector(".js-form-newApiFind"),
     containerList : document.querySelector(".js-list-container"),
     btnLoadMore : document.querySelector('[data-action="load-more"]')
 };
-
-
 refs.newsForm.addEventListener("submit",onSource);
 refs.btnLoadMore.addEventListener("click",loadMore);
 
-let searchQuery = "";
+ class NewsApiService {
+    constructor() {
+        this.sourceQuery = "";
+        this.page = 1;
+    }
+    fetchArticle () {
 
+        const options = {
+            headers : {
+                Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
+
+            }
+        };
+        const url = `https://newsapi.org/v2/everything?q=${this.sourceQuery}&pageSize=5&page=${this.page}`;
+       return fetch(url , options)
+            .then(r => r.json())
+            .then(data => {
+                this.page += 1;
+                return  data.articles;
+            })
+    };
+     get query() {
+        return this.sourceQuery;
+ };
+    set query(newQuery) {
+        this.sourceQuery = newQuery;
+    };
+    resetPage (){
+        this.page = 1;
+    }
+
+};
+
+const newApiService = new NewsApiService();
 
 function onSource (e) {
     e.preventDefault();
 
-    searchQuery = e.currentTarget.elements.query.value;
-
-    const url = `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=10&page=1`;
-
-    const options = {
-        headers : {
-            Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
-
-        }
-    };
-
-    fetch(url , options)
-        .then(r => r.json())
-        .then(data => console.log)
+    newApiService.query = e.currentTarget.elements.query.value;
+    newApiService.resetPage();
+    newApiService.fetchArticle().then(articles => {
+        console.log(articles)
+    })
 };
 
 function loadMore (e) {
-    const options = {
-        headers : {
-            Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
-
-        }
-    };
-    const url = `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=10&page=1`;
-    fetch(url , options)
-        .then(r => r.json())
-        .then(data => console.log)
+    newApiService.fetchArticle().then(articles => {
+        console.log(articles)
+    })
 };
 
-
+// const markup =
+//     `<li>
+//         <img src="{urlToImage}" alt="">
+//         <h2>${title}</h2>
+//         <p>${author}</p>
+//         <p>${description}</p>
+//     </li>
+//     `
 
 
 // NewSAPiService
