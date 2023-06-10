@@ -415,9 +415,19 @@ body {
 }
 .section-newApiShow .btn-showMore {
   display: none;
+  margin: 0 auto;
 }
-.section-newApiShow .btn-show {
-  display: initial;
+.section-newApiShow .is-show {
+  display: block;
+}
+.section-newApiShow .user-spinner {
+  display: none;
+  margin-right: 5px;
+}
+.section-newApiShow .is-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .list-container {

@@ -107,7 +107,8 @@
 const refs = {
     newsForm : document.querySelector(".js-form-newApiFind"),
     containerList : document.querySelector(".js-list-container"),
-    btnLoadMore : document.querySelector('[data-action="load-more"]')
+    btnLoadMore : document.querySelector('[data-action="load-more"]'),
+    loadSpinner : document.querySelector(".js-spinner"),
 };
 refs.newsForm.addEventListener("submit",onSource);
 refs.btnLoadMore.addEventListener("click",loadMore);
@@ -153,7 +154,8 @@ function onSource (e) {
 
     newApiService.query = e.currentTarget.elements.query.value;
 
-    refs.btnLoadMore .classList.add("btn-show")
+    refs.btnLoadMore.classList.add("is-show");
+
     if(newApiService.query === "") {
         return  alert("Empty string!")
     };
@@ -169,7 +171,11 @@ function onSource (e) {
 function loadMore (e) {
     newApiService.fetchArticle().then(articles => {
         drawMarkup(articles);
+        refs.loadSpinner.classList.add("is-show")
+        refs.btnLoadMore.classList.add("disabled");
     })
+    // refs.loadSpinner.classList.add("is-show")
+    // refs.btnLoadMore.classList.add("disabled");
 };
 function clearContainer () {
     refs.containerList.textContent = "";
