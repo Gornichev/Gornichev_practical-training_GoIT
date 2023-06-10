@@ -413,6 +413,12 @@ body {
 .section-newApiShow .js-form-newApiFind .js-input-newApiFind {
   margin-right: 20px;
 }
+.section-newApiShow .btn-showMore {
+  display: none;
+}
+.section-newApiShow .btn-show {
+  display: initial;
+}
 
 .list-container {
   list-style: none;
@@ -427,7 +433,10 @@ body {
   border: 1px solid tomato;
 }
 .list-container .article-item .article-item-img {
-  max-width: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .index {

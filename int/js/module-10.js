@@ -112,22 +112,24 @@ const refs = {
 refs.newsForm.addEventListener("submit",onSource);
 refs.btnLoadMore.addEventListener("click",loadMore);
 
+
+const API_KEY = "0a6eeea406d74a34be3c6c704eaf1f8c";
+const BASE_URL = "https://newsapi.org/v2"
+const options = {
+    headers : {
+        Authorization: API_KEY,
+    }
+};
+
  class NewsApiService {
     constructor() {
         this.sourceQuery = "";
         this.page = 1;
     }
     fetchArticle () {
-
-        const options = {
-            headers : {
-                Authorization: "0a6eeea406d74a34be3c6c704eaf1f8c",
-
-            }
-        };
-        const url = `https://newsapi.org/v2/everything?q=${this.sourceQuery}&pageSize=4&page=${this.page}`;
+        const url = `${BASE_URL}/everything?q=${this.sourceQuery}&pageSize=4&page=${this.page}`;
        return fetch(url , options)
-            .then(r => r.json())
+            .then(response => response.json())
             .then(({articles}) => {
                 this.page += 1;
                 return  articles;
@@ -141,22 +143,42 @@ refs.btnLoadMore.addEventListener("click",loadMore);
     };
     resetPage (){
         this.page = 1;
-    }
-
+    };
 };
 
 const newApiService = new NewsApiService();
 
 function onSource (e) {
-    e.preventDefault();
+    e.preventDefault()
 
     newApiService.query = e.currentTarget.elements.query.value;
-    newApiService.resetPage();
+
+    refs.btnLoadMore .classList.add("btn-show")
+    if(newApiService.query === "") {
+        return  alert("Empty string!")
+    };
+    newApiService.resetPage()
+
     newApiService.fetchArticle().then(articles => {
-        console.log(articles)
+        clearContainer();
+        drawMarkup(articles)
+    })
+        .catch(error => console.log(error))
+};
+
+function loadMore (e) {
+    newApiService.fetchArticle().then(articles => {
+        drawMarkup(articles);
+    })
+};
+function clearContainer () {
+    refs.containerList.textContent = "";
+};
+
+function drawMarkup (articles){
     articles.map(article => {
-            const markup =
-                `<li class="article-item">
+        const markup =
+            `<li class="article-item">
             <img src="${article.urlToImage}" alt="" class="article-item-img">
             <h5>${article.title}</h5>
             <p>${article.author}</p>
@@ -165,19 +187,7 @@ function onSource (e) {
         `
         refs.containerList.insertAdjacentHTML("beforeend",markup)
     })
-
-
-    })
-        .catch(error => console.log(error))
-};
-
-function loadMore (e) {
-    newApiService.fetchArticle().then(articles => {
-        console.log(articles)
-    })
-};
-
-
+}
 
 
 // NewSAPiService
