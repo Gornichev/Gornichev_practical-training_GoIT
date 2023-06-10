@@ -125,12 +125,12 @@ refs.btnLoadMore.addEventListener("click",loadMore);
 
             }
         };
-        const url = `https://newsapi.org/v2/everything?q=${this.sourceQuery}&pageSize=5&page=${this.page}`;
+        const url = `https://newsapi.org/v2/everything?q=${this.sourceQuery}&pageSize=4&page=${this.page}`;
        return fetch(url , options)
             .then(r => r.json())
-            .then(data => {
+            .then(({articles}) => {
                 this.page += 1;
-                return  data.articles;
+                return  articles;
             })
     };
      get query() {
@@ -154,7 +154,21 @@ function onSource (e) {
     newApiService.resetPage();
     newApiService.fetchArticle().then(articles => {
         console.log(articles)
+    articles.map(article => {
+            const markup =
+                `<li class="article-item">
+            <img src="${article.urlToImage}" alt="" class="article-item-img">
+            <h5>${article.title}</h5>
+            <p>${article.author}</p>
+            <p>${article.description}</p>
+        </li>
+        `
+        refs.containerList.insertAdjacentHTML("beforeend",markup)
     })
+
+
+    })
+        .catch(error => console.log(error))
 };
 
 function loadMore (e) {
@@ -163,14 +177,7 @@ function loadMore (e) {
     })
 };
 
-// const markup =
-//     `<li>
-//         <img src="{urlToImage}" alt="">
-//         <h2>${title}</h2>
-//         <p>${author}</p>
-//         <p>${description}</p>
-//     </li>
-//     `
+
 
 
 // NewSAPiService

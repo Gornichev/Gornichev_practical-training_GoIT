@@ -405,12 +405,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
 }
 .section-newApiShow .js-form-newApiFind .js-input-newApiFind-group {
   display: flex;
 }
 .section-newApiShow .js-form-newApiFind .js-input-newApiFind {
   margin-right: 20px;
+}
+
+.list-container {
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+.list-container .article-item {
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid tomato;
+}
+.list-container .article-item .article-item-img {
+  max-width: 200px;
 }
 
 .index {
