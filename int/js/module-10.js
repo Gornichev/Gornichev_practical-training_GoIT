@@ -154,29 +154,39 @@ function onSource (e) {
 
     newApiService.query = e.currentTarget.elements.query.value;
 
-    refs.btnLoadMore.classList.add("is-show");
-
     if(newApiService.query === "") {
         return  alert("Empty string!")
     };
     newApiService.resetPage()
 
     newApiService.fetchArticle().then(articles => {
+        refs.btnLoadMore.classList.add("is-show");
         clearContainer();
-        drawMarkup(articles)
+        drawMarkup(articles);
     })
         .catch(error => console.log(error))
 };
 
 function loadMore (e) {
+
+    showSpinner();
     newApiService.fetchArticle().then(articles => {
         drawMarkup(articles);
-        refs.loadSpinner.classList.add("is-show")
-        refs.btnLoadMore.classList.add("disabled");
+        removeSpinner();
     })
-    // refs.loadSpinner.classList.add("is-show")
-    // refs.btnLoadMore.classList.add("disabled");
+        .catch(error => console.log(error))
 };
+
+function showSpinner () {
+    refs.loadSpinner.classList.add("is-show");
+    refs.btnLoadMore.classList.add("disabled");
+};
+
+function removeSpinner () {
+    refs.btnLoadMore.classList.remove("disabled");
+    refs.loadSpinner.classList.remove("is-show");
+};
+
 function clearContainer () {
     refs.containerList.textContent = "";
 };
@@ -193,7 +203,7 @@ function drawMarkup (articles){
         `
         refs.containerList.insertAdjacentHTML("beforeend",markup)
     })
-}
+};
 
 
 // NewSAPiService

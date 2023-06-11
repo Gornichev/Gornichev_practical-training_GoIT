@@ -422,9 +422,10 @@ body {
 }
 .section-newApiShow .user-spinner {
   display: none;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 .section-newApiShow .is-show {
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
