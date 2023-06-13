@@ -96,4 +96,10 @@ function findCountry (e) {
 };
 
 
-
+function fetchUnit () {
+    fetch(" http://localhost:3000/motorcycle")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+}
