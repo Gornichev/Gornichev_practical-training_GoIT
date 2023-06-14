@@ -7,7 +7,7 @@
     "prod": "webpack --mode=production",
     "dev": "webpack --mode=development",
     "server": "webpack  serve --mode=production --open",
-    "back-server" : "json-server --watch db.json"
+    "back-server" : "json-server --watch db.json -d 300 -p 0543"
   },
   "keywords": [],
   "author": "",

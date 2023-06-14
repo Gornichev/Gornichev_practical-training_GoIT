@@ -7,6 +7,7 @@
   ],
   "motorcycle" : [
     {
+      "id" : 4,
       "name": "suzuki",
       "price" : 5000,
       "color" : "black",
@@ -14,6 +15,7 @@
       "available" : true
     },
     {
+      "id" : 2,
       "name": "honda",
       "price" : 6000,
       "color" : "red",
@@ -21,6 +23,7 @@
       "available" : false
     },
     {
+      "id" : 1,
       "name": "Geon",
       "price" : 3000,
       "color" : "white",

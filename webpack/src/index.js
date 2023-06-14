@@ -103,3 +103,21 @@ function fetchUnit () {
             console.log(data)
         })
 }
+
+// CRUD
+
+// Get
+
+function fetchMoto () {
+    return  fetch(" http://localhost:0543/motorcycle")
+        .then(r => r.json())
+};
+
+fetchMoto();
+
+function fetchMotoById(motoId) {
+    return  fetch(`http://localhost:0543/motorcycle/${motoId}`)
+        .then(r => r.json())
+};
+
+fetchMotoById(4)
