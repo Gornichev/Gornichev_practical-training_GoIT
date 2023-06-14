@@ -19,7 +19,23 @@ export default [
         color : "white",
         description : `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, voluptatibus!`,
         available : true,
-    }
+    },
+    {
+        "name": "Ducati",
+        "price": 4200,
+        "color": "red",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, voluptatibus!",
+        "available": true,
+        "id": 6
+    },
+    {
+        "name": "lonsin",
+        "price": 1500,
+        "color": "white",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, voluptatibus!",
+        "available": true,
+        "id": 5
+    },
 ];
 
 // // const rootRef = document.querySelector("#root");
