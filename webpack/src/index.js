@@ -242,18 +242,4 @@ function fetchUnit () {
 //
 // fetchMoto();
 
-// Async function
-async function getMoto () {
-    const response = await fetch(" http://localhost:0543/motorcycle");
-    const moto = await response.json()
-    return moto
-};
 
-getMoto().then(console.log)
-
-
-// getMoto().then(moto => moto.json()).then(data => {
-//     data.map(element => {
-//         console.log(element.name)
-//     })
-// })
