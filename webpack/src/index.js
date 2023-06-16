@@ -107,38 +107,38 @@ function fetchUnit () {
 // CRUD
 
 // Get
-const BASE_URL = "http://localhost:0543/motorcycle"
-//
-function fetchMoto () {
-    return  fetch(`${BASE_URL}`)
-        .then(r => r.json())
-};
-//
-// fetchMoto();
-//
-// function fetchMotoById(motoId) {
-//     return  fetch(`${BASE_URL}/${motoId}`)
+// const BASE_URL = "http://localhost:0543/motorcycle"
+// //
+// function fetchMoto () {
+//     return  fetch(`${BASE_URL}`)
 //         .then(r => r.json())
 // };
+// //
+// // fetchMoto();
+// //
+// // function fetchMotoById(motoId) {
+// //     return  fetch(`${BASE_URL}/${motoId}`)
+// //         .then(r => r.json())
+// // };
+// //
+// // fetchMotoById(4)
 //
-// fetchMotoById(4)
-
-// POST
-
-const ducati = {
-    "name": "Ducati",
-    "price" : 4200,
-    "color" : "black",
-    "description" : "Multistrada NEW 1260 Enduros!",
-    "available" : true
-};
-const lonsin = {
-    "name": "lonsin",
-    "price" : 1500,
-    "color" : "white",
-    "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, voluptatibus!",
-    "available" : true
-};
+// // POST
+//
+// const ducati = {
+//     "name": "Ducati",
+//     "price" : 4200,
+//     "color" : "black",
+//     "description" : "Multistrada NEW 1260 Enduros!",
+//     "available" : true
+// };
+// const lonsin = {
+//     "name": "lonsin",
+//     "price" : 1500,
+//     "color" : "white",
+//     "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, voluptatibus!",
+//     "available" : true
+// };
 
 // const options = {
 //     method : "POST",
@@ -228,16 +228,32 @@ const lonsin = {
 
 // DELETE
 
-function deleteMOtoById (id) {
+// function deleteMOtoById (id) {
+//
+//     const options = {
+//         method: "DELETE"
+//     };
+//
+// return fetch(`${BASE_URL}/${id}`,options).then(r => r.json())
+//
+// };
+//
+// deleteMOtoById(7).catch(error => console.log(error))
+//
+// fetchMoto();
 
-    const options = {
-        method: "DELETE"
-    };
-
-return fetch(`${BASE_URL}/${id}`,options).then(r => r.json())
-
+// Async function
+async function getMoto () {
+    const response = await fetch(" http://localhost:0543/motorcycle");
+    const moto = await response.json()
+    return moto
 };
 
-deleteMOtoById(7).catch(error => console.log(error))
+getMoto().then(console.log)
 
-fetchMoto();
+
+// getMoto().then(moto => moto.json()).then(data => {
+//     data.map(element => {
+//         console.log(element.name)
+//     })
+// })
