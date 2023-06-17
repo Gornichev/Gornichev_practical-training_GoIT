@@ -108,13 +108,13 @@ function fetchUnit () {
 
 // Get
 // const BASE_URL = "http://localhost:0543/motorcycle"
-// //
+//
 // function fetchMoto () {
 //     return  fetch(`${BASE_URL}`)
 //         .then(r => r.json())
 // };
 // //
-// // fetchMoto();
+// fetchMoto();
 // //
 // // function fetchMotoById(motoId) {
 // //     return  fetch(`${BASE_URL}/${motoId}`)
@@ -243,3 +243,99 @@ function fetchUnit () {
 // fetchMoto();
 
 
+// CRUD
+// rewrite at async
+
+const BASE_URL = "http://localhost:0543"
+
+// GET
+// function getMoto() {
+//
+//   return  fetch(`${BASE_URL}/motorcycle`)
+//         .then(r => r.json())
+// }
+// getMoto();
+// async
+
+// async function getMotoAsync () {
+//
+// return  data = (await fetch(`${BASE_URL}/motorcycle`)).json()
+//
+//
+//     // const response = await fetch(`${BASE_URL}/motorcycle`)
+//     // const data = await response.json()
+//     // return data
+// };
+// getMotoAsync();
+
+// POST
+
+// const ducati = {
+//     "name": "Ducati",
+//     "price" : 4200,
+//     "color" : "black",
+//     "description" : "Multistrada NEW 1260 Enduros!",
+//     "available" : true
+// };
+// const lonsin = {
+//     "name": "lonsin",
+//     "price" : 1500,
+//     "color" : "white",
+//     "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, voluptatibus!",
+//     "available" : true
+// };
+//
+// async function addMoto(newMoto) {
+//     const options = {
+//         method : "POST",
+//         headers : {
+//             "Content-Type" : "application/json; charset=utf-8 "
+//         },
+//         body : JSON.stringify(newMoto)
+//     };
+//
+//     return data =  (await fetch(`${BASE_URL}/motorcycle`, options)).json()
+//
+//     // const response = await fetch(`${BASE_URL}/motorcycle`,options)
+//     // const data = await response.json()
+//     // return data
+// }
+//
+// addMoto(ducati);
+
+
+// PUT/Patch
+
+// async function putMotoAsync(update,id) {
+//
+//     const options = {
+//         method : "PATCH",
+//         headers : {
+//             "Content-Type" : "application/json; charset=utf-8 "
+//         },
+//         body : JSON.stringify(update)
+//     };
+//
+//     const response = await fetch(`${BASE_URL}/motorcycle/${id}`,options)
+//     const data = await response.json()
+//     return data
+// };
+//
+// putMotoAsync({name : "KTM", price : 9000, condition_of_the_goods : 10 },6);
+
+
+// DELETE
+
+async function deleteMoto(id) {
+    const options = {
+        method : "DELETE",
+        // headers : {
+        //     "Content-Type" : "application/json; charset=utf-8 "
+        // },
+    };
+
+  return data = (await fetch(`${BASE_URL}/motorcycle/${id}`,options)).json();
+
+};
+
+deleteMoto(6)
